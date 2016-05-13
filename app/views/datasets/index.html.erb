@@ -1,0 +1,6 @@
+<h1>Open Data Sources</h1>
+<ul>
+  <% @datasets.each do |dataset| %>
+    <li><%= link_to dataset.database + " : " + dataset.table, "/datasets/#{dataset.id}" %></li>
+  <% end %>
+</ul>

@@ -1,0 +1,6 @@
+<h1>Data Visualization Postings</h1>
+<ul>
+  <% @posts.each do |post| %>
+    <li><%= link_to post.title, "/posts/#{post.id}" %></li>
+  <% end %>
+</ul>

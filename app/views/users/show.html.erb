@@ -1,0 +1,9 @@
+<h1><%= @user.name %></h1>
+<p>Description: <%= @user.description %></p>
+
+<h3>Postings:</h3>
+<ul>
+  <% @user.posts.each do |post| %>
+    <li><%= link_to post.title, "/posts/#{post.id}" %></li>
+  <% end %>
+</ul>

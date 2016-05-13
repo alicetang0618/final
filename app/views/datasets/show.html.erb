@@ -1,0 +1,10 @@
+<h1><%= @dataset.database %></h1>
+<h3>Table: <%= @dataset.table %></h3>
+<p>Link: <%= link_to @dataset.url, @dataset.url %></p>
+</br>
+<h2>Data Visualization Solutions</h2>
+<ul>
+  <% @dataset.posts.each do |post| %>
+    <li><%= link_to post.title, "/posts/#{post.id}" %></li>
+  <% end %>
+</ul>
