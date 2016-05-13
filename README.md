@@ -22,3 +22,5 @@ Open Data Visualization is an Instagram-like blogging site for open data lovers 
 1. rake db:seed
 1. rails server
 1. Browse to `http://localhost:3000` and explore the functionalities of this Rails app.
+
+*Note: Not completed.*

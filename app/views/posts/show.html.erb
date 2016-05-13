@@ -1,4 +1,9 @@
-<h1><%= @post.title %></h1>
+<h1><%= @post.title %>
+  <small>
+    <%= link_to "Edit This Post", edit_post_path(@post.id) %>
+    <%= link_to "Delete This Post", post_path(@post.id), :method => :delete %>
+  </small>
+</h1>
 <h3>Author: <%= link_to @post.user.name, "/users/#{@post.user.id}" %></h3>
 <p><%= image_tag @post.image_url, width: 1000 %></p>
 <p><%= @post.content %></p>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Final</title>
+  <title>Open Data Visualization</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -14,7 +14,7 @@
       <li><%= link_to "Datasets", datasets_path %></li>
       <li><%= link_to "Authors", users_path %></li>
       <%= form_tag datasets_url, :method => :get do %>
-      	<%= text_field_tag :keyword, '', placeholder: 'Search by title...' %>
+      	<%= text_field_tag :keyword, '', placeholder: 'Search post by title...' %>
       <% end %>
     </ul>
     <ul class="nav-right">
