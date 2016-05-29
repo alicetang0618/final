@@ -1,8 +1,13 @@
 class User < ActiveRecord::Base
 
-  has_many :posts
-  has_many :subscribings, foreign_key: :subscriber_id, class_name: "Subscription"
-  has_many :subscribeds, foreign_key: :publisher_id, class_name: "Subscription"
-  has_many :comments
+  has_secure_password
+  
+  has_many :posts, :dependent => :destroy
+  has_many :subscribings, foreign_key: :subscriber_id, class_name: "Subscription", :dependent => :destroy
+  has_many :subscribeds, foreign_key: :publisher_id, class_name: "Subscription", :dependent => :destroy
+  has_many :comments, :dependent => :destroy
+
+  validates :email, presence: true
+  validates :password_digest, presence: true
 
 end

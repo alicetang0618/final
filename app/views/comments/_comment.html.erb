@@ -1,0 +1,8 @@
+<div id="<%= dom_id(comment) %>">
+  <hr>
+  <p><strong><%= comment.user.name %> said: <%= comment.rating %> stars</strong></p>
+  <p><%= comment.comment %></p>
+  <% if comment.user_id == session[:user_id].to_i %>
+  	<p><%= link_to "(delete)", comment, method: :delete, remote: true %>
+  <% end %>
+</div>

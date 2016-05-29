@@ -4,7 +4,14 @@
   <br>
   <%= form.text_field :title, size: 80, autofocus: true %></p>
 
-  <%= form.label :image_url,  "Link to visualization work" %>
+  <p><%= form.label :sources, "Data Source" %>
+  <br>
+  <%= form.select :sources, Dataset.all.order('database').collect {|d| [d.database + ": " + d.table, d.id]}, {}, {:multiple => true, autofocus: true} %></p>
+  <p>
+  Dataset not found? <%= link_to "Click here", new_dataset_url %> to add a new dataset!
+  </p>
+
+  <%= form.label :image_url,  "Link to your visualization work" %>
   <br>
   <%= form.text_field :image_url, size: 80 %>
 

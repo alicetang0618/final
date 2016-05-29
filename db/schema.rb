@@ -55,10 +55,11 @@ ActiveRecord::Schema.define(version: 0) do
   add_index "subscriptions", ["subscriber_id"], name: "index_subscriptions_on_subscriber_id"
 
   create_table "users", force: :cascade do |t|
-    t.text "name"
-    t.text "email"
-    t.text "password"
-    t.text "description"
+    t.text    "name"
+    t.text    "email"
+    t.text    "description"
+    t.text    "password_digest"
+    t.boolean "admin",           default: false
   end
 
 end

@@ -1,10 +1,18 @@
 <h1>
 	Data Visualization Postings
-	<small><%= link_to "Add a new post", new_post_url %></small>
+	<% if session[:user_id] %>
+	  <small><%= link_to "Add a new post", new_post_url %></small>
+	<% else %>
+	  <small><%= link_to "Sign in to add a post", login_path %></small>
+	<% end %>
 </h1>
 
-<ul>
-  <% @posts.each do |post| %>
-    <li><%= link_to post.title, "/posts/#{post.id}" %></li>
+<%= will_paginate @posts %>
+<div class="post-selections">
+	<% @posts.each do |post| %>
+	  <div class="post-box">
+		  <%= link_to image_tag(post.image_url), post_path(post.id) %>
+		  <h3><%= link_to post.title, post_path(post.id) %></h3>
+	  </div>
   <% end %>
-</ul>
+</div>

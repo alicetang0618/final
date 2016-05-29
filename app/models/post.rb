@@ -1,8 +1,8 @@
 class Post < ActiveRecord::Base
 
   belongs_to :user
-  has_many :comments
-  has_many :sources
-  has_many :datasets, :through => :sources
+  has_many :comments, :dependent => :destroy
+  has_many :sources, :dependent => :destroy
+  has_many :datasets, :through => :sources, :dependent => :destroy
 
 end

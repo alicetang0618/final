@@ -1,4 +1,11 @@
-<h1><%= @dataset.database %></h1>
+<h1>Database: <%= @dataset.database %>
+  <% if session[:user_id] and User.find_by(id: session[:user_id].to_i).admin %>
+  	<small>
+      <%= link_to "Edit This Dataset", edit_dataset_path(@dataset.id) %>
+      <%= link_to "Delete This Dataset", dataset_path(@dataset.id), :method => :delete %>
+  	</small>
+  <% end %>
+</h1>
 <h3>Table: <%= @dataset.table %></h3>
 <p>Link: <%= link_to @dataset.url, @dataset.url %></p>
 </br>
@@ -8,3 +15,4 @@
     <li><%= link_to post.title, "/posts/#{post.id}" %></li>
   <% end %>
 </ul>
+<p><%= link_to "Click here", new_post_url %> to add a new post!</p>

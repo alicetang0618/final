@@ -1,6 +1,11 @@
-<h1>Open Data Sources</h1>
+<h1>Open Data Sources
+<small><%= link_to "Add a new dataset", new_dataset_url %></small>
+</h1>
+
+<%= will_paginate @datasets %>
 <ul>
   <% @datasets.each do |dataset| %>
     <li><%= link_to dataset.database + " : " + dataset.table, "/datasets/#{dataset.id}" %></li>
   <% end %>
 </ul>
+<%= will_paginate @datasets %>

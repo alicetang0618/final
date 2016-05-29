@@ -1,16 +1,24 @@
 <h1><%= @post.title %>
-  <small>
-    <%= link_to "Edit This Post", edit_post_path(@post.id) %>
-    <%= link_to "Delete This Post", post_path(@post.id), :method => :delete %>
-  </small>
-</h1>
-<h3>Author: <%= link_to @post.user.name, "/users/#{@post.user.id}" %></h3>
-<p><%= image_tag @post.image_url, width: 1000 %></p>
-<p><%= @post.content %></p>
-
-<h3>Source Dataset(s):</h3>
-<ul>
-  <% @post.datasets.each do |dataset| %>
-    <li><%= link_to dataset.database + " : " + dataset.table, "/datasets/#{dataset.id}" %></li>
+  <% if @post.user.id == session[:user_id].to_i %>
+  	<small>
+      <%= link_to "Edit This Post", edit_post_path(@post.id) %>
+      <%= link_to "Delete This Post", post_path(@post.id), :method => :delete %>
+  	</small>
   <% end %>
-</ul>
+</h1>
+
+<div class="details">
+	<h3>Author: <%= link_to @post.user.name, "/users/#{@post.user.id}" %></h3>
+	<p><%= image_tag @post.image_url, width: 1000 %></p>
+	<p><%= @post.content %></p>
+
+	<h3>Source Dataset(s):</h3>
+	<ul>
+	  <% @post.datasets.each do |dataset| %>
+	    <li><%= link_to dataset.database + " : " + dataset.table, "/datasets/#{dataset.id}" %></li>
+	  <% end %>
+	</ul>
+</div>
+
+<br/>
+<%= render 'comments' %>

@@ -1,0 +1,16 @@
+<h1>Subscriptions</h1>
+<%= will_paginate @subscriptions %>
+<ul>
+  <% @subscriptions.each do |sub| %>
+	<% if sub.publisher != nil %>
+	  <li><%= link_to sub.publisher.name, user_path(sub.publisher) %>
+		<ul>
+		  <% sub.publisher.posts.each do |post| %>
+		  	<li><%= link_to post.title, post_path(post) %></li>
+		  <% end %>
+		</ul>
+	  </li>
+	<% end %>
+  <% end %>
+</ul>
+<%= will_paginate @subscriptions %>

@@ -13,12 +13,16 @@
       <li><%= link_to "Posts", posts_path %></li>
       <li><%= link_to "Datasets", datasets_path %></li>
       <li><%= link_to "Authors", users_path %></li>
-      <%= form_tag datasets_url, :method => :get do %>
-      	<%= text_field_tag :keyword, '', placeholder: 'Search post by title...' %>
+      <li><%= link_to "Subscriptions", subscriptions_path %></li>
+      <%= form_tag posts_url, :method => :get do %>
+      	<%= text_field_tag :keyword, '', placeholder: 'Search for post by title or content...' %>
       <% end %>
     </ul>
     <ul class="nav-right">
-    <% if cookies['user_id'].present? %>
+    <% if session["user_id"].present? %>
+
+      <% current_user = User.find_by(id: session["user_id"]) %>
+      <li>Hello, <%= link_to current_user.name, user_path(current_user) %>!</li>
       <li><%= link_to "Sign Out", logout_path %></li>
     <% else %>
       <li><%= link_to "Sign Up", new_user_path %></li>
@@ -29,6 +33,10 @@
 
   <div class="container">
 
+    <% if flash["notice"].present? %>
+      <p><%= flash["notice"] %></p>
+    <% end %>
+    
     <%= yield %>
 
   </div>

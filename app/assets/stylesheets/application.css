@@ -19,7 +19,6 @@ body {
   margin: 20px;
   font-size: 16px;
 }
-
 input, select, textarea {
   margin-top: 8px;
 }
@@ -27,9 +26,8 @@ input, select, textarea {
   margin: 10px auto;
   padding: 10px;
 }
-
 nav {
-  background: #000;
+  background: #990033;
   color: white;
   padding: 8px;
   font-size: 22px;
@@ -53,7 +51,6 @@ nav li {
   list-style-type: none;
   padding-right: 20px;
 }
-
 h1 {
   border-bottom: solid 2px #AAA;
   padding-bottom: 12px;
@@ -63,29 +60,24 @@ a {
   border-bottom: dotted 1px #000;
   color: #000;
 }
-
 a:hover {
   text-decoration: none;
-  /*color: #090;*/
-  border-bottom: solid 1px #090;
+  color: #ff0000;
+  border-bottom: solid 1px #ff0000;
 }
-
 li {
   line-height: 1.7em;
 }
-
 input, textarea {
   font-size: 16px;
   padding: 8px;
 }
-
 h1 small a {
   font-size: 14px;
   font-weight: normal;
   color: #999;
   margin-left: 12px;
 }
-
 .pull-right {
   float: right;
   margin: 0 0 20px 20px;
@@ -122,5 +114,29 @@ aside {
 nav form input {
   border-radius: 6px;
   margin: 0;
-  width: 400px;
+  width: 300px;
+}
+
+.post-box {
+  float: left;
+  width: 240px;
+  height: 400px;
+  padding: 20px;
+  padding-left: 0px;
+  text-align: center;
+}
+.post-box img {
+  text-align: center;
+  margin: auto auto;
+  display: block;
+  box-shadow: 8px 8px 8px #999;
+  width: 202px;
+  height: 317px;
+}
+aside .post-box {
+  margin: 20px auto;
+  padding: 0;
+}
+.post-selections {
+  width: 70%;
 }

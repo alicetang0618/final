@@ -1,4 +1,22 @@
-<h1><%= @user.name %></h1>
+<% if @user.id == session[:user_id].to_i %>
+  <h1>My Account
+  <small><%= link_to "Edit", edit_user_path(@user) %></small>
+  <small><%= link_to "Delete", user_path(@user), method: :delete, data: { confirm: "Do you really want to delete your account?" } %></small>
+  </h1>
+  <p>Name: <%= @user.name %></p>
+  <p>Email: <%= @user.email %></p>
+<% else %>
+  <h1><%= @user.name %>
+    <% if session[:user_id] %>
+      <% sub = Subscription.find_by(subscriber_id: session[:user_id].to_i, publisher_id: @user.id) %>
+      <% if sub != nil %>
+        <small><%= link_to "Unsubscribe", subscription_path(id: sub.id), method: :delete %></small>
+      <% else %>
+        <small><%= link_to "Subscribe", subscriptions_url(id: @user.id), method: :post %></small>
+      <% end %>
+    <% end %>
+  </h1>
+<% end %>
 <p>Description: <%= @user.description %></p>
 
 <h3>Postings:</h3>
