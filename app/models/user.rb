@@ -8,8 +8,5 @@ class User < ActiveRecord::Base
   has_many :comments, :dependent => :destroy
 
   validates :email, presence: true, uniqueness: true
-  validates :password, confirmation: true
-  validates_confirmation_of :password
-  attr_accessor :password
 
 end

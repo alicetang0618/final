@@ -21,7 +21,7 @@ Open Data Visualization is an Instagram-like blogging site for open data lovers 
 ## To Run
 
 1. Clone this repository
-1. bundle install --without production
+1. bundle install
 1. rake db:migrate
 1. rake db:seed
 1. rails server

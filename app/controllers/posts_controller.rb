@@ -23,17 +23,24 @@ class PostsController < ApplicationController
     @post.content = params[:post][:content]
     @post.image_url = params[:post][:image_url]
     @post.user_id = session[:user_id]
-    @post.save
-    sources = params[:post][:sources]
-    sources.each do |source|
-      if source != ""
-        @source = Source.new
-        @source.post_id = @post.id
-        @source.dataset_id = source.to_i
-        @source.save
+    success = @post.save
+
+    if success
+      sources = params[:post][:sources]
+      sources.each do |source|
+        if source != ""
+          @source = Source.new
+          @source.post_id = @post.id
+          @source.dataset_id = source.to_i
+          @source.save
+        end
       end
+      redirect_to posts_url
+    else
+      flash["notice"] = "Sorry, there's something wrong with the information you entered. Please try again!"
+      redirect_to new_post_url
     end
-    redirect_to posts_url
+
   end
 
   def show
