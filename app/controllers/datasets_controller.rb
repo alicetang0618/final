@@ -15,8 +15,13 @@ class DatasetsController < ApplicationController
     @dataset.database = params[:dataset][:database]
     @dataset.table = params[:dataset][:table]
     @dataset.url = params[:dataset][:url]
-    @dataset.save
-    redirect_to datasets_url
+    success = @dataset.save
+    if success
+      redirect_to datasets_url
+    else
+      flash["notice"] = "Sorry, there's something wrong with the information you entered. Please try again!"
+      redirect_to new_dataset_url
+    end
   end
 
   def show
@@ -42,8 +47,13 @@ class DatasetsController < ApplicationController
     @dataset.database = params[:dataset][:database]
     @dataset.table = params[:dataset][:table]
     @dataset.url = params[:dataset][:url]
-    @dataset.save
-    redirect_to datasets_url(@dataset)
+    success = @dataset.save
+    if success
+      redirect_to datasets_url(@dataset)
+    else
+      flash["notice"] = "Sorry, there's something wrong with the information you entered. Please try again!"
+      redirect_to edit_dataset_path(@dataset)
+    end
   end
 
   def destroy

@@ -32595,3 +32595,1360 @@ Processing by PostsController#show as HTML
   Rendered posts/_comments.html.erb (12.3ms)
   Rendered posts/show.html.erb within layouts/application (26.3ms)
 Completed 200 OK in 51ms (Views: 38.7ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/posts/87" for ::1 at 2016-05-30 08:35:21 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"87"}
+  [1m[35mPost Load (0.4ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 87]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 96]]
+  [1m[35mDataset Load (0.7ms)[0m  SELECT "datasets".* FROM "datasets" INNER JOIN "sources" ON "datasets"."id" = "sources"."dataset_id" WHERE "sources"."post_id" = ?  [["post_id", 87]]
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 87]]
+  [1m[35mComment Load (0.4ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?  [["post_id", 87]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 99]]
+  Rendered comments/_comment.html.erb (26.3ms)
+  Rendered posts/_comments.html.erb (39.3ms)
+  Rendered posts/show.html.erb within layouts/application (278.1ms)
+Completed 200 OK in 369ms (Views: 316.3ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/assets/password_resets.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-05-30 08:35:21 -0500
+
+
+Started GET "/assets/password_resets.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-05-30 08:35:22 -0500
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-05-30 08:35:22 -0500
+
+
+Started GET "/assets/application.self-94b02e0fa8e37eef7ad03ad188e3140b3d5f550df2d26881275e7fa1927e7829.css?body=1" for ::1 at 2016-05-30 08:35:22 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-05-30 08:35:22 -0500
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-05-30 08:35:22 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-05-30 08:35:22 -0500
+
+
+Started GET "/assets/wifi_margaret-50d702b337e10289d3af7da909ab1e3d7a08f429b59f2d40910caa341eb046b8.png" for ::1 at 2016-05-30 08:35:22 -0500
+
+
+Started GET "/login" for ::1 at 2016-05-30 08:35:28 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 38ms (Views: 37.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for ::1 at 2016-05-30 08:35:30 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"U6G69pAppcjlUu5pPJrPjW4ZWezvmJP2eNJFeJgLC7vR21SXYMjSGZRhUobrykJopboZm+SeV5pkzSq1XDxTwQ==", "email"=>"grace@example.org", "password"=>"[FILTERED]", "commit"=>"Let Me In!"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "grace@example.org"]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 70ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2016-05-30 08:35:30 -0500
+Processing by PostsController#index as HTML
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "posts"[0m
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" LIMIT 10 OFFSET 0
+  Rendered posts/index.html.erb within layouts/application (14.8ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 97]]
+Completed 200 OK in 42ms (Views: 40.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/datasets" for ::1 at 2016-05-30 08:35:33 -0500
+Processing by DatasetsController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "datasets"
+  [1m[36mDataset Load (0.2ms)[0m  [1mSELECT  "datasets".* FROM "datasets" LIMIT 30 OFFSET 0[0m
+  Rendered datasets/index.html.erb within layouts/application (3.9ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 97]]
+Completed 200 OK in 29ms (Views: 27.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/datasets/new" for ::1 at 2016-05-30 08:35:38 -0500
+Processing by DatasetsController#new as HTML
+  Rendered datasets/_form.html.erb (20.2ms)
+  Rendered datasets/new.html.erb within layouts/application (22.4ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 97]]
+Completed 200 OK in 40ms (Views: 39.7ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/datasets" for ::1 at 2016-05-30 08:35:54 -0500
+Processing by DatasetsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QXNPuLTzNXzT06F/hWckDl0/dLP2Tn1aEEDoAbXLDdTDCaHZRBJCraLgHZBSN6nrlpw0xP1IuTYMX4fMcfxVrg==", "dataset"=>{"database"=>"2", "table"=>"41", "url"=>"5"}, "commit"=>"Create Dataset"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "datasets" ("database", "table", "url") VALUES (?, ?, ?)[0m  [["database", "2"], ["table", "41"], ["url", "5"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+Redirected to http://localhost:3000/datasets
+Completed 302 Found in 4ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/datasets" for ::1 at 2016-05-30 08:35:54 -0500
+Processing by DatasetsController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "datasets"[0m
+  [1m[35mDataset Load (0.1ms)[0m  SELECT  "datasets".* FROM "datasets" LIMIT 30 OFFSET 0
+  Rendered datasets/index.html.erb within layouts/application (2.7ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 97]]
+Completed 200 OK in 17ms (Views: 15.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/datasets/78" for ::1 at 2016-05-30 08:35:57 -0500
+Processing by DatasetsController#show as HTML
+  Parameters: {"id"=>"78"}
+  [1m[35mDataset Load (0.1ms)[0m  SELECT  "datasets".* FROM "datasets" WHERE "datasets"."id" = ? LIMIT 1  [["id", 78]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 97]]
+  [1m[35mPost Load (0.4ms)[0m  SELECT "posts".* FROM "posts" INNER JOIN "sources" ON "posts"."id" = "sources"."post_id" WHERE "sources"."dataset_id" = ?  [["dataset_id", 78]]
+  Rendered datasets/show.html.erb within layouts/application (5.3ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 97]]
+Completed 200 OK in 22ms (Views: 20.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/logout" for ::1 at 2016-05-30 08:36:03 -0500
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-05-30 08:36:03 -0500
+Processing by PostsController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "posts"
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" LIMIT 10 OFFSET 0[0m
+  Rendered posts/index.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 21ms (Views: 19.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/login" for ::1 at 2016-05-30 08:36:04 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 13ms (Views: 12.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for ::1 at 2016-05-30 08:36:12 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mWHekll7A7NVFljd+AosmbRE1ulS/g9RCqHwUsAZKAyvIrMiuyvSbTOHWppLxW9dBXafx7iQXXZykrtzA/tdWQ==", "email"=>"admin@example.org", "password"=>"[FILTERED]", "commit"=>"Let Me In!"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "admin@example.org"]]
+Redirected to http://localhost:3000/login
+Completed 302 Found in 67ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/login" for ::1 at 2016-05-30 08:36:13 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 13ms (Views: 13.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for ::1 at 2016-05-30 08:36:29 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SRh6tDXbV/a/XsKMLY4Ji2KQpBIek3WU6P7k1YQ2AX5/WxcE14uGKNnPwMueQUpP06LtPPT9J7OQza/0R9R0Kw==", "email"=>"admin@example.org", "password"=>"[FILTERED]", "commit"=>"Let Me In!"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "admin@example.org"]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 68ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for ::1 at 2016-05-30 08:36:29 -0500
+Processing by PostsController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "posts"
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" LIMIT 10 OFFSET 0[0m
+  Rendered posts/index.html.erb within layouts/application (5.9ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 100]]
+Completed 200 OK in 19ms (Views: 17.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/datasets" for ::1 at 2016-05-30 08:36:32 -0500
+Processing by DatasetsController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "datasets"[0m
+  [1m[35mDataset Load (0.1ms)[0m  SELECT  "datasets".* FROM "datasets" LIMIT 30 OFFSET 0
+  Rendered datasets/index.html.erb within layouts/application (1.4ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 100]]
+Completed 200 OK in 16ms (Views: 14.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/datasets/78" for ::1 at 2016-05-30 08:36:34 -0500
+Processing by DatasetsController#show as HTML
+  Parameters: {"id"=>"78"}
+  [1m[35mDataset Load (0.1ms)[0m  SELECT  "datasets".* FROM "datasets" WHERE "datasets"."id" = ? LIMIT 1  [["id", 78]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 100]]
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts" INNER JOIN "sources" ON "posts"."id" = "sources"."post_id" WHERE "sources"."dataset_id" = ?  [["dataset_id", 78]]
+  Rendered datasets/show.html.erb within layouts/application (1.6ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 100]]
+Completed 200 OK in 17ms (Views: 15.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/datasets/78/edit" for ::1 at 2016-05-30 08:36:35 -0500
+Processing by DatasetsController#edit as HTML
+  Parameters: {"id"=>"78"}
+  [1m[35mDataset Load (0.1ms)[0m  SELECT  "datasets".* FROM "datasets" WHERE "datasets"."id" = ? LIMIT 1  [["id", 78]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 100]]
+  Rendered datasets/_form.html.erb (1.4ms)
+  Rendered datasets/edit.html.erb within layouts/application (3.2ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 100]]
+Completed 200 OK in 28ms (Views: 26.2ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/datasets/78" for ::1 at 2016-05-30 08:36:42 -0500
+Processing by DatasetsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"J/qQk5CGuH3cCfwwPzfCHcadxFuF45R4HBDTtqPXueoRuf0jctZpo7qY/neM+IHZd6+NdW+Nxl9kI5iXYDXMvw==", "dataset"=>{"database"=>"2", "table"=>"6", "url"=>"5"}, "commit"=>"Update Dataset", "id"=>"78"}
+  [1m[36mDataset Load (0.1ms)[0m  [1mSELECT  "datasets".* FROM "datasets" WHERE "datasets"."id" = ? LIMIT 1[0m  [["id", 78]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "datasets" SET "table" = ? WHERE "datasets"."id" = ?[0m  [["table", "6"], ["id", 78]]
+  [1m[35m (0.6ms)[0m  commit transaction
+Redirected to http://localhost:3000/datasets.78
+Completed 302 Found in 4ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/datasets.78" for ::1 at 2016-05-30 08:36:42 -0500
+Processing by DatasetsController#index as 
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "datasets"[0m
+  [1m[35mDataset Load (0.1ms)[0m  SELECT  "datasets".* FROM "datasets" LIMIT 30 OFFSET 0
+  Rendered datasets/index.html.erb within layouts/application (2.1ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 100]]
+Completed 200 OK in 28ms (Views: 27.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts" for ::1 at 2016-05-30 08:40:14 -0500
+Processing by PostsController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "posts"
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" LIMIT 10 OFFSET 0[0m
+  Rendered posts/index.html.erb within layouts/application (10.0ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 100]]
+Completed 200 OK in 38ms (Views: 33.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/posts/new" for ::1 at 2016-05-30 08:40:18 -0500
+Processing by PostsController#new as HTML
+  [1m[36mDataset Load (0.2ms)[0m  [1mSELECT "datasets".* FROM "datasets"  ORDER BY database[0m
+  Rendered posts/_form.html.erb (14.9ms)
+  Rendered posts/new.html.erb within layouts/application (16.8ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 100]]
+Completed 200 OK in 33ms (Views: 32.3ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/posts" for ::1 at 2016-05-30 08:40:26 -0500
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NJXThCUv4K0yk9tiFZi1D9Q9EkkBMPx2/oRLuZP2M1AC1r40x38xc1QC2SWmV/bLZQ9bZ+terlGGtwCYUBRGBQ==", "post"=>{"title"=>"4", "sources"=>["", "75"], "image_url"=>"2", "content"=>""}, "commit"=>"Create Post"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "posts" ("title", "content", "image_url", "user_id") VALUES (?, ?, ?, ?)  [["title", "4"], ["content", ""], ["image_url", "2"], ["user_id", 100]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "sources" ("post_id", "dataset_id") VALUES (?, ?)[0m  [["post_id", 90], ["dataset_id", 75]]
+  [1m[35m (0.6ms)[0m  commit transaction
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 8ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/posts" for ::1 at 2016-05-30 08:40:26 -0500
+Processing by PostsController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "posts"[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" LIMIT 10 OFFSET 0
+  Rendered posts/index.html.erb within layouts/application (8.8ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 100]]
+Completed 200 OK in 21ms (Views: 20.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/images/2" for ::1 at 2016-05-30 08:40:26 -0500
+
+ActionController::RoutingError (No route matches [GET] "/images/2"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/xiaoruitang/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /Users/xiaoruitang/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /Users/xiaoruitang/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.6ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.7ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (92.9ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (44.4ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (7.3ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (106.0ms)
+
+
+Started GET "/posts/90" for ::1 at 2016-05-30 08:40:28 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"90"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 90]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 100]]
+  [1m[35mDataset Load (0.1ms)[0m  SELECT "datasets".* FROM "datasets" INNER JOIN "sources" ON "datasets"."id" = "sources"."dataset_id" WHERE "sources"."post_id" = ?  [["post_id", 90]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 90]]
+  Rendered posts/_comments.html.erb (9.9ms)
+  Rendered posts/show.html.erb within layouts/application (16.6ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 100]]
+Completed 200 OK in 34ms (Views: 30.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/images/2" for ::1 at 2016-05-30 08:40:28 -0500
+
+ActionController::RoutingError (No route matches [GET] "/images/2"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/xiaoruitang/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /Users/xiaoruitang/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /Users/xiaoruitang/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.1ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.0ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (63.9ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (36.2ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (79.2ms)
+
+
+Started GET "/posts/90/edit" for ::1 at 2016-05-30 08:40:33 -0500
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"90"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 90]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 100]]
+  [1m[36mDataset Load (0.1ms)[0m  [1mSELECT "datasets".* FROM "datasets"  ORDER BY database[0m
+  [1m[35mSource Load (0.1ms)[0m  SELECT "sources".* FROM "sources" WHERE "sources"."post_id" = ?  [["post_id", 90]]
+  Rendered posts/_form.html.erb (4.9ms)
+  Rendered posts/edit.html.erb within layouts/application (7.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 100]]
+Completed 200 OK in 25ms (Views: 22.8ms | ActiveRecord: 0.5ms)
+
+
+Started PATCH "/posts/90" for ::1 at 2016-05-30 08:40:39 -0500
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nZo/QLPsx5N6QTbRcSpBtcOtUSsytS29xUVhHLJv8/ir2VLwUbwWTRzQNJbC5QJxcp8YBdjbf5q9dio9cY2GrQ==", "post"=>{"title"=>"4", "sources"=>["", "77"], "image_url"=>"2", "content"=>""}, "commit"=>"Update Post", "id"=>"90"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 90]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36mSource Load (0.1ms)[0m  [1mSELECT "sources".* FROM "sources" WHERE "sources"."post_id" = ?[0m  [["post_id", 90]]
+  [1m[35mSQL (1.9ms)[0m  DELETE FROM "sources" WHERE "sources"."id" = ?  [["id", 75]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "sources" ("post_id", "dataset_id") VALUES (?, ?)  [["post_id", 90], ["dataset_id", 77]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/posts.90
+Completed 302 Found in 10ms (ActiveRecord: 3.2ms)
+
+
+Started GET "/posts.90" for ::1 at 2016-05-30 08:40:39 -0500
+Processing by PostsController#index as 
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "posts"
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" LIMIT 10 OFFSET 0[0m
+  Rendered posts/index.html.erb within layouts/application (8.5ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 100]]
+Completed 200 OK in 31ms (Views: 29.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/images/2" for ::1 at 2016-05-30 08:40:39 -0500
+
+ActionController::RoutingError (No route matches [GET] "/images/2"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/xiaoruitang/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /Users/xiaoruitang/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /Users/xiaoruitang/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.6ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.2ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (87.9ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (42.2ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (88.4ms)
+
+
+Started GET "/posts/90" for ::1 at 2016-05-30 08:40:41 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"90"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 90]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 100]]
+  [1m[36mDataset Load (0.1ms)[0m  [1mSELECT "datasets".* FROM "datasets" INNER JOIN "sources" ON "datasets"."id" = "sources"."dataset_id" WHERE "sources"."post_id" = ?[0m  [["post_id", 90]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?  [["post_id", 90]]
+  Rendered posts/_comments.html.erb (1.8ms)
+  Rendered posts/show.html.erb within layouts/application (5.6ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 100]]
+Completed 200 OK in 19ms (Views: 17.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/images/2" for ::1 at 2016-05-30 08:40:42 -0500
+
+ActionController::RoutingError (No route matches [GET] "/images/2"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/xiaoruitang/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /Users/xiaoruitang/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /Users/xiaoruitang/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.4ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.0ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (63.0ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (35.8ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (80.0ms)
+
+
+Started GET "/posts/90/edit" for ::1 at 2016-05-30 08:40:44 -0500
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"90"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 90]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 100]]
+  [1m[35mDataset Load (0.2ms)[0m  SELECT "datasets".* FROM "datasets"  ORDER BY database
+  [1m[36mSource Load (0.1ms)[0m  [1mSELECT "sources".* FROM "sources" WHERE "sources"."post_id" = ?[0m  [["post_id", 90]]
+  Rendered posts/_form.html.erb (3.4ms)
+  Rendered posts/edit.html.erb within layouts/application (4.8ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 100]]
+Completed 200 OK in 22ms (Views: 19.8ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/posts/90" for ::1 at 2016-05-30 08:40:49 -0500
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BNaYJBBAGv375NXpOO1QQvWIGGDVTyl3ER++WRPEE+oylfWU8hDLI511166LIhOGRLpRTj8he1BpLPV40CZmvw==", "post"=>{"title"=>"4", "sources"=>["", "78"], "image_url"=>"2", "content"=>""}, "commit"=>"Update Post", "id"=>"90"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 90]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mSource Load (0.1ms)[0m  SELECT "sources".* FROM "sources" WHERE "sources"."post_id" = ?  [["post_id", 90]]
+  [1m[36mSQL (2.6ms)[0m  [1mDELETE FROM "sources" WHERE "sources"."id" = ?[0m  [["id", 76]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "sources" ("post_id", "dataset_id") VALUES (?, ?)[0m  [["post_id", 90], ["dataset_id", 78]]
+  [1m[35m (0.6ms)[0m  commit transaction
+Redirected to http://localhost:3000/posts.90
+Completed 302 Found in 8ms (ActiveRecord: 3.8ms)
+
+
+Started GET "/posts.90" for ::1 at 2016-05-30 08:40:49 -0500
+Processing by PostsController#index as 
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "posts"[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" LIMIT 10 OFFSET 0
+  Rendered posts/index.html.erb within layouts/application (7.8ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 100]]
+Completed 200 OK in 29ms (Views: 27.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/images/2" for ::1 at 2016-05-30 08:40:49 -0500
+
+ActionController::RoutingError (No route matches [GET] "/images/2"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/xiaoruitang/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /Users/xiaoruitang/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /Users/xiaoruitang/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (5.9ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.5ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (94.4ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (35.3ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (78.4ms)
+
+
+Started GET "/posts/90" for ::1 at 2016-05-30 08:40:51 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"90"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 90]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 100]]
+  [1m[35mDataset Load (0.1ms)[0m  SELECT "datasets".* FROM "datasets" INNER JOIN "sources" ON "datasets"."id" = "sources"."dataset_id" WHERE "sources"."post_id" = ?  [["post_id", 90]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 90]]
+  Rendered posts/_comments.html.erb (1.8ms)
+  Rendered posts/show.html.erb within layouts/application (5.6ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 100]]
+Completed 200 OK in 21ms (Views: 19.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/images/2" for ::1 at 2016-05-30 08:40:51 -0500
+
+ActionController::RoutingError (No route matches [GET] "/images/2"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/xiaoruitang/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /Users/xiaoruitang/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /Users/xiaoruitang/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.3ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.1ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (67.4ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (38.2ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (80.5ms)
+
+
+Started DELETE "/posts/90" for ::1 at 2016-05-30 08:42:08 -0500
+Processing by PostsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"wVMeSAgYaQ7jDxAwWlpRRjfjyA+wU0AiJKY6GSByXrj3EHP46ki40IWeEnfplRKChtGBIVo9EgVclXE445Ar7Q==", "id"=>"90"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 90]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 100]]
+  [1m[36mSQL (1.7ms)[0m  [1mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 90]]
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 4ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/posts" for ::1 at 2016-05-30 08:42:08 -0500
+Processing by PostsController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "posts"
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" LIMIT 10 OFFSET 0[0m
+  Rendered posts/index.html.erb within layouts/application (9.0ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 100]]
+Completed 200 OK in 31ms (Views: 29.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/logout" for ::1 at 2016-05-30 08:55:16 -0500
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-05-30 08:55:16 -0500
+Processing by PostsController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "posts"[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" LIMIT 10 OFFSET 0
+  Rendered posts/index.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 69ms (Views: 68.3ms | ActiveRecord: 0.2ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mSQL (1.1ms)[0m  DELETE FROM "users"
+  [1m[36mSQL (0.8ms)[0m  [1mDELETE FROM "posts"[0m
+  [1m[35mSQL (0.7ms)[0m  DELETE FROM "subscriptions"
+  [1m[36mSQL (0.8ms)[0m  [1mDELETE FROM "comments"[0m
+  [1m[35mSQL (0.7ms)[0m  DELETE FROM "sources"
+  [1m[36mSQL (0.7ms)[0m  [1mDELETE FROM "datasets"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'margaret@example.org' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "description") VALUES (?, ?, ?, ?)  [["name", "Margaret Hopper"], ["email", "margaret@example.org"], ["password_digest", "$2a$10$/15QmDJqdhgCL25WEm85ee6SwH0ZWsNgQjrenT6Nn3/Kt.O7sJ8IW"], ["description", "I love exploring open data!"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'grace@example.org' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "description") VALUES (?, ?, ?, ?)  [["name", "Grace Turing"], ["email", "grace@example.org"], ["password_digest", "$2a$10$sE967kpZjvyfwsxgPRuhou5vP77H.g.q5KndXpS5dpCKnTEA8hPQq"], ["description", "Just for fun..."]]
+  [1m[36m (1.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'alan@example.org' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "description") VALUES (?, ?, ?, ?)  [["name", "Alan Hamilton"], ["email", "alan@example.org"], ["password_digest", "$2a$10$801lXjtIKSay.43qsuiEg.pXGQ9mb3s5j8j9Ys2OC23R5QYwevXji"], ["description", "Love this site so much!"]]
+  [1m[36m (1.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'alice@example.org' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "description") VALUES (?, ?, ?, ?)  [["name", "Alice Tang"], ["email", "alice@example.org"], ["password_digest", "$2a$10$bOZXGDIWBM3d9CkJlwKGluUfcm4cAUnH8qNN7.Bo9sRZvhHqLbk1m"], ["description", "I'm really excited to share my work!"]]
+  [1m[36m (1.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'admin@example.org' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "description", "admin") VALUES (?, ?, ?, ?, ?)  [["name", "Administrator"], ["email", "admin@example.org"], ["password_digest", "$2a$10$ZIzXtk0OPqWBq3t6FDzKTODFXnE0gh6F4K4/qyC2RNvY75hTuEYsW"], ["description", "Feel free to email me at admin@example.org if you need any help!"], ["admin", "t"]]
+  [1m[36m (1.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'rbrummett@gmail.org' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "description") VALUES (?, ?, ?, ?)  [["name", "Randall Brummett"], ["email", "rbrummett@gmail.org"], ["password_digest", "$2a$10$Q7R7/lNOQ58XVubA5pnT/uJZzznc5RD7lSBPJ9PMd9iZmNH0sC3D6"], ["description", "Randall Brummett is a fish biologist. Growing up on a houseboat on the Columbia River, he fell in love early with fish. After obtaining a PhD in fisheries at Auburn University, he spent 30 years in the Near East and Africa building fish farms, teaching aquaculture and fisheries biology, and undertaking a wide range of research and extension projects focusing on aquaculture, fish biodiversity and community based fisheries management systems. He joined the World Bank as a Senior Specialist in 2010 where his job is to develop a portfolio of investments in sustainable aquaculture and fisheries."]]
+  [1m[36m (1.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "datasets" ("database", "table", "url") VALUES (?, ?, ?)[0m  [["database", "City of Chicago Data Portal"], ["table", "Chicago Energy Benchmarking"], ["url", "https://data.cityofchicago.org/Environment-Sustainable-Development/Chicago-Energy-Benchmarking/xq83-jr8c"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "datasets" ("database", "table", "url") VALUES (?, ?, ?)  [["database", "City of Chicago Data Portal"], ["table", "Food Inspections"], ["url", "https://data.cityofchicago.org/Health-Human-Services/Food-Inspections/4ijn-s7e5"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "datasets" ("database", "table", "url") VALUES (?, ?, ?)[0m  [["database", "NYC Open Data"], ["table", "NYC Wi-Fi Hotspot Locations"], ["url", "https://nycopendata.socrata.com/City-Government/NYC-Wi-Fi-Hotspot-Locations/yjub-udmw"]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "datasets" ("database", "table", "url") VALUES (?, ?, ?)  [["database", "World Bank Open Data"], ["table", "Renewable electricity output"], ["url", "http://data.worldbank.org/indicator/EG.ELC.RNEW.ZS?order=wbapi_data_value_2012+wbapi_data_value+wbapi_data_value-last&sort=desc"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "datasets" ("database", "table", "url") VALUES (?, ?, ?)[0m  [["database", "World Bank Open Data"], ["table", "Aquaculture production"], ["url", "http://data.worldbank.org/indicator/ER.FSH.AQUA.MT"]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "datasets" ("database", "table", "url") VALUES (?, ?, ?)  [["database", "World Bank Open Data"], ["table", "Capture fisheries production"], ["url", "http://data.worldbank.org/indicator/ER.FSH.CAPT.MT"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "posts" ("title", "image_url", "content", "user_id") VALUES (?, ?, ?, ?)[0m  [["title", "Visualize Chicago Energy Benchmarking"], ["image_url", "energy_alan.png"], ["content", "This map shows the geographic distribution of buildings that are required to report annual energy use to the City by the ordinance. The Chicago Building Energy Use Benchmarking Ordinance calls on existing municipal, commercial, and residential buildings larger than 50,000 square feet to track whole-building energy use, report to the City annually, and verify data accuracy every three years. The law, which phases in from 2014-2017, covers less than 1% of Chicago’s buildings, which account for approximately 20% of total energy used by all buildings. For more details, including ordinance text, rules and regulations, and timing, please visit www.CityofChicago.org/EnergyBenchmarking. The ordinance authorizes the City to share property-specific information with the public, beginning with the second year in which a building is required to comply. Initially, the dataset includes 243 properties larger than 250,000 square feet that were covered by the ordinance in both 2014 and 2015. The dataset represents self-reported and publicly-available property information for January - December, 2014. In future years, the City plans to release additional building data, as-authorized by the ordinance. Using the \"Data Year\" column, this map shows data for 2014, as reported in 2015."], ["user_id", 103]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "posts" ("title", "image_url", "content", "user_id") VALUES (?, ?, ?, ?)  [["title", "Renewable Electricity Output by Country"], ["image_url", "electricity_alice.png"], ["content", "This map shows the level of renewable electricity usage for countries around the world. Renewable electricity is the share of electrity generated by renewable power plants in total electricity generated by all types of plants."], ["user_id", 104]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "posts" ("title", "image_url", "content", "user_id") VALUES (?, ?, ?, ?)[0m  [["title", "Chicago Food Inspection Trends and Results"], ["image_url", "food_grace.png"], ["content", "The top chart shows how the number of food inspections changes over time. The bottom chart shows the overall distribution of inspection results."], ["user_id", 102]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "posts" ("title", "image_url", "content", "user_id") VALUES (?, ?, ?, ?)  [["title", "Aquaculture production now exceeds capture fisheries"], ["image_url", "fishery_randall.png"], ["content", "Fish is the main animal protein for more than 1 billion people. Average worldwide fish consumption is about 20 kilograms per person per year. Marine resources are essential to the food security of much of the world’s population and Sustainable Development Goal 14 looks to conserve and sustainably use the oceans, seas and marine resources. Monitoring progress toward this goal is paramount but raises substantial challenges.\n\nCapture fisheries have dominated the seafood market until recently. Since the 1980s there has been a rise in aquaculture (fish, shellfish and seaweed farming), which now accounts for more than half of all seafood production. Countries in East Asia dominate capture fisheries and aquaculture production and together account for over 90 percent of global output.\n\nCapture fisheries have generally stagnated since the early 1990s, and many governments have implemented subsidy schemes to protect local fish supplies and employment in the sector. Subsidies to fisheries total approximately $10 billion a year, driving continued fishing despite decreasing catch value and profitability."], ["user_id", 106]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "posts" ("title", "image_url", "content", "user_id") VALUES (?, ?, ?, ?)[0m  [["title", "Chicago Energy Benchmarking Heat Map"], ["image_url", "energy_alice.png"], ["content", "I was inspired by Alan's post and want to do one on Chicago energy mapping. I think for this dataset, heat map is more informative than spot map."], ["user_id", 104]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "posts" ("title", "image_url", "content", "user_id") VALUES (?, ?, ?, ?)  [["title", "Geographic Distribution of NYC Wifi Hotspots"], ["image_url", "wifi_margaret.png"], ["content", "This map shows the locations of Wifi hotspots in New York city. It's a super useful map for travellers!"], ["user_id", 101]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "posts" ("title", "image_url", "content", "user_id") VALUES (?, ?, ?, ?)[0m  [["title", "Chicago Food Inspections by Community Areas"], ["image_url", "food_alan.png"], ["content", "This map shows the community distribution of Chicago food inspections. This information is derived from inspections of restaurants and other food establishments in Chicago from January 1, 2010 to the present. Inspections are performed by staff from the Chicago Department of Public Health’s Food Protection Program using a standardized procedure. The results of the inspection are inputted into a database, then reviewed and approved by a State of Illinois Licensed Environmental Health Practitioner (LEHP). For descriptions of the data elements included in this set, go to http://bit.ly/tS9IE8."], ["user_id", 103]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "posts" ("title", "image_url", "content", "user_id") VALUES (?, ?, ?, ?)  [["title", "Locations and Providers of NYC Wifi Hotspots"], ["image_url", "wifi_grace.png"], ["content", "According to the top chart, a large number of wifi hotspots are available outdoors. From the bottom chart, we can see that Time Warner Cable is the largest provider of NYC wifi hotspots."], ["user_id", 102]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "sources" ("post_id", "dataset_id") VALUES (?, ?)[0m  [["post_id", 91], ["dataset_id", 79]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "sources" ("post_id", "dataset_id") VALUES (?, ?)  [["post_id", 95], ["dataset_id", 79]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "sources" ("post_id", "dataset_id") VALUES (?, ?)[0m  [["post_id", 93], ["dataset_id", 80]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "sources" ("post_id", "dataset_id") VALUES (?, ?)  [["post_id", 97], ["dataset_id", 80]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "sources" ("post_id", "dataset_id") VALUES (?, ?)[0m  [["post_id", 96], ["dataset_id", 81]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "sources" ("post_id", "dataset_id") VALUES (?, ?)  [["post_id", 98], ["dataset_id", 81]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "sources" ("post_id", "dataset_id") VALUES (?, ?)[0m  [["post_id", 92], ["dataset_id", 82]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "sources" ("post_id", "dataset_id") VALUES (?, ?)  [["post_id", 94], ["dataset_id", 83]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "sources" ("post_id", "dataset_id") VALUES (?, ?)[0m  [["post_id", 94], ["dataset_id", 84]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "subscriptions" ("publisher_id", "subscriber_id") VALUES (?, ?)  [["publisher_id", 104], ["subscriber_id", 103]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "subscriptions" ("publisher_id", "subscriber_id") VALUES (?, ?)[0m  [["publisher_id", 103], ["subscriber_id", 104]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "subscriptions" ("publisher_id", "subscriber_id") VALUES (?, ?)  [["publisher_id", 101], ["subscriber_id", 102]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "subscriptions" ("publisher_id", "subscriber_id") VALUES (?, ?)[0m  [["publisher_id", 103], ["subscriber_id", 101]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "subscriptions" ("publisher_id", "subscriber_id") VALUES (?, ?)  [["publisher_id", 102], ["subscriber_id", 104]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "subscriptions" ("publisher_id", "subscriber_id") VALUES (?, ?)[0m  [["publisher_id", 103], ["subscriber_id", 102]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "subscriptions" ("publisher_id", "subscriber_id") VALUES (?, ?)  [["publisher_id", 104], ["subscriber_id", 101]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "comments" ("rating", "comment", "post_id", "user_id") VALUES (?, ?, ?, ?)[0m  [["rating", 5], ["comment", "Great map!"], ["post_id", 92], ["user_id", 103]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "comments" ("rating", "comment", "post_id", "user_id") VALUES (?, ?, ?, ?)  [["rating", 4], ["comment", "Very informative!"], ["post_id", 92], ["user_id", 101]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "comments" ("rating", "comment", "post_id", "user_id") VALUES (?, ?, ?, ?)[0m  [["rating", 4], ["comment", "I like these two charts!"], ["post_id", 98], ["user_id", 101]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "comments" ("rating", "comment", "post_id", "user_id") VALUES (?, ?, ?, ?)  [["rating", 4], ["comment", "Yes, it's super useful!"], ["post_id", 96], ["user_id", 104]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "comments" ("rating", "comment", "post_id", "user_id") VALUES (?, ?, ?, ?)[0m  [["rating", 5], ["comment", "I have another posting on the same dataset. Want to take a look?"], ["post_id", 97], ["user_id", 102]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "comments" ("rating", "comment", "post_id", "user_id") VALUES (?, ?, ?, ?)  [["rating", 5], ["comment", "Great visualization!"], ["post_id", 91], ["user_id", 104]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/" for ::1 at 2016-05-30 08:56:13 -0500
+Processing by PostsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "posts"[0m
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" LIMIT 10 OFFSET 0
+  Rendered posts/index.html.erb within layouts/application (72.0ms)
+Completed 200 OK in 93ms (Views: 91.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/password_resets.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-05-30 08:56:13 -0500
+
+
+Started GET "/assets/password_resets.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-05-30 08:56:13 -0500
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-05-30 08:56:13 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-05-30 08:56:13 -0500
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-05-30 08:56:13 -0500
+
+
+Started GET "/assets/application.self-94b02e0fa8e37eef7ad03ad188e3140b3d5f550df2d26881275e7fa1927e7829.css?body=1" for ::1 at 2016-05-30 08:56:13 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-05-30 08:56:13 -0500
+
+
+Started GET "/assets/energy_alan-e72dff968a742512f403ce277e2debb3ba41dd6889c66f9a683a54b7bed1a055.png" for ::1 at 2016-05-30 08:56:13 -0500
+
+
+Started GET "/assets/fishery_randall-c99201ccf1838b7fb2bbbf3594096ac902d2ae9db1f2c0127a1906033681d9eb.png" for ::1 at 2016-05-30 08:56:13 -0500
+
+
+Started GET "/assets/wifi_margaret-50d702b337e10289d3af7da909ab1e3d7a08f429b59f2d40910caa341eb046b8.png" for ::1 at 2016-05-30 08:56:13 -0500
+
+
+Started GET "/assets/food_grace-3f54c73c7c7a9025647a3de0c4554b96ef8ec732ab615cf7814c798e3a4ccfda.png" for ::1 at 2016-05-30 08:56:13 -0500
+
+
+Started GET "/assets/energy_alice-58cf11df4dc4d308681b72ad18ee712fe5c45606426222c935086dd7622286fe.png" for ::1 at 2016-05-30 08:56:13 -0500
+
+
+Started GET "/assets/electricity_alice-f82a722b3dea9ba4f6e06231f0626d11d9de7782ee32683c8e64b9659c35cd14.png" for ::1 at 2016-05-30 08:56:13 -0500
+
+
+Started GET "/assets/food_alan-0837fbdb18416932bbc31bf5d115d2fdce982167069465d3003e250abc6d2906.png" for ::1 at 2016-05-30 08:56:13 -0500
+
+
+Started GET "/assets/wifi_grace-f92a0499a4115080eb682f8e1822f3a48735767d0803d48a8616c1a0dd761f6e.png" for ::1 at 2016-05-30 08:56:13 -0500
+
+
+Started GET "/posts/94" for ::1 at 2016-05-30 08:56:28 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"94"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 94]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 106]]
+  [1m[36mDataset Load (0.1ms)[0m  [1mSELECT "datasets".* FROM "datasets" INNER JOIN "sources" ON "datasets"."id" = "sources"."dataset_id" WHERE "sources"."post_id" = ?[0m  [["post_id", 94]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?  [["post_id", 94]]
+  Rendered posts/_comments.html.erb (1.1ms)
+  Rendered posts/show.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 27ms (Views: 24.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/datasets/83" for ::1 at 2016-05-30 08:58:58 -0500
+Processing by DatasetsController#show as HTML
+  Parameters: {"id"=>"83"}
+  [1m[36mDataset Load (0.1ms)[0m  [1mSELECT  "datasets".* FROM "datasets" WHERE "datasets"."id" = ? LIMIT 1[0m  [["id", 83]]
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts" INNER JOIN "sources" ON "posts"."id" = "sources"."post_id" WHERE "sources"."dataset_id" = ?  [["dataset_id", 83]]
+  Rendered datasets/show.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 23ms (Views: 20.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts/94" for ::1 at 2016-05-30 08:59:03 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"94"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 94]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 106]]
+  [1m[36mDataset Load (0.1ms)[0m  [1mSELECT "datasets".* FROM "datasets" INNER JOIN "sources" ON "datasets"."id" = "sources"."dataset_id" WHERE "sources"."post_id" = ?[0m  [["post_id", 94]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?  [["post_id", 94]]
+  Rendered posts/_comments.html.erb (1.1ms)
+  Rendered posts/show.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 25ms (Views: 23.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/datasets" for ::1 at 2016-05-30 08:59:46 -0500
+Processing by DatasetsController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "datasets"[0m
+  [1m[35mDataset Load (0.1ms)[0m  SELECT  "datasets".* FROM "datasets" LIMIT 30 OFFSET 0
+  Rendered datasets/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 16ms (Views: 14.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts" for ::1 at 2016-05-30 08:59:52 -0500
+Processing by PostsController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "posts"[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" LIMIT 10 OFFSET 0
+  Rendered posts/index.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 21ms (Views: 20.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/datasets" for ::1 at 2016-05-30 09:00:36 -0500
+Processing by DatasetsController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "datasets"[0m
+  [1m[35mDataset Load (0.1ms)[0m  SELECT  "datasets".* FROM "datasets" LIMIT 30 OFFSET 0
+  Rendered datasets/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 22ms (Views: 20.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users" for ::1 at 2016-05-30 09:00:38 -0500
+Processing by UsersController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" LIMIT 30 OFFSET 0
+  Rendered users/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 24ms (Views: 22.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/datasets" for ::1 at 2016-05-30 09:00:39 -0500
+Processing by DatasetsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "datasets"[0m
+  [1m[35mDataset Load (0.1ms)[0m  SELECT  "datasets".* FROM "datasets" LIMIT 30 OFFSET 0
+  Rendered datasets/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 26ms (Views: 24.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users" for ::1 at 2016-05-30 09:00:41 -0500
+Processing by UsersController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" LIMIT 30 OFFSET 0
+  Rendered users/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 17ms (Views: 15.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/103" for ::1 at 2016-05-30 09:00:43 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"103"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 103]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "posts" WHERE "posts"."user_id" = ?  [["user_id", 103]]
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 103]]
+  Rendered users/show.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 22ms (Views: 20.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users" for ::1 at 2016-05-30 09:00:46 -0500
+Processing by UsersController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" LIMIT 30 OFFSET 0[0m
+  Rendered users/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 22ms (Views: 20.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/106" for ::1 at 2016-05-30 09:00:47 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"106"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 106]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 106]]
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?  [["user_id", 106]]
+  Rendered users/show.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 24ms (Views: 22.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts/94" for ::1 at 2016-05-30 09:00:52 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"94"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 94]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 106]]
+  [1m[36mDataset Load (0.1ms)[0m  [1mSELECT "datasets".* FROM "datasets" INNER JOIN "sources" ON "datasets"."id" = "sources"."dataset_id" WHERE "sources"."post_id" = ?[0m  [["post_id", 94]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?  [["post_id", 94]]
+  Rendered posts/_comments.html.erb (1.0ms)
+  Rendered posts/show.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 32ms (Views: 29.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users" for ::1 at 2016-05-30 09:00:54 -0500
+Processing by UsersController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" LIMIT 30 OFFSET 0
+  Rendered users/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 17ms (Views: 16.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/105" for ::1 at 2016-05-30 09:00:55 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"105"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 105]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "posts" WHERE "posts"."user_id" = ?  [["user_id", 105]]
+  Rendered users/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 25ms (Views: 23.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts" for ::1 at 2016-05-30 09:01:55 -0500
+Processing by PostsController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "posts"[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" LIMIT 10 OFFSET 0
+  Rendered posts/index.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 29ms (Views: 27.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/91" for ::1 at 2016-05-30 09:01:56 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"91"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 91]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 103]]
+  [1m[36mDataset Load (0.1ms)[0m  [1mSELECT "datasets".* FROM "datasets" INNER JOIN "sources" ON "datasets"."id" = "sources"."dataset_id" WHERE "sources"."post_id" = ?[0m  [["post_id", 91]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?  [["post_id", 91]]
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 91]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 104]]
+  Rendered comments/_comment.html.erb (4.4ms)
+  Rendered posts/_comments.html.erb (8.6ms)
+  Rendered posts/show.html.erb within layouts/application (12.2ms)
+Completed 200 OK in 37ms (Views: 33.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/datasets" for ::1 at 2016-05-30 09:02:02 -0500
+Processing by DatasetsController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "datasets"[0m
+  [1m[35mDataset Load (0.1ms)[0m  SELECT  "datasets".* FROM "datasets" LIMIT 30 OFFSET 0
+  Rendered datasets/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 17ms (Views: 15.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/datasets/80" for ::1 at 2016-05-30 09:02:03 -0500
+Processing by DatasetsController#show as HTML
+  Parameters: {"id"=>"80"}
+  [1m[36mDataset Load (0.1ms)[0m  [1mSELECT  "datasets".* FROM "datasets" WHERE "datasets"."id" = ? LIMIT 1[0m  [["id", 80]]
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts" INNER JOIN "sources" ON "posts"."id" = "sources"."post_id" WHERE "sources"."dataset_id" = ?  [["dataset_id", 80]]
+  Rendered datasets/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 20ms (Views: 18.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts" for ::1 at 2016-05-30 09:03:43 -0500
+Processing by PostsController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "posts"[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" LIMIT 10 OFFSET 0
+  Rendered posts/index.html.erb within layouts/application (12.3ms)
+Completed 200 OK in 28ms (Views: 26.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts/91" for ::1 at 2016-05-30 09:03:43 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"91"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 91]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 103]]
+  [1m[36mDataset Load (0.1ms)[0m  [1mSELECT "datasets".* FROM "datasets" INNER JOIN "sources" ON "datasets"."id" = "sources"."dataset_id" WHERE "sources"."post_id" = ?[0m  [["post_id", 91]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?  [["post_id", 91]]
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 91]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 104]]
+  Rendered comments/_comment.html.erb (1.0ms)
+  Rendered posts/_comments.html.erb (4.3ms)
+  Rendered posts/show.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 34ms (Views: 30.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/posts" for ::1 at 2016-05-30 09:03:46 -0500
+Processing by PostsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "posts"[0m
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" LIMIT 10 OFFSET 0
+  Rendered posts/index.html.erb within layouts/application (13.1ms)
+Completed 200 OK in 35ms (Views: 33.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts/94" for ::1 at 2016-05-30 09:03:48 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"94"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 94]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 106]]
+  [1m[36mDataset Load (0.1ms)[0m  [1mSELECT "datasets".* FROM "datasets" INNER JOIN "sources" ON "datasets"."id" = "sources"."dataset_id" WHERE "sources"."post_id" = ?[0m  [["post_id", 94]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?  [["post_id", 94]]
+  Rendered posts/_comments.html.erb (1.0ms)
+  Rendered posts/show.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 26ms (Views: 23.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts/94" for ::1 at 2016-05-30 09:04:11 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"94"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 94]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 106]]
+  [1m[36mDataset Load (0.1ms)[0m  [1mSELECT "datasets".* FROM "datasets" INNER JOIN "sources" ON "datasets"."id" = "sources"."dataset_id" WHERE "sources"."post_id" = ?[0m  [["post_id", 94]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?  [["post_id", 94]]
+  Rendered posts/_comments.html.erb (1.9ms)
+  Rendered posts/show.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 20ms (Views: 18.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/password_resets.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-05-30 09:04:11 -0500
+
+
+Started GET "/assets/application.self-94b02e0fa8e37eef7ad03ad188e3140b3d5f550df2d26881275e7fa1927e7829.css?body=1" for ::1 at 2016-05-30 09:04:11 -0500
+
+
+Started GET "/assets/password_resets.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-05-30 09:04:11 -0500
+
+
+Started GET "/assets/fishery_randall-c99201ccf1838b7fb2bbbf3594096ac902d2ae9db1f2c0127a1906033681d9eb.png" for ::1 at 2016-05-30 09:04:11 -0500
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-05-30 09:04:11 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-05-30 09:04:11 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-05-30 09:04:11 -0500
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-05-30 09:04:11 -0500
+
+
+Started GET "/datasets" for ::1 at 2016-05-30 09:04:17 -0500
+Processing by DatasetsController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "datasets"[0m
+  [1m[35mDataset Load (0.1ms)[0m  SELECT  "datasets".* FROM "datasets" LIMIT 30 OFFSET 0
+  Rendered datasets/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 16ms (Views: 15.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts" for ::1 at 2016-05-30 09:04:47 -0500
+Processing by PostsController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "posts"[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" LIMIT 10 OFFSET 0
+  Rendered posts/index.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 21ms (Views: 19.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/92" for ::1 at 2016-05-30 09:04:49 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"92"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 92]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 104]]
+  [1m[36mDataset Load (0.1ms)[0m  [1mSELECT "datasets".* FROM "datasets" INNER JOIN "sources" ON "datasets"."id" = "sources"."dataset_id" WHERE "sources"."post_id" = ?[0m  [["post_id", 92]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?  [["post_id", 92]]
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 92]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 103]]
+  Rendered comments/_comment.html.erb (1.5ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 101]]
+  Rendered comments/_comment.html.erb (1.0ms)
+  Rendered posts/_comments.html.erb (8.9ms)
+  Rendered posts/show.html.erb within layouts/application (13.6ms)
+Completed 200 OK in 32ms (Views: 29.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/datasets" for ::1 at 2016-05-30 09:07:00 -0500
+Processing by DatasetsController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "datasets"
+  [1m[36mDataset Load (0.1ms)[0m  [1mSELECT  "datasets".* FROM "datasets" LIMIT 30 OFFSET 0[0m
+  Rendered datasets/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 15ms (Views: 14.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/datasets/79" for ::1 at 2016-05-30 09:07:01 -0500
+Processing by DatasetsController#show as HTML
+  Parameters: {"id"=>"79"}
+  [1m[35mDataset Load (0.1ms)[0m  SELECT  "datasets".* FROM "datasets" WHERE "datasets"."id" = ? LIMIT 1  [["id", 79]]
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" INNER JOIN "sources" ON "posts"."id" = "sources"."post_id" WHERE "sources"."dataset_id" = ?[0m  [["dataset_id", 79]]
+  Rendered datasets/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 19ms (Views: 18.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/datasets/79" for ::1 at 2016-05-30 09:07:24 -0500
+Processing by DatasetsController#show as HTML
+  Parameters: {"id"=>"79"}
+  [1m[35mDataset Load (0.1ms)[0m  SELECT  "datasets".* FROM "datasets" WHERE "datasets"."id" = ? LIMIT 1  [["id", 79]]
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" INNER JOIN "sources" ON "posts"."id" = "sources"."post_id" WHERE "sources"."dataset_id" = ?[0m  [["dataset_id", 79]]
+  Rendered datasets/show.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 27ms (Views: 25.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/password_resets.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-05-30 09:07:24 -0500
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-05-30 09:07:24 -0500
+
+
+Started GET "/assets/application.self-94b02e0fa8e37eef7ad03ad188e3140b3d5f550df2d26881275e7fa1927e7829.css?body=1" for ::1 at 2016-05-30 09:07:24 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-05-30 09:07:24 -0500
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-05-30 09:07:24 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-05-30 09:07:24 -0500
+
+
+Started GET "/assets/password_resets.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-05-30 09:07:24 -0500
+
+
+Started GET "/posts/91" for ::1 at 2016-05-30 09:07:33 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"91"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 91]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 103]]
+  [1m[35mDataset Load (0.1ms)[0m  SELECT "datasets".* FROM "datasets" INNER JOIN "sources" ON "datasets"."id" = "sources"."dataset_id" WHERE "sources"."post_id" = ?  [["post_id", 91]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 91]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?  [["post_id", 91]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 104]]
+  Rendered comments/_comment.html.erb (1.0ms)
+  Rendered posts/_comments.html.erb (3.7ms)
+  Rendered posts/show.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 23ms (Views: 20.9ms | ActiveRecord: 0.5ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mSQL (1.7ms)[0m  DELETE FROM "users"
+  [1m[36mSQL (0.8ms)[0m  [1mDELETE FROM "posts"[0m
+  [1m[35mSQL (0.7ms)[0m  DELETE FROM "subscriptions"
+  [1m[36mSQL (0.8ms)[0m  [1mDELETE FROM "comments"[0m
+  [1m[35mSQL (0.8ms)[0m  DELETE FROM "sources"
+  [1m[36mSQL (0.7ms)[0m  [1mDELETE FROM "datasets"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'margaret@example.org' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "description") VALUES (?, ?, ?, ?)  [["name", "Margaret Hopper"], ["email", "margaret@example.org"], ["password_digest", "$2a$10$62zC4N/FGDlRzXFg6RaV7OUHdTxMqS6wBi3JdkeflvH20Y.nSNb1."], ["description", "I love exploring open data!"]]
+  [1m[36m (1.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'grace@example.org' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "description") VALUES (?, ?, ?, ?)  [["name", "Grace Turing"], ["email", "grace@example.org"], ["password_digest", "$2a$10$uHsSx2s4qXi1YW8EaYJfqek6owqGtpjDTIvCFpc8tYNRkE44/I6lm"], ["description", "Just for fun..."]]
+  [1m[36m (1.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'alan@example.org' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "description") VALUES (?, ?, ?, ?)  [["name", "Alan Hamilton"], ["email", "alan@example.org"], ["password_digest", "$2a$10$R/l.wEVN4b1OGgmESpueWOfuTPd7XQSz4Fh6gSMX8.S6j.9295pSm"], ["description", "Love this site so much!"]]
+  [1m[36m (1.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'alice@example.org' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "description") VALUES (?, ?, ?, ?)  [["name", "Alice Tang"], ["email", "alice@example.org"], ["password_digest", "$2a$10$m0poVT3XhSC2Ga/Nom.qL.yA3r93fr4f8tQKGWZt7hL.W5qNkIcG2"], ["description", "I'm really excited to share my work!"]]
+  [1m[36m (1.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'admin@example.org' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "description", "admin") VALUES (?, ?, ?, ?, ?)  [["name", "Administrator"], ["email", "admin@example.org"], ["password_digest", "$2a$10$jYgoUhP17edhvhiLY0HtiOusasJ.X6EQ89NA7u3unI.14TDMGJl7C"], ["description", "Feel free to email me at admin@example.org if you need any help!"], ["admin", "t"]]
+  [1m[36m (1.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'rbrummett@gmail.org' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "description") VALUES (?, ?, ?, ?)  [["name", "Randall Brummett"], ["email", "rbrummett@gmail.org"], ["password_digest", "$2a$10$mLeZJg012zXU8KXsyTTCQeStV2Dfx03sYBTY8wHnrcWSDz9DPODKu"], ["description", "Randall Brummett is a fish biologist. Growing up on a houseboat on the Columbia River, he fell in love early with fish. After obtaining a PhD in fisheries at Auburn University, he spent 30 years in the Near East and Africa building fish farms, teaching aquaculture and fisheries biology, and undertaking a wide range of research and extension projects focusing on aquaculture, fish biodiversity and community based fisheries management systems. He joined the World Bank as a Senior Specialist in 2010 where his job is to develop a portfolio of investments in sustainable aquaculture and fisheries."]]
+  [1m[36m (1.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "datasets" ("database", "table", "url") VALUES (?, ?, ?)[0m  [["database", "City of Chicago Data Portal"], ["table", "Chicago Energy Benchmarking"], ["url", "https://data.cityofchicago.org/Environment-Sustainable-Development/Chicago-Energy-Benchmarking/xq83-jr8c"]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "datasets" ("database", "table", "url") VALUES (?, ?, ?)  [["database", "City of Chicago Data Portal"], ["table", "Food Inspections"], ["url", "https://data.cityofchicago.org/Health-Human-Services/Food-Inspections/4ijn-s7e5"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "datasets" ("database", "table", "url") VALUES (?, ?, ?)[0m  [["database", "NYC Open Data"], ["table", "NYC Wi-Fi Hotspot Locations"], ["url", "https://nycopendata.socrata.com/City-Government/NYC-Wi-Fi-Hotspot-Locations/yjub-udmw"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "datasets" ("database", "table", "url") VALUES (?, ?, ?)  [["database", "World Bank Open Data"], ["table", "Renewable electricity output"], ["url", "http://data.worldbank.org/indicator/EG.ELC.RNEW.ZS?order=wbapi_data_value_2012+wbapi_data_value+wbapi_data_value-last&sort=desc"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "datasets" ("database", "table", "url") VALUES (?, ?, ?)[0m  [["database", "World Bank Open Data"], ["table", "Aquaculture production"], ["url", "http://data.worldbank.org/indicator/ER.FSH.AQUA.MT"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "datasets" ("database", "table", "url") VALUES (?, ?, ?)  [["database", "World Bank Open Data"], ["table", "Capture fisheries production"], ["url", "http://data.worldbank.org/indicator/ER.FSH.CAPT.MT"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "posts" ("title", "image_url", "content", "user_id") VALUES (?, ?, ?, ?)[0m  [["title", "Visualize Chicago Energy Benchmarking"], ["image_url", "energy_alan.png"], ["content", "This map shows the geographic distribution of buildings that are required to report annual energy use to the City by the ordinance. The Chicago Building Energy Use Benchmarking Ordinance calls on existing municipal, commercial, and residential buildings larger than 50,000 square feet to track whole-building energy use, report to the City annually, and verify data accuracy every three years. The law, which phases in from 2014-2017, covers less than 1% of Chicago’s buildings, which account for approximately 20% of total energy used by all buildings. For more details, including ordinance text, rules and regulations, and timing, please visit www.CityofChicago.org/EnergyBenchmarking. The ordinance authorizes the City to share property-specific information with the public, beginning with the second year in which a building is required to comply. Initially, the dataset includes 243 properties larger than 250,000 square feet that were covered by the ordinance in both 2014 and 2015. The dataset represents self-reported and publicly-available property information for January - December, 2014. In future years, the City plans to release additional building data, as-authorized by the ordinance. Using the \"Data Year\" column, this map shows data for 2014, as reported in 2015."], ["user_id", 109]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "posts" ("title", "image_url", "content", "user_id") VALUES (?, ?, ?, ?)  [["title", "Renewable Electricity Output by Country"], ["image_url", "electricity_alice.png"], ["content", "This map shows the level of renewable electricity usage for countries around the world. Renewable electricity is the share of electrity generated by renewable power plants in total electricity generated by all types of plants."], ["user_id", 110]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "posts" ("title", "image_url", "content", "user_id") VALUES (?, ?, ?, ?)[0m  [["title", "Chicago Food Inspection Trends and Results"], ["image_url", "food_grace.png"], ["content", "The top chart shows how the number of food inspections changes over time. The bottom chart shows the overall distribution of inspection results."], ["user_id", 108]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "posts" ("title", "image_url", "content", "user_id") VALUES (?, ?, ?, ?)  [["title", "Aquaculture production now exceeds capture fisheries"], ["image_url", "fishery_randall.png"], ["content", "Fish is the main animal protein for more than 1 billion people. Average worldwide fish consumption is about 20 kilograms per person per year. Marine resources are essential to the food security of much of the world’s population and Sustainable Development Goal 14 looks to conserve and sustainably use the oceans, seas and marine resources. Monitoring progress toward this goal is paramount but raises substantial challenges.\n\nCapture fisheries have dominated the seafood market until recently. Since the 1980s there has been a rise in aquaculture (fish, shellfish and seaweed farming), which now accounts for more than half of all seafood production. Countries in East Asia dominate capture fisheries and aquaculture production and together account for over 90 percent of global output.\n\nCapture fisheries have generally stagnated since the early 1990s, and many governments have implemented subsidy schemes to protect local fish supplies and employment in the sector. Subsidies to fisheries total approximately $10 billion a year, driving continued fishing despite decreasing catch value and profitability."], ["user_id", 112]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "posts" ("title", "image_url", "content", "user_id") VALUES (?, ?, ?, ?)[0m  [["title", "Chicago Energy Benchmarking Heat Map"], ["image_url", "energy_alice.png"], ["content", "I was inspired by Alan's post and want to do one on Chicago energy mapping. I think for this dataset, heat map is more informative than spot map."], ["user_id", 110]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "posts" ("title", "image_url", "content", "user_id") VALUES (?, ?, ?, ?)  [["title", "Geographic Distribution of NYC Wifi Hotspots"], ["image_url", "wifi_margaret.png"], ["content", "This map shows the locations of Wifi hotspots in New York city. It's a super useful map for travellers!"], ["user_id", 107]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "posts" ("title", "image_url", "content", "user_id") VALUES (?, ?, ?, ?)[0m  [["title", "Chicago Food Inspections by Community Areas"], ["image_url", "food_alan.png"], ["content", "This map shows the community distribution of Chicago food inspections. This information is derived from inspections of restaurants and other food establishments in Chicago from January 1, 2010 to the present. Inspections are performed by staff from the Chicago Department of Public Health’s Food Protection Program using a standardized procedure. The results of the inspection are inputted into a database, then reviewed and approved by a State of Illinois Licensed Environmental Health Practitioner (LEHP). For descriptions of the data elements included in this set, go to http://bit.ly/tS9IE8."], ["user_id", 109]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "posts" ("title", "image_url", "content", "user_id") VALUES (?, ?, ?, ?)  [["title", "Locations and Providers of NYC Wifi Hotspots"], ["image_url", "wifi_grace.png"], ["content", "According to the top chart, a large number of wifi hotspots are available outdoors. From the bottom chart, we can see that Time Warner Cable is the largest provider of NYC wifi hotspots."], ["user_id", 108]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "sources" ("post_id", "dataset_id") VALUES (?, ?)[0m  [["post_id", 99], ["dataset_id", 85]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "sources" ("post_id", "dataset_id") VALUES (?, ?)  [["post_id", 103], ["dataset_id", 85]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "sources" ("post_id", "dataset_id") VALUES (?, ?)[0m  [["post_id", 101], ["dataset_id", 86]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "sources" ("post_id", "dataset_id") VALUES (?, ?)  [["post_id", 105], ["dataset_id", 86]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "sources" ("post_id", "dataset_id") VALUES (?, ?)[0m  [["post_id", 104], ["dataset_id", 87]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "sources" ("post_id", "dataset_id") VALUES (?, ?)  [["post_id", 106], ["dataset_id", 87]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "sources" ("post_id", "dataset_id") VALUES (?, ?)[0m  [["post_id", 100], ["dataset_id", 88]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "sources" ("post_id", "dataset_id") VALUES (?, ?)  [["post_id", 102], ["dataset_id", 89]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "sources" ("post_id", "dataset_id") VALUES (?, ?)[0m  [["post_id", 102], ["dataset_id", 90]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "subscriptions" ("publisher_id", "subscriber_id") VALUES (?, ?)  [["publisher_id", 110], ["subscriber_id", 109]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "subscriptions" ("publisher_id", "subscriber_id") VALUES (?, ?)[0m  [["publisher_id", 109], ["subscriber_id", 110]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "subscriptions" ("publisher_id", "subscriber_id") VALUES (?, ?)  [["publisher_id", 107], ["subscriber_id", 108]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "subscriptions" ("publisher_id", "subscriber_id") VALUES (?, ?)[0m  [["publisher_id", 109], ["subscriber_id", 107]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "subscriptions" ("publisher_id", "subscriber_id") VALUES (?, ?)  [["publisher_id", 108], ["subscriber_id", 110]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "subscriptions" ("publisher_id", "subscriber_id") VALUES (?, ?)[0m  [["publisher_id", 109], ["subscriber_id", 108]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "subscriptions" ("publisher_id", "subscriber_id") VALUES (?, ?)  [["publisher_id", 110], ["subscriber_id", 107]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "comments" ("rating", "comment", "post_id", "user_id") VALUES (?, ?, ?, ?)[0m  [["rating", 5], ["comment", "Great map!"], ["post_id", 100], ["user_id", 109]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "comments" ("rating", "comment", "post_id", "user_id") VALUES (?, ?, ?, ?)  [["rating", 4], ["comment", "Very informative!"], ["post_id", 100], ["user_id", 107]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "comments" ("rating", "comment", "post_id", "user_id") VALUES (?, ?, ?, ?)[0m  [["rating", 4], ["comment", "I like these two charts!"], ["post_id", 106], ["user_id", 107]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "comments" ("rating", "comment", "post_id", "user_id") VALUES (?, ?, ?, ?)  [["rating", 4], ["comment", "Yes, it's super useful!"], ["post_id", 104], ["user_id", 110]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "comments" ("rating", "comment", "post_id", "user_id") VALUES (?, ?, ?, ?)[0m  [["rating", 5], ["comment", "I have another posting on the same dataset. Want to take a look?"], ["post_id", 105], ["user_id", 108]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "comments" ("rating", "comment", "post_id", "user_id") VALUES (?, ?, ?, ?)  [["rating", 5], ["comment", "Great visualization!"], ["post_id", 99], ["user_id", 110]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m

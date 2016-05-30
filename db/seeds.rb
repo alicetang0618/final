@@ -10,6 +10,7 @@ grace = User.create name: 'Grace Turing', email: 'grace@example.org', password: 
 alan = User.create name: 'Alan Hamilton', email: 'alan@example.org', password: 'imitationgame', description: 'Love this site so much!'
 alice = User.create name: 'Alice Tang', email: 'alice@example.org', password: 'xiaoruit', description: "I'm really excited to share my work!"
 admin = User.create name: 'Administrator', email: 'admin@example.org', password: 'alicetang', description: "Feel free to email me at admin@example.org if you need any help!", admin: 1
+randall = User.create name: 'Randall Brummett', email: 'rbrummett@gmail.org', password: 'fisher', description: "Randall Brummett is a fish biologist. Growing up on a houseboat on the Columbia River, he fell in love early with fish. After obtaining a PhD in fisheries at Auburn University, he spent 30 years in the Near East and Africa building fish farms, teaching aquaculture and fisheries biology, and undertaking a wide range of research and extension projects focusing on aquaculture, fish biodiversity and community based fisheries management systems. He joined the World Bank as a Senior Specialist in 2010 where his job is to develop a portfolio of investments in sustainable aquaculture and fisheries."
 
 chicago_energy = Dataset.new
 chicago_energy.database = 'City of Chicago Data Portal'
@@ -35,6 +36,18 @@ world_electricity.table = 'Renewable electricity output'
 world_electricity.url = 'http://data.worldbank.org/indicator/EG.ELC.RNEW.ZS?order=wbapi_data_value_2012+wbapi_data_value+wbapi_data_value-last&sort=desc'
 world_electricity.save
 
+world_aquaculture = Dataset.new
+world_aquaculture.database = 'World Bank Open Data'
+world_aquaculture.table = 'Aquaculture production'
+world_aquaculture.url = 'http://data.worldbank.org/indicator/ER.FSH.AQUA.MT'
+world_aquaculture.save
+
+world_fishery = Dataset.new
+world_fishery.database = 'World Bank Open Data'
+world_fishery.table = 'Capture fisheries production'
+world_fishery.url = 'http://data.worldbank.org/indicator/ER.FSH.CAPT.MT'
+world_fishery.save
+
 energy_map1 = Post.new
 energy_map1.title = 'Visualize Chicago Energy Benchmarking'
 energy_map1.image_url = 'energy_alan.png'
@@ -55,6 +68,13 @@ food_chart1.image_url = 'food_grace.png'
 food_chart1.content = "The top chart shows how the number of food inspections changes over time. The bottom chart shows the overall distribution of inspection results."
 food_chart1.user_id = grace.id
 food_chart1.save
+
+fishery_chart = Post.new
+fishery_chart.title = 'Aquaculture production now exceeds capture fisheries'
+fishery_chart.image_url = 'fishery_randall.png'
+fishery_chart.content = "Fish is the main animal protein for more than 1 billion people. Average worldwide fish consumption is about 20 kilograms per person per year. Marine resources are essential to the food security of much of the world’s population and Sustainable Development Goal 14 looks to conserve and sustainably use the oceans, seas and marine resources. Monitoring progress toward this goal is paramount but raises substantial challenges.\n\nCapture fisheries have dominated the seafood market until recently. Since the 1980s there has been a rise in aquaculture (fish, shellfish and seaweed farming), which now accounts for more than half of all seafood production. Countries in East Asia dominate capture fisheries and aquaculture production and together account for over 90 percent of global output.\n\nCapture fisheries have generally stagnated since the early 1990s, and many governments have implemented subsidy schemes to protect local fish supplies and employment in the sector. Subsidies to fisheries total approximately $10 billion a year, driving continued fishing despite decreasing catch value and profitability."
+fishery_chart.user_id = randall.id
+fishery_chart.save
 
 energy_map2 = Post.new
 energy_map2.title = 'Chicago Energy Benchmarking Heat Map'
@@ -91,6 +111,8 @@ Source.create(post_id: food_chart2.id, dataset_id: chicago_food.id)
 Source.create(post_id: wifi_chart1.id, dataset_id: nyc_wifi.id)
 Source.create(post_id: wifi_chart2.id, dataset_id: nyc_wifi.id)
 Source.create(post_id: electricity_map.id, dataset_id: world_electricity.id)
+Source.create(post_id: fishery_chart.id, dataset_id: world_aquaculture.id)
+Source.create(post_id: fishery_chart.id, dataset_id: world_fishery.id)
 
 Subscription.create(publisher_id: alice.id, subscriber_id: alan.id)
 Subscription.create(publisher_id: alan.id, subscriber_id: alice.id)

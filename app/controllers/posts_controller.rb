@@ -66,21 +66,26 @@ class PostsController < ApplicationController
     @post.title = params[:post][:title]
     @post.content = params[:post][:content]
     @post.image_url = params[:post][:image_url]
-    @post.save
-    old_sources = Source.where(post_id: @post.id).all
-    old_sources.each do |source|
-      source.delete
-    end
-    sources = params[:post][:sources]
-    sources.each do |source|
-      if source != ""
-        @source = Source.new
-        @source.post_id = @post.id
-        @source.dataset_id = source.to_i
-        @source.save
+    success = @post.save
+    if success
+      old_sources = Source.where(post_id: @post.id).all
+      old_sources.each do |source|
+        source.delete
       end
+      sources = params[:post][:sources]
+      sources.each do |source|
+        if source != ""
+          @source = Source.new
+          @source.post_id = @post.id
+          @source.dataset_id = source.to_i
+          @source.save
+        end
+      end
+      redirect_to posts_url(@post)
+    else
+      flash["notice"] = "Sorry, there's something wrong with the information you entered. Please try again!"
+      redirect_to edit_post_path(@post)
     end
-    redirect_to posts_url(@post)
   end
 
   def destroy
