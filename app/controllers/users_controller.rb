@@ -22,7 +22,7 @@ class UsersController < ApplicationController
     @user.description = params[:user][:description]
     success = @user.save
     if success
-      redirect_to root_url
+      redirect_to login_url
     else
       flash["notice"] = "Sorry, there's something wrong with the information you entered. Please try again!"
       redirect_to new_user_url

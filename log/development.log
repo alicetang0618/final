@@ -28936,3 +28936,219 @@ Processing by PostsController#index as HTML
   Rendered posts/index.html.erb within layouts/application (4.0ms)
   [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 64]]
 Completed 200 OK in 16ms (Views: 15.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/new" for ::1 at 2016-05-29 22:50:45 -0500
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (3.1ms)
+  Rendered users/new.html.erb within layouts/application (4.8ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 64]]
+Completed 200 OK in 30ms (Views: 20.3ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/users" for ::1 at 2016-05-29 22:50:51 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xYNLRVOEP7Ao7fIZ+qY+N4nX0P8p24k3cykRDwCiqyuwlA01Ruopl6YHUt8DEDt8onTIN7radBvK0uu3miyM3A==", "user"=>{"name"=>"a", "email"=>"a", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "description"=>""}, "commit"=>"Submit"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'a' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "description") VALUES (?, ?, ?, ?)[0m  [["name", "a"], ["email", "a"], ["password_digest", "$2a$10$7vFZbg.BUSNcN8UvVSx6iOuq/m2BKnNeLYi/BSO9huT.w5U.CUdlK"], ["description", ""]]
+  [1m[35m (1.5ms)[0m  commit transaction
+Redirected to http://localhost:3000/login
+Completed 302 Found in 73ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/login" for ::1 at 2016-05-29 22:50:51 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 64]]
+Completed 200 OK in 15ms (Views: 13.9ms | ActiveRecord: 0.1ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mSQL (1.7ms)[0m  DELETE FROM "users"
+  [1m[36mSQL (0.8ms)[0m  [1mDELETE FROM "posts"[0m
+  [1m[35mSQL (1.0ms)[0m  DELETE FROM "subscriptions"
+  [1m[36mSQL (0.9ms)[0m  [1mDELETE FROM "comments"[0m
+  [1m[35mSQL (0.8ms)[0m  DELETE FROM "sources"
+  [1m[36mSQL (0.8ms)[0m  [1mDELETE FROM "datasets"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'margaret@example.org' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "description") VALUES (?, ?, ?, ?)  [["name", "Margaret Hopper"], ["email", "margaret@example.org"], ["password_digest", "$2a$10$HvPjgWmiwGMTiHMZ/ll45.vJnKt3mMlXhFVAikRvBT1wJW7AZLLy2"], ["description", "I love exploring open data!"]]
+  [1m[36m (1.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'grace@example.org' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "description") VALUES (?, ?, ?, ?)  [["name", "Grace Turing"], ["email", "grace@example.org"], ["password_digest", "$2a$10$tFjcJo/rPp9ZOvCdESBcU.0IDmThYAu2KfOfa9gZeLnqia0DnDZXi"], ["description", "Just for fun..."]]
+  [1m[36m (1.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'alan@example.org' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "description") VALUES (?, ?, ?, ?)  [["name", "Alan Hamilton"], ["email", "alan@example.org"], ["password_digest", "$2a$10$WVPcmjFkCmseNg4F5MHgQuSR1qE.ShBAbVECy/8bFDvK13YcQUDGm"], ["description", "Love this site so much!"]]
+  [1m[36m (1.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'alice@example.org' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "description") VALUES (?, ?, ?, ?)  [["name", "Alice Tang"], ["email", "alice@example.org"], ["password_digest", "$2a$10$zcQ15GmOlUyjaaG7Vz0lZu5XAh1NhtxQlwX1nAgv.ICzksQ6pj9A."], ["description", "I'm really excited to share my work!"]]
+  [1m[36m (1.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'admin@example.org' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "description") VALUES (?, ?, ?, ?)  [["name", "Administrator"], ["email", "admin@example.org"], ["password_digest", "$2a$10$1GSkTAdu7mUmGofbG8X2eOojYBGZ0VlaYyW9NbUBCRkzSj5/0.OT."], ["description", "Feel free to email me at admin@example.org if you need any help!"]]
+  [1m[36m (1.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "datasets" ("database", "table", "url") VALUES (?, ?, ?)[0m  [["database", "City of Chicago Data Portal"], ["table", "Chicago Energy Benchmarking"], ["url", "https://data.cityofchicago.org/Environment-Sustainable-Development/Chicago-Energy-Benchmarking/xq83-jr8c"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "datasets" ("database", "table", "url") VALUES (?, ?, ?)  [["database", "City of Chicago Data Portal"], ["table", "Food Inspections"], ["url", "https://data.cityofchicago.org/Health-Human-Services/Food-Inspections/4ijn-s7e5"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "posts" ("title", "image_url", "content", "user_id") VALUES (?, ?, ?, ?)[0m  [["title", "Visualize Chicago Energy Benchmarking"], ["image_url", "energy_alan.png"], ["content", "This map shows the geographic distribution of buildings that are required to report annual energy use to the City by the ordinance. The Chicago Building Energy Use Benchmarking Ordinance calls on existing municipal, commercial, and residential buildings larger than 50,000 square feet to track whole-building energy use, report to the City annually, and verify data accuracy every three years. The law, which phases in from 2014-2017, covers less than 1% of Chicago’s buildings, which account for approximately 20% of total energy used by all buildings. For more details, including ordinance text, rules and regulations, and timing, please visit www.CityofChicago.org/EnergyBenchmarking. The ordinance authorizes the City to share property-specific information with the public, beginning with the second year in which a building is required to comply. Initially, the dataset includes 243 properties larger than 250,000 square feet that were covered by the ordinance in both 2014 and 2015. The dataset represents self-reported and publicly-available property information for January - December, 2014. In future years, the City plans to release additional building data, as-authorized by the ordinance. Using the \"Data Year\" column, this map shows data for 2014, as reported in 2015."], ["user_id", 68]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "posts" ("title", "image_url", "content", "user_id") VALUES (?, ?, ?, ?)  [["title", "Chicago Energy Benchmarking Heat Map"], ["image_url", "energy_alice.png"], ["content", "I was inspired by Alan's post and want to do one on Chicago energy mapping. I think for this dataset, heat map is more informative than spot map."], ["user_id", 69]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "posts" ("title", "image_url", "content", "user_id") VALUES (?, ?, ?, ?)[0m  [["title", "Chicago Food Inspection Trends and Results"], ["image_url", "food_alan.png"], ["content", "The top chart shows how the number of food inspections changes over time. The bottom chart shows the overall distribution of inspection results."], ["user_id", 68]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "posts" ("title", "image_url", "content", "user_id") VALUES (?, ?, ?, ?)  [["title", "Chicago Food Inspections by Community Areas"], ["image_url", "food_grace.png"], ["content", "This map shows the community distribution of Chicago food inspections. This information is derived from inspections of restaurants and other food establishments in Chicago from January 1, 2010 to the present. Inspections are performed by staff from the Chicago Department of Public Health’s Food Protection Program using a standardized procedure. The results of the inspection are inputted into a database, then reviewed and approved by a State of Illinois Licensed Environmental Health Practitioner (LEHP). For descriptions of the data elements included in this set, go to http://bit.ly/tS9IE8."], ["user_id", 67]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "sources" ("post_id", "dataset_id") VALUES (?, ?)[0m  [["post_id", 47], ["dataset_id", 54]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "sources" ("post_id", "dataset_id") VALUES (?, ?)  [["post_id", 48], ["dataset_id", 54]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "sources" ("post_id", "dataset_id") VALUES (?, ?)[0m  [["post_id", 49], ["dataset_id", 55]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "sources" ("post_id", "dataset_id") VALUES (?, ?)  [["post_id", 50], ["dataset_id", 55]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mSQL (1.8ms)[0m  DELETE FROM "users"
+  [1m[36mSQL (0.7ms)[0m  [1mDELETE FROM "posts"[0m
+  [1m[35mSQL (0.8ms)[0m  DELETE FROM "subscriptions"
+  [1m[36mSQL (0.8ms)[0m  [1mDELETE FROM "comments"[0m
+  [1m[35mSQL (0.7ms)[0m  DELETE FROM "sources"
+  [1m[36mSQL (0.7ms)[0m  [1mDELETE FROM "datasets"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'margaret@example.org' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "description") VALUES (?, ?, ?, ?)  [["name", "Margaret Hopper"], ["email", "margaret@example.org"], ["password_digest", "$2a$10$3LQuj2kkAOikKdycpNWuL.ewVaZFFKC2DwWeGKo94IsC9kiYC4efa"], ["description", "I love exploring open data!"]]
+  [1m[36m (1.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'grace@example.org' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "description") VALUES (?, ?, ?, ?)  [["name", "Grace Turing"], ["email", "grace@example.org"], ["password_digest", "$2a$10$.CIxFJ.rbDFsz5FwGsbuo.4VXLlv4bOFz1Ira4t2CcPBwkqHy1xAW"], ["description", "Just for fun..."]]
+  [1m[36m (1.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'alan@example.org' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "description") VALUES (?, ?, ?, ?)  [["name", "Alan Hamilton"], ["email", "alan@example.org"], ["password_digest", "$2a$10$xl0q5jGEa2ovLebllPpoV.Pi6bzUNP1GVDCm/AEQnEdEkozm96cOe"], ["description", "Love this site so much!"]]
+  [1m[36m (1.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'alice@example.org' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "description") VALUES (?, ?, ?, ?)  [["name", "Alice Tang"], ["email", "alice@example.org"], ["password_digest", "$2a$10$5T3oDojeh2nZKTXjlpvu4OYpm/Dqv9IU6/xI0VyPrbFfk6V5H.Bt."], ["description", "I'm really excited to share my work!"]]
+  [1m[36m (1.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'admin@example.org' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "description", "admin") VALUES (?, ?, ?, ?, ?)  [["name", "Administrator"], ["email", "admin@example.org"], ["password_digest", "$2a$10$DGyJmXvlI56O9qKaG60MA.GEBpgOeSeoUzFZxKND7ozhU8hI3aaS."], ["description", "Feel free to email me at admin@example.org if you need any help!"], ["admin", "t"]]
+  [1m[36m (1.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "datasets" ("database", "table", "url") VALUES (?, ?, ?)[0m  [["database", "City of Chicago Data Portal"], ["table", "Chicago Energy Benchmarking"], ["url", "https://data.cityofchicago.org/Environment-Sustainable-Development/Chicago-Energy-Benchmarking/xq83-jr8c"]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "datasets" ("database", "table", "url") VALUES (?, ?, ?)  [["database", "City of Chicago Data Portal"], ["table", "Food Inspections"], ["url", "https://data.cityofchicago.org/Health-Human-Services/Food-Inspections/4ijn-s7e5"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "posts" ("title", "image_url", "content", "user_id") VALUES (?, ?, ?, ?)[0m  [["title", "Visualize Chicago Energy Benchmarking"], ["image_url", "energy_alan.png"], ["content", "This map shows the geographic distribution of buildings that are required to report annual energy use to the City by the ordinance. The Chicago Building Energy Use Benchmarking Ordinance calls on existing municipal, commercial, and residential buildings larger than 50,000 square feet to track whole-building energy use, report to the City annually, and verify data accuracy every three years. The law, which phases in from 2014-2017, covers less than 1% of Chicago’s buildings, which account for approximately 20% of total energy used by all buildings. For more details, including ordinance text, rules and regulations, and timing, please visit www.CityofChicago.org/EnergyBenchmarking. The ordinance authorizes the City to share property-specific information with the public, beginning with the second year in which a building is required to comply. Initially, the dataset includes 243 properties larger than 250,000 square feet that were covered by the ordinance in both 2014 and 2015. The dataset represents self-reported and publicly-available property information for January - December, 2014. In future years, the City plans to release additional building data, as-authorized by the ordinance. Using the \"Data Year\" column, this map shows data for 2014, as reported in 2015."], ["user_id", 73]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "posts" ("title", "image_url", "content", "user_id") VALUES (?, ?, ?, ?)  [["title", "Chicago Energy Benchmarking Heat Map"], ["image_url", "energy_alice.png"], ["content", "I was inspired by Alan's post and want to do one on Chicago energy mapping. I think for this dataset, heat map is more informative than spot map."], ["user_id", 74]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "posts" ("title", "image_url", "content", "user_id") VALUES (?, ?, ?, ?)[0m  [["title", "Chicago Food Inspection Trends and Results"], ["image_url", "food_alan.png"], ["content", "The top chart shows how the number of food inspections changes over time. The bottom chart shows the overall distribution of inspection results."], ["user_id", 73]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "posts" ("title", "image_url", "content", "user_id") VALUES (?, ?, ?, ?)  [["title", "Chicago Food Inspections by Community Areas"], ["image_url", "food_grace.png"], ["content", "This map shows the community distribution of Chicago food inspections. This information is derived from inspections of restaurants and other food establishments in Chicago from January 1, 2010 to the present. Inspections are performed by staff from the Chicago Department of Public Health’s Food Protection Program using a standardized procedure. The results of the inspection are inputted into a database, then reviewed and approved by a State of Illinois Licensed Environmental Health Practitioner (LEHP). For descriptions of the data elements included in this set, go to http://bit.ly/tS9IE8."], ["user_id", 72]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "sources" ("post_id", "dataset_id") VALUES (?, ?)[0m  [["post_id", 51], ["dataset_id", 56]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "sources" ("post_id", "dataset_id") VALUES (?, ?)  [["post_id", 52], ["dataset_id", 56]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "sources" ("post_id", "dataset_id") VALUES (?, ?)[0m  [["post_id", 53], ["dataset_id", 57]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "sources" ("post_id", "dataset_id") VALUES (?, ?)  [["post_id", 54], ["dataset_id", 57]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+
+
+Started POST "/sessions" for ::1 at 2016-05-29 23:34:10 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4dgvLqOZzwaXjNfndbbi0qtP8PLCQnsFPmGRHGtXj8OUz2letvfZIRlmdyGMAOeZgOzoOlFDhimHmmuk8dmoNA==", "email"=>"admin@example.org", "password"=>"[FILTERED]", "commit"=>"Let Me In!"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "admin@example.org"]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 76ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2016-05-29 23:34:10 -0500
+Processing by PostsController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "posts"[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" LIMIT 10 OFFSET 0
+  Rendered posts/index.html.erb within layouts/application (94.9ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 75]]
+Completed 200 OK in 164ms (Views: 159.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/food_grace-0837fbdb18416932bbc31bf5d115d2fdce982167069465d3003e250abc6d2906.png" for ::1 at 2016-05-29 23:34:10 -0500
+
+
+Started GET "/assets/energy_alice-58cf11df4dc4d308681b72ad18ee712fe5c45606426222c935086dd7622286fe.png" for ::1 at 2016-05-29 23:34:10 -0500
+
+
+Started GET "/assets/food_alan-3f54c73c7c7a9025647a3de0c4554b96ef8ec732ab615cf7814c798e3a4ccfda.png" for ::1 at 2016-05-29 23:34:10 -0500
+
+
+Started GET "/datasets" for ::1 at 2016-05-29 23:34:40 -0500
+Processing by DatasetsController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "datasets"
+  [1m[36mDataset Load (0.1ms)[0m  [1mSELECT  "datasets".* FROM "datasets" LIMIT 30 OFFSET 0[0m
+  Rendered datasets/index.html.erb within layouts/application (4.7ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 75]]
+Completed 200 OK in 23ms (Views: 19.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/datasets/56" for ::1 at 2016-05-29 23:34:41 -0500
+Processing by DatasetsController#show as HTML
+  Parameters: {"id"=>"56"}
+  [1m[36mDataset Load (0.1ms)[0m  [1mSELECT  "datasets".* FROM "datasets" WHERE "datasets"."id" = ? LIMIT 1[0m  [["id", 56]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 75]]
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts" INNER JOIN "sources" ON "posts"."id" = "sources"."post_id" WHERE "sources"."dataset_id" = ?[0m  [["dataset_id", 56]]
+  Rendered datasets/show.html.erb within layouts/application (25.7ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 75]]
+Completed 200 OK in 44ms (Views: 42.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/datasets/56/edit" for ::1 at 2016-05-29 23:34:44 -0500
+Processing by DatasetsController#edit as HTML
+  Parameters: {"id"=>"56"}
+  [1m[36mDataset Load (0.1ms)[0m  [1mSELECT  "datasets".* FROM "datasets" WHERE "datasets"."id" = ? LIMIT 1[0m  [["id", 56]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 75]]
+  Rendered datasets/_form.html.erb (2.3ms)
+  Rendered datasets/edit.html.erb within layouts/application (6.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 75]]
+Completed 200 OK in 24ms (Views: 22.5ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/datasets/56" for ::1 at 2016-05-29 23:34:47 -0500
+Processing by DatasetsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vGk5iHq2s8HaRL0w8TmTkxCJP4ucbg7ei/VI6tQJuaLJfn/4b9il5lSuHfYIj5bYOyonQw9v8/IyDrJSToeeVQ==", "dataset"=>{"database"=>"City of Chicago Data Portal", "table"=>"Chicago Energy Benchmarking", "url"=>"https://data.cityofchicago.org/Environment-Sustainable-Development/Chicago-Energy-Benchmarking/xq83-jr8c"}, "commit"=>"Update Dataset", "id"=>"56"}
+  [1m[35mDataset Load (0.1ms)[0m  SELECT  "datasets".* FROM "datasets" WHERE "datasets"."id" = ? LIMIT 1  [["id", 56]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/datasets.56
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/datasets.56" for ::1 at 2016-05-29 23:34:47 -0500
+Processing by DatasetsController#index as 
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "datasets"[0m
+  [1m[35mDataset Load (0.1ms)[0m  SELECT  "datasets".* FROM "datasets" LIMIT 30 OFFSET 0
+  Rendered datasets/index.html.erb within layouts/application (1.7ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 75]]
+Completed 200 OK in 24ms (Views: 23.4ms | ActiveRecord: 0.3ms)
