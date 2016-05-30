@@ -23,6 +23,12 @@ chicago_food.table = 'Food Inspections'
 chicago_food.url = 'https://data.cityofchicago.org/Health-Human-Services/Food-Inspections/4ijn-s7e5'
 chicago_food.save
 
+nyc_wifi = Dataset.new
+nyc_wifi.database = 'NYC Open Data'
+nyc_wifi.table = 'NYC Wi-Fi Hotspot Locations'
+nyc_wifi.url = 'https://nycopendata.socrata.com/City-Government/NYC-Wi-Fi-Hotspot-Locations/yjub-udmw'
+nyc_wifi.save
+
 energy_map1 = Post.new
 energy_map1.title = 'Visualize Chicago Energy Benchmarking'
 energy_map1.image_url = 'energy_alan.png'
@@ -39,19 +45,35 @@ energy_map2.save
 
 food_chart1 = Post.new
 food_chart1.title = 'Chicago Food Inspection Trends and Results'
-food_chart1.image_url = 'food_alan.png'
+food_chart1.image_url = 'food_grace.png'
 food_chart1.content = "The top chart shows how the number of food inspections changes over time. The bottom chart shows the overall distribution of inspection results."
-food_chart1.user_id = alan.id
+food_chart1.user_id = grace.id
 food_chart1.save
 
 food_chart2 = Post.new
 food_chart2.title = 'Chicago Food Inspections by Community Areas'
-food_chart2.image_url = 'food_grace.png'
+food_chart2.image_url = 'food_alan.png'
 food_chart2.content = "This map shows the community distribution of Chicago food inspections. This information is derived from inspections of restaurants and other food establishments in Chicago from January 1, 2010 to the present. Inspections are performed by staff from the Chicago Department of Public Health’s Food Protection Program using a standardized procedure. The results of the inspection are inputted into a database, then reviewed and approved by a State of Illinois Licensed Environmental Health Practitioner (LEHP). For descriptions of the data elements included in this set, go to http://bit.ly/tS9IE8."
-food_chart2.user_id = grace.id
+food_chart2.user_id = alan.id
 food_chart2.save
+
+wifi_chart1 = Post.new
+wifi_chart1.title = 'Geographic Distribution of NYC Wifi Hotspots'
+wifi_chart1.image_url = 'wifi_margaret.png'
+wifi_chart1.content = "This map shows the locations of Wifi hotspots in New York city. It's a super useful map for travellers!"
+wifi_chart1.user_id = margaret.id
+wifi_chart1.save
+
+wifi_chart2 = Post.new
+wifi_chart2.title = 'Locations and Providers of NYC Wifi Hotspots'
+wifi_chart2.image_url = 'wifi_grace.png'
+wifi_chart2.content = "According to the top chart, a large number of wifi hotspots are available outdoors. From the bottom chart, we can see that Time Warner Cable is the largest provider of NYC wifi hotspots."
+wifi_chart2.user_id = grace.id
+wifi_chart2.save
 
 Source.create(post_id: energy_map1.id, dataset_id: chicago_energy.id)
 Source.create(post_id: energy_map2.id, dataset_id: chicago_energy.id)
 Source.create(post_id: food_chart1.id, dataset_id: chicago_food.id)
 Source.create(post_id: food_chart2.id, dataset_id: chicago_food.id)
+Source.create(post_id: wifi_chart1.id, dataset_id: nyc_wifi.id)
+Source.create(post_id: wifi_chart2.id, dataset_id: nyc_wifi.id)
