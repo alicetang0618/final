@@ -20,8 +20,12 @@
 <p>Description: <%= @user.description %></p>
 
 <h3>Postings:</h3>
-<ul>
-  <% @user.posts.each do |post| %>
-    <li><%= link_to post.title, "/posts/#{post.id}" %></li>
-  <% end %>
-</ul>
+<% if @user.posts.count > 0 %>
+  <ul>
+    <% @user.posts.each do |post| %>
+      <li><%= link_to post.title, "/posts/#{post.id}" %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p><%= @user.name %> doesn't have any postings yet.</p>
+<% end %>

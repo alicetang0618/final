@@ -1,5 +1,11 @@
 <h1>Open Data Sources
-<small><%= link_to "Add a new dataset", new_dataset_url %></small>
+	<small>
+		<% if session[:user_id] %>
+			<%= link_to "Add a new dataset", new_dataset_url %>
+		<% else %>
+			<%= link_to "Sign in to add a dataset", new_dataset_url %>
+		<% end %>	
+	</small>
 </h1>
 
 <%= will_paginate @datasets %>

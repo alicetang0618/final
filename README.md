@@ -21,7 +21,16 @@ Open Data Visualization is an Instagram-like blogging site for open data lovers 
 - datasets: The dataset resource enables users to view a list of open datasets and a list of postings on each dataset. It also allows users to add a new open dataset, edit the information of an existing dataset and delete a dataset if there are no posts associated with it.
 - posts: The post resource represents blog posts by users. It allows users to browse a list of posts, view a particular post, create a new post, edit and delete their own posts.
 - comments: This resource enables users to create/edit/delete their ratings and comments on posts.
-- users: This resource represents users. It allows users to view the information and a list of posts by a particular user.
+- users: This resource represents users. It allows users to view the information and a list of posts by a particular user. 
+
+## Authorizations
+
+- Authenticated users can create new posts. Only the author can edit or delete a post.
+- Authenticated users can add datasets. However, only admin users (admin@example.com) can edit or delete a dataset.
+- Every authenticated user can only modify his/her own account information and delete his/her own account.
+- Only authenticated users are allowed to give ratings and comments on postings.
+- Authenticated users can subscribe/unsubscribe to other user's posts.
+- Non-authenticated users can only query/view the available resources but cannot modify any of them.
 
 ## To Run
 

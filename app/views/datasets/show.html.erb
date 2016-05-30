@@ -15,4 +15,8 @@
     <li><%= link_to post.title, "/posts/#{post.id}" %></li>
   <% end %>
 </ul>
-<p><%= link_to "Click here", new_post_url %> to add a new post!</p>
+<% if session[:user_id] %>
+  <p><%= link_to "Click here", new_post_url %> to add a new post!</p>
+<% else %>
+  <p><%= link_to "Sign in", login_url %> to add a new post!</p>
+<% end %>
