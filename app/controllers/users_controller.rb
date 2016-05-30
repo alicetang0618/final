@@ -19,8 +19,13 @@ class UsersController < ApplicationController
     @user.email = params[:user][:email]
     @user.password = params[:user][:password]
     @user.description = params[:user][:description]
-    @user.save
-    redirect_to root_url
+    success = @user.save
+    if success
+      redirect_to root_url
+    else
+      flash["notice"] = "Sorry, there's something wrong with the information you entered. Please try again!"
+      redirect_to new_user_url
+    end
   end
 
   def show
@@ -38,9 +43,16 @@ class UsersController < ApplicationController
 
   def update
     @user.name = params[:user][:name]
+    @user.email = params[:user][:email]
+    @user.password = params[:user][:password]
     @user.description = params[:user][:description]
-    @user.save
-    redirect_to root_url
+    success = @user.save
+    if success
+      redirect_to root_url
+    else
+      flash["notice"] = "Sorry, there's something wrong with the information you entered. Please try again!"
+      redirect_to edit_user_url(@user)
+    end
   end
 
   def destroy

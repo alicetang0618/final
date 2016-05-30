@@ -2,15 +2,15 @@
 
   <p><%= form.label :database, "Database Name" %>
   <br>
-  <%= form.text_field :database, size: 80, autofocus: true %></p>
+  <%= form.text_field :database, size: 80, autofocus: true, required: true %></p>
 
   <%= form.label :table,  "Table Name" %>
   <br>
-  <%= form.text_field :table, size: 80 %>
+  <%= form.text_field :table, size: 80, required: true %>
 
   <p><%= form.label :url, "Link" %>
   <br>
-  <%= form.text_field :url, size: 80, autofocus: true %></p>
+  <%= form.text_field :url, size: 80, autofocus: true, required: true %></p>
 
   <%= form.submit %>
 <% end %>

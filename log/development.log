@@ -23247,3 +23247,2279 @@ Processing by PostsController#index as HTML
   Rendered posts/index.html.erb within layouts/application (3.9ms)
   [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 42]]
 Completed 200 OK in 16ms (Views: 14.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts/30" for ::1 at 2016-05-29 16:26:24 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"30"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 30]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 43]]
+  [1m[36mDataset Load (0.1ms)[0m  [1mSELECT "datasets".* FROM "datasets" INNER JOIN "sources" ON "datasets"."id" = "sources"."dataset_id" WHERE "sources"."post_id" = ?[0m  [["post_id", 30]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?  [["post_id", 30]]
+  Rendered posts/_comments.html.erb (7.6ms)
+  Rendered posts/show.html.erb within layouts/application (16.2ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 42]]
+Completed 200 OK in 30ms (Views: 27.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users" for ::1 at 2016-05-29 16:26:36 -0500
+Processing by UsersController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" LIMIT 30 OFFSET 0[0m
+  Rendered users/index.html.erb within layouts/application (1.2ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 42]]
+Completed 200 OK in 13ms (Views: 12.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts" for ::1 at 2016-05-29 16:27:55 -0500
+Processing by PostsController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "posts"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "posts"
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" LIMIT 10 OFFSET 0[0m
+  Rendered posts/index.html.erb within layouts/application (4.1ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 42]]
+Completed 200 OK in 16ms (Views: 14.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts/29" for ::1 at 2016-05-29 16:28:07 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"29"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 29]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 43]]
+  [1m[36mDataset Load (0.1ms)[0m  [1mSELECT "datasets".* FROM "datasets" INNER JOIN "sources" ON "datasets"."id" = "sources"."dataset_id" WHERE "sources"."post_id" = ?[0m  [["post_id", 29]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?  [["post_id", 29]]
+  Rendered posts/_comments.html.erb (1.9ms)
+  Rendered posts/show.html.erb within layouts/application (5.3ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 42]]
+Completed 200 OK in 18ms (Views: 16.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts/29" for ::1 at 2016-05-29 16:28:56 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"29"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 29]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 43]]
+  [1m[35mDataset Load (0.1ms)[0m  SELECT "datasets".* FROM "datasets" INNER JOIN "sources" ON "datasets"."id" = "sources"."dataset_id" WHERE "sources"."post_id" = ?  [["post_id", 29]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 29]]
+  Rendered posts/_comments.html.erb (9.4ms)
+  Rendered posts/show.html.erb within layouts/application (22.6ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 42]]
+Completed 200 OK in 55ms (Views: 35.7ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/assets/application.self-cb1f1ad15f98676b5b6add579bce50964eae287fade02ecb259bcea445a6b88b.css?body=1" for ::1 at 2016-05-29 16:28:57 -0500
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-05-29 16:28:57 -0500
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-05-29 16:28:57 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-05-29 16:28:57 -0500
+
+
+Started GET "/assets/energy_alan-e72dff968a742512f403ce277e2debb3ba41dd6889c66f9a683a54b7bed1a055.png" for ::1 at 2016-05-29 16:28:57 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-05-29 16:28:57 -0500
+
+
+Started GET "/logout" for ::1 at 2016-05-29 16:28:58 -0500
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-05-29 16:28:59 -0500
+Processing by PostsController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "posts"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "posts"
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" LIMIT 10 OFFSET 0[0m
+  Rendered posts/index.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 16ms (Views: 14.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/new" for ::1 at 2016-05-29 16:29:00 -0500
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (3.9ms)
+  Rendered users/new.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 20ms (Views: 18.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2016-05-29 16:29:35 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OR4cTByR5dLpYmcSA8ppwWB6oYsaLqE3xayTIKMuOdttWQwi61fI24PPF93WfPFjUYFfzOJq4t9q1cXqsrinEg==", "user"=>{"name"=>"a", "email"=>"alice@example.org", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "description"=>""}, "commit"=>"Submit"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "description") VALUES (?, ?, ?, ?)[0m  [["name", "a"], ["email", "alice@example.org"], ["password_digest", "$2a$10$30.rDFs0NEqQoLds1RRNu.RFXMno3ZBaJUWexetu8YTbmOIrOLEaa"], ["description", ""]]
+  [1m[35m (1.6ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 68ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/" for ::1 at 2016-05-29 16:29:35 -0500
+Processing by PostsController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "posts"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "posts"
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" LIMIT 10 OFFSET 0[0m
+  Rendered posts/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 16ms (Views: 14.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/new" for ::1 at 2016-05-29 16:29:43 -0500
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (1.7ms)
+  Rendered users/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 15ms (Views: 14.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2016-05-29 16:30:09 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xsdlc5trqc6ywR6Jud7PeNEnC4l++bGXIvRo50GtMzCSgHUdbK2Ex9hsbkZsaFfa4Nz1zoa98n+NjT4tUDut+Q==", "user"=>{"name"=>"1", "email"=>"1", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "description"=>""}, "commit"=>"Submit"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "description") VALUES (?, ?, ?, ?)[0m  [["name", "1"], ["email", "1"], ["password_digest", "$2a$10$sBYfed17FSVlZq9gvbQRX.CRFegB0uh76/6h97Iz8pUZNMRBkg1xC"], ["description", ""]]
+  [1m[35m (1.6ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 69ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/" for ::1 at 2016-05-29 16:30:09 -0500
+Processing by PostsController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "posts"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "posts"
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" LIMIT 10 OFFSET 0[0m
+  Rendered posts/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 16ms (Views: 15.2ms | ActiveRecord: 0.3ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users"[0m
+
+
+Started GET "/users/new" for ::1 at 2016-05-29 16:36:26 -0500
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (2.2ms)
+  Rendered users/new.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 24ms (Views: 15.6ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/users" for ::1 at 2016-05-29 16:36:38 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qvkGPNcpS9UTH7GEJPw+SoAC9yXVsvZayidAMQIQinP+vhZSIO9m3HmywUvxSqbosfkJYi32tbJlXhb7E4YUug==", "user"=>{"name"=>"1", "email"=>"1", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "description"=>""}, "commit"=>"Submit"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = '1' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 70ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2016-05-29 16:36:38 -0500
+Processing by PostsController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "posts"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "posts"
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT  "posts".* FROM "posts" LIMIT 10 OFFSET 0[0m
+  Rendered posts/index.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 26ms (Views: 19.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/new" for ::1 at 2016-05-29 16:36:50 -0500
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (1.8ms)
+  Rendered users/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 16ms (Views: 15.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2016-05-29 16:37:07 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"t3Kca9mSTHGnogrTjpTU+nYXebMqamCvk/tttXMuUT7jNYwFLlRheM0PehxbIkxYR+yH9NIuI0c8gjt/YrjP9w==", "user"=>{"name"=>"a", "email"=>"alan@example.org", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "description"=>""}, "commit"=>"Submit"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'alan@example.org' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 67ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2016-05-29 16:37:07 -0500
+Processing by PostsController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "posts"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "posts"
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" LIMIT 10 OFFSET 0[0m
+  Rendered posts/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 15ms (Views: 14.1ms | ActiveRecord: 0.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+
+
+Started GET "/users/new" for ::1 at 2016-05-29 16:37:34 -0500
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (2.6ms)
+  Rendered users/new.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 16ms (Views: 15.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2016-05-29 16:37:43 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+gr+heo15vyXBpUFvH1gClDGTZuQP+Nbd3eLI5xo8KKuTe7rHfPL9f2r5cppy/ioYT2z3Gh7oLPYDt3pjf5uaw==", "user"=>{"name"=>"s", "email"=>"alan@example.org", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "description"=>""}, "commit"=>"Submit"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'alan@example.org' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 67ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2016-05-29 16:37:43 -0500
+Processing by PostsController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "posts"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "posts"
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" LIMIT 10 OFFSET 0[0m
+  Rendered posts/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 15ms (Views: 13.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/login" for ::1 at 2016-05-29 16:37:46 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 15ms (Views: 14.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for ::1 at 2016-05-29 16:37:52 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uFbwftd+TpeiFnK0rYtuqRWYbwEucLrE4VPypLWXwe3sEeAQILhjnsi7Ant4PfYLJGORRtY0+SxOKqRupAFfJA==", "email"=>"alan@example.org", "password"=>"[FILTERED]", "commit"=>"Let Me In!"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "alan@example.org"]]
+Redirected to http://localhost:3000/login
+Completed 302 Found in 65ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/login" for ::1 at 2016-05-29 16:37:52 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 11ms (Views: 10.4ms | ActiveRecord: 0.0ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+
+
+Started GET "/users/new" for ::1 at 2016-05-29 16:38:38 -0500
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (2.1ms)
+  Rendered users/new.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 23ms (Views: 15.6ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/users" for ::1 at 2016-05-29 16:38:44 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"I2/kbEChRBHlGkIDiTjy2MGE47ScCrIT2RsqpXsqlkd3KPQCt2dpGI+3Msxcjmp68H8d82RO8ft2YnxvarwIjg==", "user"=>{"name"=>"d", "email"=>"d", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "description"=>""}, "commit"=>"Submit"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'd' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "description") VALUES (?, ?, ?, ?)[0m  [["name", "d"], ["email", "d"], ["password_digest", "$2a$10$PIoavvpGlsTWYrFOCOYHxuOL1SNH6g/YFItOhbo/RIyAPRC328ge6"], ["description", ""]]
+  [1m[35m (1.5ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 73ms (ActiveRecord: 2.1ms)
+
+
+Started GET "/" for ::1 at 2016-05-29 16:38:44 -0500
+Processing by PostsController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "posts"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "posts"
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" LIMIT 10 OFFSET 0[0m
+  Rendered posts/index.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 24ms (Views: 18.9ms | ActiveRecord: 0.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+
+
+Started GET "/" for ::1 at 2016-05-29 16:48:05 -0500
+Processing by PostsController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "posts"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "posts"
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" LIMIT 10 OFFSET 0[0m
+  Rendered posts/index.html.erb within layouts/application (197.0ms)
+Completed 200 OK in 253ms (Views: 228.5ms | ActiveRecord: 6.3ms)
+
+
+Started GET "/users/new" for ::1 at 2016-05-29 16:48:08 -0500
+Processing by UsersController#new as HTML
+Completed 500 Internal Server Error in 45ms (ActiveRecord: 0.1ms)
+
+NoMethodError (undefined method `attr_accessible' for #<Class:0x007f98fbe0b870>
+Did you mean?  attr_accessor):
+  app/models/user.rb:13:in `<class:User>'
+  app/models/user.rb:1:in `<top (required)>'
+  app/controllers/users_controller.rb:33:in `new'
+
+
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.1ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (45.9ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (59.2ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (118.9ms)
+
+
+Started GET "/users/new" for ::1 at 2016-05-29 16:48:08 -0500
+Processing by UsersController#new as HTML
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `attr_accessible' for #<Class:0x007f99021a36d0>
+Did you mean?  attr_accessor):
+  app/models/user.rb:13:in `<class:User>'
+  app/models/user.rb:1:in `<top (required)>'
+  app/controllers/users_controller.rb:33:in `new'
+
+
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.3ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (45.8ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (43.3ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (92.0ms)
+
+
+Started GET "/users/new" for ::1 at 2016-05-29 16:48:26 -0500
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (11.6ms)
+  Rendered users/new.html.erb within layouts/application (13.1ms)
+Completed 200 OK in 43ms (Views: 32.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.self-cb1f1ad15f98676b5b6add579bce50964eae287fade02ecb259bcea445a6b88b.css?body=1" for ::1 at 2016-05-29 16:48:26 -0500
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-05-29 16:48:26 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-05-29 16:48:26 -0500
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-05-29 16:48:26 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-05-29 16:48:26 -0500
+
+
+Started POST "/users" for ::1 at 2016-05-29 16:48:33 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ClkrzVAz1dM8+7dK32sfWP3MGQng8ySnkAosv3zDs0deHjujp/X42lZWx4UK3Yf6zDfnThi3Z08/c3p1bVUtjg==", "user"=>{"name"=>"1", "email"=>"1", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "description"=>""}, "commit"=>"Submit"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = '1' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 16ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2016-05-29 16:48:33 -0500
+Processing by PostsController#index as HTML
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "posts"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "posts"
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" LIMIT 10 OFFSET 0[0m
+  Rendered posts/index.html.erb within layouts/application (10.1ms)
+Completed 200 OK in 35ms (Views: 24.8ms | ActiveRecord: 1.0ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+
+
+Started GET "/users/new" for ::1 at 2016-05-29 16:48:46 -0500
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (2.5ms)
+  Rendered users/new.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 17ms (Views: 16.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2016-05-29 16:48:54 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CZnbZU5ksh46OQfLhoVkMDS3Lmxjw7t52V2ZdqEMa2Vd3ssLuaKfF1CUdwRTM/ySBUzQK5uH+JF2JM+8sJr1rA==", "user"=>{"name"=>"3", "email"=>"4", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "description"=>""}, "commit"=>"Submit"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = '4' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 4ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2016-05-29 16:48:54 -0500
+Processing by PostsController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "posts"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "posts"
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" LIMIT 10 OFFSET 0[0m
+  Rendered posts/index.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 20ms (Views: 18.2ms | ActiveRecord: 0.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+
+
+Started GET "/users/new" for ::1 at 2016-05-29 16:49:06 -0500
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (1.8ms)
+  Rendered users/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 15ms (Views: 14.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2016-05-29 16:49:21 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZqQfaqsjaWtAirT7993Uie0vhyPmgjBQTMhYMsdqnPcy4w8EXOVEYionxDQia0wr3NR5ZB7Gc7jjsQ741vwCPg==", "user"=>{"name"=>"a", "email"=>"alice@example.org", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "description"=>""}, "commit"=>"Submit"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'alice@example.org' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 4ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2016-05-29 16:49:21 -0500
+Processing by PostsController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "posts"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "posts"
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" LIMIT 10 OFFSET 0[0m
+  Rendered posts/index.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 18ms (Views: 16.0ms | ActiveRecord: 0.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+
+
+Started GET "/login" for ::1 at 2016-05-29 16:52:06 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 14ms (Views: 13.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for ::1 at 2016-05-29 16:52:07 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"O1beRBPnCfTaABjF9IZTPnOjLn31NFn+YIA9boGCKV9vEc4q5CEk/bCtaAohMMucQljQOg1wGhbP+WukkBS3lg==", "email"=>"grace@example.org", "password"=>"[FILTERED]", "commit"=>"Let Me In!"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "grace@example.org"]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 77ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2016-05-29 16:52:07 -0500
+Processing by PostsController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "posts"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "posts"
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" LIMIT 10 OFFSET 0[0m
+  Rendered posts/index.html.erb within layouts/application (6.4ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 42]]
+Completed 200 OK in 24ms (Views: 18.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/posts/new" for ::1 at 2016-05-29 16:52:09 -0500
+Processing by PostsController#new as HTML
+  [1m[36mDataset Load (0.2ms)[0m  [1mSELECT "datasets".* FROM "datasets"  ORDER BY database[0m
+  Rendered posts/_form.html.erb (8.3ms)
+  Rendered posts/new.html.erb within layouts/application (10.0ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.3ms)
+
+ActionView::Template::Error (wrong number of arguments (given 5, expected 1..4)):
+     6: 
+     7:   <p><%= form.label :sources, "Data Source" %>
+     8:   <br>
+     9:   <%= form.select :sources, Dataset.all.order('database').collect {|d| [d.database + ": " + d.table, d.id]}, {}, {:multiple => true, autofocus: true}, required: true %></p>
+    10:   <p>
+    11:   Dataset not found? <%= link_to "Click here", new_dataset_url %> to add a new dataset!
+    12:   </p>
+  app/views/posts/_form.html.erb:9:in `block in _app_views_posts__form_html_erb___3956218236878327994_70147571244120'
+  app/views/posts/_form.html.erb:1:in `_app_views_posts__form_html_erb___3956218236878327994_70147571244120'
+  app/views/posts/new.html.erb:3:in `_app_views_posts_new_html_erb__820080928935766503_70147571190200'
+
+
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.5ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (45.4ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (36.9ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (80.2ms)
+
+
+Started GET "/posts/new" for ::1 at 2016-05-29 16:52:09 -0500
+Processing by PostsController#new as HTML
+  [1m[35mDataset Load (0.2ms)[0m  SELECT "datasets".* FROM "datasets"  ORDER BY database
+  Rendered posts/_form.html.erb (5.5ms)
+  Rendered posts/new.html.erb within layouts/application (8.0ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.2ms)
+
+ActionView::Template::Error (wrong number of arguments (given 5, expected 1..4)):
+     6: 
+     7:   <p><%= form.label :sources, "Data Source" %>
+     8:   <br>
+     9:   <%= form.select :sources, Dataset.all.order('database').collect {|d| [d.database + ": " + d.table, d.id]}, {}, {:multiple => true, autofocus: true}, required: true %></p>
+    10:   <p>
+    11:   Dataset not found? <%= link_to "Click here", new_dataset_url %> to add a new dataset!
+    12:   </p>
+  app/views/posts/_form.html.erb:9:in `block in _app_views_posts__form_html_erb___3956218236878327994_70147554095660'
+  app/views/posts/_form.html.erb:1:in `_app_views_posts__form_html_erb___3956218236878327994_70147554095660'
+  app/views/posts/new.html.erb:3:in `_app_views_posts_new_html_erb__820080928935766503_70147554160440'
+
+
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.3ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (51.9ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (39.2ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (86.1ms)
+
+
+Started GET "/posts/new" for ::1 at 2016-05-29 16:52:34 -0500
+Processing by PostsController#new as HTML
+  [1m[36mDataset Load (0.1ms)[0m  [1mSELECT "datasets".* FROM "datasets"  ORDER BY database[0m
+  Rendered posts/_form.html.erb (17.3ms)
+  Rendered posts/new.html.erb within layouts/application (18.3ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 42]]
+Completed 200 OK in 33ms (Views: 31.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.self-cb1f1ad15f98676b5b6add579bce50964eae287fade02ecb259bcea445a6b88b.css?body=1" for ::1 at 2016-05-29 16:52:34 -0500
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-05-29 16:52:34 -0500
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-05-29 16:52:34 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-05-29 16:52:34 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-05-29 16:52:34 -0500
+
+
+Started GET "/posts/new" for ::1 at 2016-05-29 16:52:41 -0500
+Processing by PostsController#new as HTML
+  [1m[36mDataset Load (0.1ms)[0m  [1mSELECT "datasets".* FROM "datasets"  ORDER BY database[0m
+  Rendered posts/_form.html.erb (3.0ms)
+  Rendered posts/new.html.erb within layouts/application (3.9ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 42]]
+Completed 200 OK in 16ms (Views: 14.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.self-cb1f1ad15f98676b5b6add579bce50964eae287fade02ecb259bcea445a6b88b.css?body=1" for ::1 at 2016-05-29 16:52:41 -0500
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-05-29 16:52:41 -0500
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-05-29 16:52:41 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-05-29 16:52:41 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-05-29 16:52:41 -0500
+
+
+Started POST "/posts" for ::1 at 2016-05-29 16:52:50 -0500
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bs56i4dp7LmpRC+7wN78jcib6ik3TrSZ798UhP6KmSM6iWrlcK/BsMPpX3QVaGQv+WAUbs8K93FApkJO7xwH6g==", "post"=>{"title"=>"1", "sources"=>["", "41", "33"], "image_url"=>"", "content"=>""}, "commit"=>"Create Post"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "posts" ("title", "content", "image_url", "user_id") VALUES (?, ?, ?, ?)  [["title", "1"], ["content", ""], ["image_url", ""], ["user_id", 42]]
+  [1m[36m (1.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "sources" ("post_id", "dataset_id") VALUES (?, ?)[0m  [["post_id", 34], ["dataset_id", 41]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "sources" ("post_id", "dataset_id") VALUES (?, ?)  [["post_id", 34], ["dataset_id", 33]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 13ms (ActiveRecord: 4.0ms)
+
+
+Started GET "/posts" for ::1 at 2016-05-29 16:52:50 -0500
+Processing by PostsController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "posts"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "posts"[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" LIMIT 10 OFFSET 0
+  Rendered posts/index.html.erb within layouts/application (5.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 42]]
+Completed 200 OK in 21ms (Views: 18.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts/34" for ::1 at 2016-05-29 16:52:53 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"34"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 34]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 42]]
+  [1m[35mDataset Load (0.2ms)[0m  SELECT "datasets".* FROM "datasets" INNER JOIN "sources" ON "datasets"."id" = "sources"."dataset_id" WHERE "sources"."post_id" = ?  [["post_id", 34]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 34]]
+  Rendered posts/_comments.html.erb (9.6ms)
+  Rendered posts/show.html.erb within layouts/application (17.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 42]]
+Completed 200 OK in 34ms (Views: 29.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2016-05-29 17:36:17 -0500
+Processing by PostsController#index as HTML
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "posts"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "posts"
+  [1m[36mPost Load (0.5ms)[0m  [1mSELECT  "posts".* FROM "posts" LIMIT 10 OFFSET 0[0m
+  Rendered posts/index.html.erb within layouts/application (13.6ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 42]]
+Completed 200 OK in 73ms (Views: 54.7ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/subscriptions" for ::1 at 2016-05-29 18:05:17 -0500
+Processing by SubscriptionsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "subscriptions" WHERE "subscriptions"."subscriber_id" = ?[0m  [["subscriber_id", 42]]
+  [1m[35mSubscription Load (0.2ms)[0m  SELECT  "subscriptions".* FROM "subscriptions" WHERE "subscriptions"."subscriber_id" = ? LIMIT 10 OFFSET 0  [["subscriber_id", 42]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 43]]
+  [1m[35mPost Load (0.7ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?  [["user_id", 43]]
+  Rendered subscriptions/index.html.erb within layouts/application (32.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 42]]
+Completed 200 OK in 57ms (Views: 49.7ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/users" for ::1 at 2016-05-29 18:05:20 -0500
+Processing by UsersController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" LIMIT 30 OFFSET 0[0m
+  Rendered users/index.html.erb within layouts/application (2.2ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 42]]
+Completed 200 OK in 18ms (Views: 17.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/42" for ::1 at 2016-05-29 18:05:21 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"42"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 42]]
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?  [["user_id", 42]]
+  Rendered users/show.html.erb within layouts/application (2.5ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 42]]
+Completed 200 OK in 21ms (Views: 18.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users" for ::1 at 2016-05-29 18:05:23 -0500
+Processing by UsersController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" LIMIT 30 OFFSET 0[0m
+  Rendered users/index.html.erb within layouts/application (1.6ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 42]]
+Completed 200 OK in 15ms (Views: 14.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/43" for ::1 at 2016-05-29 18:05:23 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"43"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 43]]
+  [1m[35mSubscription Load (0.1ms)[0m  SELECT  "subscriptions".* FROM "subscriptions" WHERE "subscriptions"."subscriber_id" = ? AND "subscriptions"."publisher_id" = ? LIMIT 1  [["subscriber_id", 42], ["publisher_id", 43]]
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 43]]
+  Rendered users/show.html.erb within layouts/application (2.5ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 42]]
+Completed 200 OK in 16ms (Views: 14.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users" for ::1 at 2016-05-29 18:05:25 -0500
+Processing by UsersController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" LIMIT 30 OFFSET 0
+  Rendered users/index.html.erb within layouts/application (2.3ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 42]]
+Completed 200 OK in 19ms (Views: 17.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/41" for ::1 at 2016-05-29 18:05:26 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"41"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 41]]
+  [1m[36mSubscription Load (0.1ms)[0m  [1mSELECT  "subscriptions".* FROM "subscriptions" WHERE "subscriptions"."subscriber_id" = ? AND "subscriptions"."publisher_id" = ? LIMIT 1[0m  [["subscriber_id", 42], ["publisher_id", 41]]
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?  [["user_id", 41]]
+  Rendered users/show.html.erb within layouts/application (1.4ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 42]]
+Completed 200 OK in 14ms (Views: 12.7ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/subscriptions?id=41" for ::1 at 2016-05-29 18:05:27 -0500
+Processing by SubscriptionsController#create as HTML
+  Parameters: {"authenticity_token"=>"kbkkwyYNZzy0Q7QgFLt+4woTmdS85WXDqTacDPCI/6PF/jSt0ctKNd7uxO/BDeZBO+hnk0ShJisGT8rG4R5hag==", "id"=>"41"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "subscriptions" ("publisher_id", "subscriber_id") VALUES (?, ?)[0m  [["publisher_id", 41], ["subscriber_id", 42]]
+  [1m[35m (1.4ms)[0m  commit transaction
+Redirected to http://localhost:3000/subscriptions
+Completed 302 Found in 5ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/subscriptions" for ::1 at 2016-05-29 18:05:27 -0500
+Processing by SubscriptionsController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "subscriptions" WHERE "subscriptions"."subscriber_id" = ?[0m  [["subscriber_id", 42]]
+  [1m[35mSubscription Load (0.1ms)[0m  SELECT  "subscriptions".* FROM "subscriptions" WHERE "subscriptions"."subscriber_id" = ? LIMIT 10 OFFSET 0  [["subscriber_id", 42]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 43]]
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?  [["user_id", 43]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 41]]
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?  [["user_id", 41]]
+  Rendered subscriptions/index.html.erb within layouts/application (6.9ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 42]]
+Completed 200 OK in 19ms (Views: 18.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/subscriptions" for ::1 at 2016-05-29 18:05:29 -0500
+Processing by SubscriptionsController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "subscriptions" WHERE "subscriptions"."subscriber_id" = ?  [["subscriber_id", 42]]
+  [1m[36mSubscription Load (0.1ms)[0m  [1mSELECT  "subscriptions".* FROM "subscriptions" WHERE "subscriptions"."subscriber_id" = ? LIMIT 10 OFFSET 0[0m  [["subscriber_id", 42]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 43]]
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 43]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 41]]
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 41]]
+  Rendered subscriptions/index.html.erb within layouts/application (4.6ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 42]]
+Completed 200 OK in 17ms (Views: 15.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/posts?utf8=%E2%9C%93&keyword=chicago" for ::1 at 2016-05-29 18:11:10 -0500
+Processing by PostsController#index as HTML
+  Parameters: {"utf8"=>"✓", "keyword"=>"chicago"}
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "posts" WHERE (title LIKE '%chicago%' OR content LIKE '%chicago%')[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "posts" WHERE (title LIKE '%chicago%' OR content LIKE '%chicago%')
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE (title LIKE '%chicago%' OR content LIKE '%chicago%') LIMIT 10 OFFSET 0[0m
+  Rendered posts/index.html.erb within layouts/application (9.0ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 42]]
+Completed 200 OK in 43ms (Views: 36.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/users" for ::1 at 2016-05-29 18:12:12 -0500
+Processing by UsersController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" LIMIT 30 OFFSET 0
+  Rendered users/index.html.erb within layouts/application (2.1ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 42]]
+Completed 200 OK in 18ms (Views: 16.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/logout" for ::1 at 2016-05-29 18:20:55 -0500
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-05-29 18:20:55 -0500
+Processing by PostsController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "posts"
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" LIMIT 10 OFFSET 0[0m
+  Rendered posts/index.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 28ms (Views: 22.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/new" for ::1 at 2016-05-29 18:20:56 -0500
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (4.7ms)
+  Rendered users/new.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 46ms (Views: 32.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/users" for ::1 at 2016-05-29 18:21:04 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"F/nKmVH/ahiTIcVFPWxqIbVxWOo4n5sxkTu6T26EeeKQn0SQE85vjt11jZWXQ5iPbpkQNhj+6xPEqKmO2+4ncA==", "user"=>{"name"=>"1", "email"=>"1", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "description"=>""}, "commit"=>"Submit"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = '1' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+Redirected to http://localhost:3000/users.error
+Completed 302 Found in 7ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/users.error" for ::1 at 2016-05-29 18:21:04 -0500
+Processing by UsersController#index as 
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" LIMIT 30 OFFSET 0
+  Rendered users/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 27ms (Views: 25.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/error" for ::1 at 2016-05-29 18:21:22 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"error"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 0]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for ::1 at 2016-05-29 18:21:22 -0500
+Processing by PostsController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "posts"
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT  "posts".* FROM "posts" LIMIT 10 OFFSET 0[0m
+  Rendered posts/index.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 22ms (Views: 20.6ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/users" for ::1 at 2016-05-29 18:22:33 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4LpzuFIHMKjg7E7aqJDlxYQ9YuaUnJCfixNQVt7fUZ1n3P2xEDY1Pq64BgoCvxdrX9UqOrT94L3egEOXa7UPDw==", "user"=>{"name"=>"1", "email"=>"1", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "description"=>""}, "commit"=>"Submit"}
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = '1' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+Redirected to http://localhost:3000/users/new
+Completed 302 Found in 14ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/users/new" for ::1 at 2016-05-29 18:22:33 -0500
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (2.1ms)
+  Rendered users/new.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 17ms (Views: 16.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2016-05-29 18:24:27 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MQnC1cBpL+jsfuEh6Y8Edifu//U3Br8pA6AptFW81nW2b0zcglgqfqIqqfFDoPbY/Aa3KRdnzwtWMzp14NaI5w==", "user"=>{"name"=>"1", "email"=>"1", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "description"=>""}, "commit"=>"Submit"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = '1' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Redirected to http://localhost:3000/users/new
+Completed 302 Found in 15ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/users/new" for ::1 at 2016-05-29 18:24:27 -0500
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (1.8ms)
+  Rendered users/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 17ms (Views: 15.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2016-05-29 18:24:42 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 15ms (Views: 14.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for ::1 at 2016-05-29 18:24:44 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"EMwVo/6dr+6Nk3GvhR1fOfVQ0SRq/ErJraHiU91VbjqXqpuqvKyqeMPHOX8vMq2XLriZ+EqdOuv4MvGSaD8wqA==", "email"=>"grace@example.org", "password"=>"[FILTERED]", "commit"=>"Let Me In!"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "grace@example.org"]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 68ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2016-05-29 18:24:44 -0500
+Processing by PostsController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "posts"[0m
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" LIMIT 10 OFFSET 0
+  Rendered posts/index.html.erb within layouts/application (7.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 42]]
+Completed 200 OK in 27ms (Views: 22.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/42" for ::1 at 2016-05-29 18:24:45 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"42"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 42]]
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 42]]
+  Rendered users/show.html.erb within layouts/application (3.6ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 42]]
+Completed 200 OK in 19ms (Views: 17.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/42/edit" for ::1 at 2016-05-29 18:24:47 -0500
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"42"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 42]]
+  Rendered users/_form.html.erb (2.6ms)
+  Rendered users/edit.html.erb within layouts/application (4.4ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 42]]
+Completed 200 OK in 19ms (Views: 18.0ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/users/42" for ::1 at 2016-05-29 18:26:08 -0500
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VGaHW7z2HE27NRuVT2sxNpKSe/MGxmFVit0oZ/cGm+TTAAlS/scZ2/VhU0XlRMOYSXozLyanEXffTjumQmzFdg==", "user"=>{"name"=>"Grace Hopper", "email"=>"grace@example.org", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "description"=>"Just for fun..."}, "commit"=>"Submit", "id"=>"42"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 42]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."email" = 'grace@example.org' AND "users"."id" != 42) LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 14ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2016-05-29 18:26:08 -0500
+Processing by PostsController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "posts"[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" LIMIT 10 OFFSET 0
+  Rendered posts/index.html.erb within layouts/application (6.6ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 42]]
+Completed 200 OK in 23ms (Views: 18.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/42" for ::1 at 2016-05-29 18:26:13 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"42"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 42]]
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 42]]
+  Rendered users/show.html.erb within layouts/application (3.9ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 42]]
+Completed 200 OK in 20ms (Views: 19.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/42/edit" for ::1 at 2016-05-29 18:26:14 -0500
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"42"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 42]]
+  Rendered users/_form.html.erb (2.0ms)
+  Rendered users/edit.html.erb within layouts/application (3.3ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 42]]
+Completed 200 OK in 15ms (Views: 14.4ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/users/42" for ::1 at 2016-05-29 18:26:19 -0500
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"AimTz9mLlIo097LE4fPUAaiWLJsVlR4h9Y20zV1Db+yFTx3Gm7qRHHqj+hRL3Cavc35kRzX0bgOgHqcM6Ckxfg==", "user"=>{"name"=>"Grace Hopper", "email"=>"grace@example.org", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "description"=>"Just for fun..."}, "commit"=>"Submit", "id"=>"42"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 42]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."email" = 'grace@example.org' AND "users"."id" != 42) LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2016-05-29 18:26:19 -0500
+Processing by PostsController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "posts"[0m
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" LIMIT 10 OFFSET 0
+  Rendered posts/index.html.erb within layouts/application (4.9ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 42]]
+Completed 200 OK in 21ms (Views: 18.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/42" for ::1 at 2016-05-29 18:26:54 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"42"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 42]]
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 42]]
+  Rendered users/show.html.erb within layouts/application (1.0ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 42]]
+Completed 200 OK in 14ms (Views: 12.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/42/edit" for ::1 at 2016-05-29 18:26:57 -0500
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"42"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 42]]
+  Rendered users/_form.html.erb (2.1ms)
+  Rendered users/edit.html.erb within layouts/application (3.3ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 42]]
+Completed 200 OK in 15ms (Views: 14.2ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/users/42" for ::1 at 2016-05-29 18:27:05 -0500
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"K1l6qG/KmYPuqRxrC+5PNgJ7oSiqCQXb/ltcxFYy/xGsP/ShLfucFaD9VLuhwb2Y2ZPp9IpodfmryE8F41ihgw==", "user"=>{"name"=>"Grace Hopper", "email"=>"grace@example.orgre", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "description"=>"Just for fun..."}, "commit"=>"Submit", "id"=>"42"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 42]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."email" = 'grace@example.orgre' AND "users"."id" != 42) LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "email" = ? WHERE "users"."id" = ?  [["email", "grace@example.orgre"], ["id", 42]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 5ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/" for ::1 at 2016-05-29 18:27:05 -0500
+Processing by PostsController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "posts"
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" LIMIT 10 OFFSET 0[0m
+  Rendered posts/index.html.erb within layouts/application (4.3ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 42]]
+Completed 200 OK in 17ms (Views: 16.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/42" for ::1 at 2016-05-29 18:27:09 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"42"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 42]]
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?  [["user_id", 42]]
+  Rendered users/show.html.erb within layouts/application (1.1ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 42]]
+Completed 200 OK in 14ms (Views: 12.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users" for ::1 at 2016-05-29 18:28:05 -0500
+Processing by UsersController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" LIMIT 30 OFFSET 0[0m
+  Rendered users/index.html.erb within layouts/application (10.2ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 42]]
+Completed 200 OK in 31ms (Views: 24.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/44" for ::1 at 2016-05-29 18:28:08 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"44"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 44]]
+  [1m[35mSubscription Load (0.1ms)[0m  SELECT  "subscriptions".* FROM "subscriptions" WHERE "subscriptions"."subscriber_id" = ? AND "subscriptions"."publisher_id" = ? LIMIT 1  [["subscriber_id", 42], ["publisher_id", 44]]
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 44]]
+  Rendered users/show.html.erb within layouts/application (9.0ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 42]]
+Completed 200 OK in 22ms (Views: 20.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users" for ::1 at 2016-05-29 18:28:12 -0500
+Processing by UsersController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" LIMIT 30 OFFSET 0
+  Rendered users/index.html.erb within layouts/application (1.2ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 42]]
+Completed 200 OK in 14ms (Views: 12.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/42" for ::1 at 2016-05-29 18:28:15 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"42"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 42]]
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 42]]
+  Rendered users/show.html.erb within layouts/application (4.4ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 42]]
+Completed 200 OK in 17ms (Views: 15.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/42/edit" for ::1 at 2016-05-29 18:28:17 -0500
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"42"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 42]]
+  Rendered users/_form.html.erb (2.1ms)
+  Rendered users/edit.html.erb within layouts/application (3.3ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 42]]
+Completed 200 OK in 16ms (Views: 15.1ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/users/42" for ::1 at 2016-05-29 18:28:28 -0500
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Na+vZmOL9hSA4/tbkQA9JZzJCgMNJBRKD9jSHRPwaIKyySFvIbrzgs63s4s7L8+LRyFC3y1FZGhaS8Hcppo2EA==", "user"=>{"name"=>"Grace Hopper", "email"=>"alan@example.org", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "description"=>"Just for fun..."}, "commit"=>"Submit", "id"=>"42"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 42]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."email" = 'alan@example.org' AND "users"."id" != 42) LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+Redirected to http://localhost:3000/users/42/edit
+Completed 302 Found in 7ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/users/42/edit" for ::1 at 2016-05-29 18:28:28 -0500
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"42"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 42]]
+  Rendered users/_form.html.erb (1.7ms)
+  Rendered users/edit.html.erb within layouts/application (2.9ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 42]]
+Completed 200 OK in 15ms (Views: 14.4ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/users/42" for ::1 at 2016-05-29 18:28:36 -0500
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"oOfAge45BkxZwoAMYSsEzAvfRjMbxRowwSzDdT1jrfongU6IrAgD2heWyNzLBPZi0DcO7zukahKUv9C0iAnzaA==", "user"=>{"name"=>"Grace Hopper", "email"=>"grace@example.orgre", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "description"=>"Just for fun..."}, "commit"=>"Submit", "id"=>"42"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 42]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."email" = 'grace@example.orgre' AND "users"."id" != 42) LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2016-05-29 18:28:36 -0500
+Processing by PostsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "posts"[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" LIMIT 10 OFFSET 0
+  Rendered posts/index.html.erb within layouts/application (4.6ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 42]]
+Completed 200 OK in 19ms (Views: 17.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/logout" for ::1 at 2016-05-29 18:28:38 -0500
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-05-29 18:28:38 -0500
+Processing by PostsController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "posts"
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" LIMIT 10 OFFSET 0[0m
+  Rendered posts/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 15ms (Views: 14.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/new" for ::1 at 2016-05-29 18:28:38 -0500
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (1.9ms)
+  Rendered users/new.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 15ms (Views: 14.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2016-05-29 18:28:56 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lIHGcOV5Kp/M/M0ifITiYgDtcNzubeRN2IMlttBpvX3ggVzImNpEF3FS2on06JEN6DRKvjJjd/dxbTQmcotkpw==", "user"=>{"name"=>"1", "email"=>"alice@example.org", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "description"=>""}, "commit"=>"Submit"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'alice@example.org' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+Redirected to http://localhost:3000/users/new
+Completed 302 Found in 4ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/users/new" for ::1 at 2016-05-29 18:28:56 -0500
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (2.9ms)
+  Rendered users/new.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 16ms (Views: 15.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2016-05-29 18:29:10 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"I8cKMiFQY8m3nLQL5rulZsLfafoI9xdp535cajloPYJXx5CKXPMNQQoyo6Bu19YJKgZTmNT5hNNOkE36m4rkWA==", "user"=>{"name"=>"a", "email"=>"b@c.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "description"=>""}, "commit"=>"Submit"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'b@c.com' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Redirected to http://localhost:3000/users/new
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/users/new" for ::1 at 2016-05-29 18:29:10 -0500
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (1.9ms)
+  Rendered users/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 15ms (Views: 13.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2016-05-29 18:29:27 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"E7mwXLYy2yUpm776JHAT/TRguwKxWmNRhPIEY8byg/RnuSrky5G1rZQ1qVGsHGCS3LmBYG1U8OstHBXzZBBaLg==", "user"=>{"name"=>"a", "email"=>"abc@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "description"=>""}, "commit"=>"Submit"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'abc@example.com' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+Redirected to http://localhost:3000/users/new
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/users/new" for ::1 at 2016-05-29 18:29:27 -0500
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (1.7ms)
+  Rendered users/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 15ms (Views: 14.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2016-05-29 18:29:37 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4um4G8avdApxGsv2DxiG7INBMKQS3WPf6IuJmuYK4jOW6SKjuwwagsy03F2HdPWDa5gKxs7T8GVBZZgKROg76Q==", "user"=>{"name"=>"a", "email"=>"abc@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "description"=>""}, "commit"=>"Submit"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'abc@example.com' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Redirected to http://localhost:3000/users/new
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/users/new" for ::1 at 2016-05-29 18:29:37 -0500
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (1.7ms)
+  Rendered users/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 16ms (Views: 15.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2016-05-29 18:29:56 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"l+ObD2cZNc4b9KW7nyh/aFSKv/9LTHgenrbYfYEHQtvj4wG3GrpbRqZashAXRAwHvFOFnZdC66Q3WMntI+WbAQ==", "user"=>{"name"=>"4", "email"=>"4", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "description"=>""}, "commit"=>"Submit"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = '4' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+Redirected to http://localhost:3000/users/new
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/users/new" for ::1 at 2016-05-29 18:29:56 -0500
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (2.0ms)
+  Rendered users/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 15ms (Views: 14.3ms | ActiveRecord: 0.0ms)
+  [1m[35mUser Load (1.5ms)[0m  SELECT "users".* FROM "users"
+
+
+Started POST "/users" for ::1 at 2016-05-29 18:32:11 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"j47akm67SVkABRtIaLg5XANXSX0dkTsO2TuiSOetYuj7jkAqExgn0b2rDOPg1Eoz645zH8GfqLRw1bPYRU+7Mg==", "user"=>{"name"=>"bsd", "email"=>"dsf", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "description"=>""}, "commit"=>"Submit"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'dsf' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Redirected to http://localhost:3000/users/new
+Completed 302 Found in 5ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/users/new" for ::1 at 2016-05-29 18:32:11 -0500
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (1.8ms)
+  Rendered users/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 15ms (Views: 14.0ms | ActiveRecord: 0.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+
+
+Started GET "/users/new" for ::1 at 2016-05-29 18:33:22 -0500
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (2.3ms)
+  Rendered users/new.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 26ms (Views: 16.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.self-cb1f1ad15f98676b5b6add579bce50964eae287fade02ecb259bcea445a6b88b.css?body=1" for ::1 at 2016-05-29 18:33:22 -0500
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-05-29 18:33:22 -0500
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-05-29 18:33:22 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-05-29 18:33:22 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-05-29 18:33:22 -0500
+
+
+Started POST "/users" for ::1 at 2016-05-29 18:33:31 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"p1VG+wq3eufBE2mVs2pvRO6TDfx6ox/CIgYZO9C8Bu3TVdxDdxQUb3y9fj47BhwrBko3nqatjHiL6Aircl7fNw==", "user"=>{"name"=>"bsd", "email"=>"dfs", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "description"=>""}, "commit"=>"Submit"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'dfs' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+Redirected to http://localhost:3000/users/new
+Completed 302 Found in 6ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/users/new" for ::1 at 2016-05-29 18:33:31 -0500
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (2.2ms)
+  Rendered users/new.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 16ms (Views: 14.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2016-05-29 18:34:22 -0500
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (2.2ms)
+  Rendered users/new.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 27ms (Views: 18.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.self-cb1f1ad15f98676b5b6add579bce50964eae287fade02ecb259bcea445a6b88b.css?body=1" for ::1 at 2016-05-29 18:34:22 -0500
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-05-29 18:34:22 -0500
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-05-29 18:34:22 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-05-29 18:34:22 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-05-29 18:34:22 -0500
+
+
+Started POST "/users" for ::1 at 2016-05-29 18:34:31 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SUUCkk4X9VDq95Apq8kCQ73Ej4qCEuTqxRTVl1Pfi8s9RZgqM7Sb2FdZh4IjpXEsVR216F4cd1Bs+sQH8T1SEQ==", "user"=>{"name"=>"5", "email"=>"5", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "description"=>""}, "commit"=>"Submit"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = '5' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.3ms)
+
+ActionView::MissingTemplate (Missing template users/create, application/create with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/xiaoruitang/Github/wd/final/app/views"
+):
+  actionview (4.2.6) lib/action_view/path_set.rb:46:in `find'
+  actionview (4.2.6) lib/action_view/lookup_context.rb:121:in `find'
+  actionview (4.2.6) lib/action_view/renderer/abstract_renderer.rb:18:in `find_template'
+  actionview (4.2.6) lib/action_view/renderer/template_renderer.rb:40:in `determine_template'
+  actionview (4.2.6) lib/action_view/renderer/template_renderer.rb:8:in `render'
+  actionview (4.2.6) lib/action_view/renderer/renderer.rb:46:in `render_template'
+  actionview (4.2.6) lib/action_view/renderer/renderer.rb:27:in `render'
+  actionview (4.2.6) lib/action_view/rendering.rb:100:in `_render_template'
+  actionpack (4.2.6) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.2.6) lib/action_view/rendering.rb:83:in `render_to_body'
+  actionpack (4.2.6) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.2.6) lib/action_controller/metal/renderers.rb:37:in `render_to_body'
+  actionpack (4.2.6) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.2.6) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.2.6) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+  activesupport (4.2.6) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /Users/xiaoruitang/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/benchmark.rb:308:in `realtime'
+  activesupport (4.2.6) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.2.6) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+  actionpack (4.2.6) lib/action_controller/metal/instrumentation.rb:87:in `cleanup_view_runtime'
+  activerecord (4.2.6) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.2.6) lib/action_controller/metal/instrumentation.rb:43:in `render'
+  actionpack (4.2.6) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.2.6) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.2.6) lib/abstract_controller/base.rb:198:in `process_action'
+  actionpack (4.2.6) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.2.6) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:555:in `block (2 levels) in compile'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:92:in `__run_callbacks__'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:778:in `_run_process_action_callbacks'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.6) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.6) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.6) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.6) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.6) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.6) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.6) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.6) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.6) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.6) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.6) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.6) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.6) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.6) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.6) lib/action_dispatch/routing/route_set.rb:74:in `dispatch'
+  actionpack (4.2.6) lib/action_dispatch/routing/route_set.rb:43:in `serve'
+  actionpack (4.2.6) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.6) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.6) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.6) lib/action_dispatch/routing/route_set.rb:817:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:38:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.6) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.6) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.6) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/xiaoruitang/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /Users/xiaoruitang/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /Users/xiaoruitang/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.7ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/missing_template.html.erb within rescues/layout (49.6ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.8ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (50.7ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (105.9ms)
+
+
+Started POST "/users" for ::1 at 2016-05-29 18:54:55 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SUUCkk4X9VDq95Apq8kCQ73Ej4qCEuTqxRTVl1Pfi8s9RZgqM7Sb2FdZh4IjpXEsVR216F4cd1Bs+sQH8T1SEQ==", "user"=>{"name"=>"5", "email"=>"5", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "description"=>""}, "commit"=>"Submit"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = '5' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+Redirected to http://localhost:3000/users/new
+Completed 302 Found in 14ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/users/new" for ::1 at 2016-05-29 18:54:55 -0500
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (2.2ms)
+  Rendered users/new.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 16ms (Views: 15.6ms | ActiveRecord: 0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+
+
+Started GET "/users" for ::1 at 2016-05-29 18:59:53 -0500
+Processing by UsersController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" LIMIT 30 OFFSET 0
+  Rendered users/index.html.erb within layouts/application (16.3ms)
+Completed 200 OK in 250ms (Views: 232.2ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/login" for ::1 at 2016-05-29 18:59:57 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 42ms (Views: 40.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2016-05-29 18:59:58 -0500
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (15.3ms)
+  Rendered users/new.html.erb within layouts/application (19.0ms)
+Completed 200 OK in 35ms (Views: 34.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2016-05-29 19:00:07 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4awAgRrP8alvJyy+xMTOTqojsUPNhyQM933K8qSJCxWVrJo5Z2yfIdKJOxVMqL0hQvqLIRGJt7Zek9tiBmvSzw==", "user"=>{"name"=>"a", "email"=>"t", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "description"=>""}, "commit"=>"Submit"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 't' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Redirected to http://localhost:3000/users/new
+Completed 302 Found in 21ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/users/new" for ::1 at 2016-05-29 19:00:07 -0500
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (6.6ms)
+  Rendered users/new.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 31ms (Views: 30.2ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.5ms)[0m  CREATE TEMPORARY TABLE "ausers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" text, "email" text, "description" text, "password_digest" text, "admin" boolean DEFAULT 'f') 
+  [1m[36m (0.1ms)[0m  [1mSELECT * FROM "users"[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "ausers" ("id","name","email","description","password_digest","admin") VALUES (41, 'Margaret Hamilton', 'margaret@example.org', 'I love exploring open data!', '$2a$10$.LfhsX4J.8NWwfx1KGbGi.YzkYJRvsk93E5r73lzNpTLTs.ZG1Vnq', 'f')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "ausers" ("id","name","email","description","password_digest","admin") VALUES (42, 'Grace Hopper', 'grace@example.orgre', 'Just for fun...', '$2a$10$6uYfi09Ht6QuM1RrDloNzOGgjOh6NKTXxtIM91Bt.0lKdvKSeFG5C', 'f')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "ausers" ("id","name","email","description","password_digest","admin") VALUES (43, 'Alan Turing', 'alan@example.org', 'Love this site so much!', '$2a$10$hh38bfYRb2jrgKjJN6tD0eJ.TITi12HxUsz6b8Nh8xSfwWI3DIygi', 't')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "ausers" ("id","name","email","description","password_digest","admin") VALUES (44, 'a', 'alice@example.org', '', '$2a$10$30.rDFs0NEqQoLds1RRNu.RFXMno3ZBaJUWexetu8YTbmOIrOLEaa', 'f')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "ausers" ("id","name","email","description","password_digest","admin") VALUES (45, '1', '1', '', '$2a$10$sBYfed17FSVlZq9gvbQRX.CRFegB0uh76/6h97Iz8pUZNMRBkg1xC', 'f')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "ausers" ("id","name","email","description","password_digest","admin") VALUES (46, 'd', 'd', '', '$2a$10$PIoavvpGlsTWYrFOCOYHxuOL1SNH6g/YFItOhbo/RIyAPRC328ge6', 'f')[0m
+  [1m[35m (0.3ms)[0m  DROP TABLE "users"
+  [1m[36m (0.1ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" text, "email" text, "description" text, "password_digest" text, "admin" boolean DEFAULT 'f') [0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "ausers"
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "users" ("id","name","email","description","password_digest","admin") VALUES (41, 'Margaret Hamilton', 'margaret@example.org', 'I love exploring open data!', '$2a$10$.LfhsX4J.8NWwfx1KGbGi.YzkYJRvsk93E5r73lzNpTLTs.ZG1Vnq', 'f')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "users" ("id","name","email","description","password_digest","admin") VALUES (42, 'Grace Hopper', 'grace@example.orgre', 'Just for fun...', '$2a$10$6uYfi09Ht6QuM1RrDloNzOGgjOh6NKTXxtIM91Bt.0lKdvKSeFG5C', 'f')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "users" ("id","name","email","description","password_digest","admin") VALUES (43, 'Alan Turing', 'alan@example.org', 'Love this site so much!', '$2a$10$hh38bfYRb2jrgKjJN6tD0eJ.TITi12HxUsz6b8Nh8xSfwWI3DIygi', 't')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "users" ("id","name","email","description","password_digest","admin") VALUES (44, 'a', 'alice@example.org', '', '$2a$10$30.rDFs0NEqQoLds1RRNu.RFXMno3ZBaJUWexetu8YTbmOIrOLEaa', 'f')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "users" ("id","name","email","description","password_digest","admin") VALUES (45, '1', '1', '', '$2a$10$sBYfed17FSVlZq9gvbQRX.CRFegB0uh76/6h97Iz8pUZNMRBkg1xC', 'f')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "users" ("id","name","email","description","password_digest","admin") VALUES (46, 'd', 'd', '', '$2a$10$PIoavvpGlsTWYrFOCOYHxuOL1SNH6g/YFItOhbo/RIyAPRC328ge6', 'f')
+  [1m[36m (0.8ms)[0m  [1mDROP TABLE "ausers"[0m
+  [1m[35m (2.1ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_comments_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_comments_on_user_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_comments_on_post_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_comments_on_post_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_posts_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_posts_on_user_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_sources_on_dataset_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_sources_on_dataset_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_sources_on_post_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_sources_on_post_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_subscriptions_on_subscriber_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_subscriptions_on_subscriber_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_subscriptions_on_publisher_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_subscriptions_on_publisher_id' AND type='index'
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_comments_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_comments_on_user_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_comments_on_post_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_comments_on_post_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_posts_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_posts_on_user_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_sources_on_dataset_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_sources_on_dataset_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_sources_on_post_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_sources_on_post_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_subscriptions_on_subscriber_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_subscriptions_on_subscriber_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_subscriptions_on_publisher_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_subscriptions_on_publisher_id' AND type='index'
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mSQL (2.2ms)[0m  DELETE FROM "users"
+  [1m[36mSQL (0.8ms)[0m  [1mDELETE FROM "posts"[0m
+  [1m[35mSQL (1.0ms)[0m  DELETE FROM "subscriptions"
+  [1m[36mSQL (0.9ms)[0m  [1mDELETE FROM "comments"[0m
+  [1m[35mSQL (0.8ms)[0m  DELETE FROM "sources"
+  [1m[36mSQL (0.7ms)[0m  [1mDELETE FROM "datasets"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'margaret@example.org' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'grace@example.org' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'alan@example.org' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "datasets" ("database", "table", "url") VALUES (?, ?, ?)  [["database", "City of Chicago Data Portal"], ["table", "Chicago Energy Benchmarking - 2014 Data Reported in 2015"], ["url", "https://data.cityofchicago.org/Environment-Sustainable-Development/Chicago-Energy-Benchmarking-2014-Data-Reported-in-/tepd-j7h5"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "posts" ("title", "image_url", "content") VALUES (?, ?, ?)[0m  [["title", "Visualize Chicago Energy Benchmarking"], ["image_url", "energy_alan.png"], ["content", "Based on Chicago Energy Benchmarking - 2014 Data Reported in 2015. The Chicago Building Energy Use Benchmarking Ordinance calls on existing municipal, commercial, and residential buildings larger than 50,000 square feet to track whole-building energy use, report to the City annually, and verify data accuracy every three years. The law, which phases in from 2014-2017, covers less than 1% of Chicago’s buildings, which account for approximately 20% of total energy used by all buildings. For more details, including ordinance text, rules and regulations, and timing, please visit www.CityofChicago.org/EnergyBenchmarking. The ordinance authorizes the City to share property-specific information with the public, beginning with the second year in which a building is required to comply. Initially, the dataset includes 243 properties larger than 250,000 square feet that were covered by the ordinance in both 2014 and 2015. The dataset represents self-reported and publicly-available property information for January - December, 2014. In future years, the City plans to release additional building data, as-authorized by the ordinance. Using the \"Data Year\" column, this map shows data for 2014, as reported in 2015."]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "sources" ("post_id", "dataset_id") VALUES (?, ?)  [["post_id", 35], ["dataset_id", 42]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/users/new" for ::1 at 2016-05-29 19:00:52 -0500
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (15.0ms)
+  Rendered users/new.html.erb within layouts/application (18.4ms)
+Completed 200 OK in 282ms (Views: 254.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-05-29 19:00:52 -0500
+
+
+Started GET "/assets/application.self-cb1f1ad15f98676b5b6add579bce50964eae287fade02ecb259bcea445a6b88b.css?body=1" for ::1 at 2016-05-29 19:00:52 -0500
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-05-29 19:00:52 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-05-29 19:00:52 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-05-29 19:00:52 -0500
+
+
+Started POST "/users" for ::1 at 2016-05-29 19:01:00 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Pi3KjSlA0AkUA4jS3PKRqM54zVPCJlRyJMcIgh1Y2VJKLVA1VOO+gamtn3lUnuLHJqH3MR4ox8iNKRkSv7oAiA==", "user"=>{"name"=>"m", "email"=>"m", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "description"=>""}, "commit"=>"Submit"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'm' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Redirected to http://localhost:3000/users/new
+Completed 302 Found in 15ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/users/new" for ::1 at 2016-05-29 19:01:00 -0500
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (4.6ms)
+  Rendered users/new.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 39ms (Views: 37.6ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  CREATE TEMPORARY TABLE "ausers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" text, "email" text, "description" text, "password_digest" text, "admin" boolean DEFAULT 'f') 
+  [1m[36m (0.1ms)[0m  [1mSELECT * FROM "users"[0m
+  [1m[35m (0.5ms)[0m  DROP TABLE "users"
+  [1m[36m (0.1ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" text, "email" text, "description" text, "password_digest" text, "admin" boolean DEFAULT 'f') [0m
+  [1m[35m (0.0ms)[0m  SELECT * FROM "ausers"
+  [1m[36m (0.7ms)[0m  [1mDROP TABLE "ausers"[0m
+  [1m[35m (1.2ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_comments_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_comments_on_user_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_comments_on_post_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_comments_on_post_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_posts_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_posts_on_user_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_sources_on_dataset_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_sources_on_dataset_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_sources_on_post_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_sources_on_post_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_subscriptions_on_subscriber_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_subscriptions_on_subscriber_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_subscriptions_on_publisher_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_subscriptions_on_publisher_id' AND type='index'
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_comments_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_comments_on_user_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_comments_on_post_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_comments_on_post_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_posts_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_posts_on_user_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_sources_on_dataset_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_sources_on_dataset_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_sources_on_post_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_sources_on_post_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_subscriptions_on_subscriber_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_subscriptions_on_subscriber_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_subscriptions_on_publisher_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_subscriptions_on_publisher_id' AND type='index'
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mSQL (2.5ms)[0m  DELETE FROM "users"
+  [1m[36mSQL (0.8ms)[0m  [1mDELETE FROM "posts"[0m
+  [1m[35mSQL (0.8ms)[0m  DELETE FROM "subscriptions"
+  [1m[36mSQL (0.9ms)[0m  [1mDELETE FROM "comments"[0m
+  [1m[35mSQL (0.8ms)[0m  DELETE FROM "sources"
+  [1m[36mSQL (0.8ms)[0m  [1mDELETE FROM "datasets"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'margaret@example.org' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'grace@example.org' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'alan@example.org' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "datasets" ("database", "table", "url") VALUES (?, ?, ?)  [["database", "City of Chicago Data Portal"], ["table", "Chicago Energy Benchmarking - 2014 Data Reported in 2015"], ["url", "https://data.cityofchicago.org/Environment-Sustainable-Development/Chicago-Energy-Benchmarking-2014-Data-Reported-in-/tepd-j7h5"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "posts" ("title", "image_url", "content") VALUES (?, ?, ?)[0m  [["title", "Visualize Chicago Energy Benchmarking"], ["image_url", "energy_alan.png"], ["content", "Based on Chicago Energy Benchmarking - 2014 Data Reported in 2015. The Chicago Building Energy Use Benchmarking Ordinance calls on existing municipal, commercial, and residential buildings larger than 50,000 square feet to track whole-building energy use, report to the City annually, and verify data accuracy every three years. The law, which phases in from 2014-2017, covers less than 1% of Chicago’s buildings, which account for approximately 20% of total energy used by all buildings. For more details, including ordinance text, rules and regulations, and timing, please visit www.CityofChicago.org/EnergyBenchmarking. The ordinance authorizes the City to share property-specific information with the public, beginning with the second year in which a building is required to comply. Initially, the dataset includes 243 properties larger than 250,000 square feet that were covered by the ordinance in both 2014 and 2015. The dataset represents self-reported and publicly-available property information for January - December, 2014. In future years, the City plans to release additional building data, as-authorized by the ordinance. Using the \"Data Year\" column, this map shows data for 2014, as reported in 2015."]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "sources" ("post_id", "dataset_id") VALUES (?, ?)  [["post_id", 36], ["dataset_id", 43]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/" for ::1 at 2016-05-29 19:58:42 -0500
+Processing by PostsController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "posts"[0m
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" LIMIT 10 OFFSET 0
+  Rendered posts/index.html.erb within layouts/application (188.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 47]]
+Completed 500 Internal Server Error in 263ms (ActiveRecord: 1.9ms)
+
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    22:     <% if session["user_id"].present? %>
+    23: 
+    24:       <% current_user = User.find_by(id: session["user_id"]) %>
+    25:       <li>Hello, <%= link_to current_user.name, user_path(current_user) %>!</li>
+    26:       <li><%= link_to "Sign Out", logout_path %></li>
+    27:     <% else %>
+    28:       <li><%= link_to "Sign Up", new_user_path %></li>
+  app/views/layouts/application.html.erb:25:in `_app_views_layouts_application_html_erb__2292550819879491890_70116843764120'
+
+
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.7ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (49.0ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (45.8ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/xiaoruitang/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (98.8ms)
+
+
+Started GET "/" for ::1 at 2016-05-29 19:59:21 -0500
+Processing by PostsController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "posts"
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" LIMIT 10 OFFSET 0[0m
+  Rendered posts/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 14ms (Views: 13.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.self-cb1f1ad15f98676b5b6add579bce50964eae287fade02ecb259bcea445a6b88b.css?body=1" for ::1 at 2016-05-29 19:59:21 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-05-29 19:59:21 -0500
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-05-29 19:59:21 -0500
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-05-29 19:59:21 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-05-29 19:59:21 -0500
+
+
+Started GET "/assets/energy_alan-e72dff968a742512f403ce277e2debb3ba41dd6889c66f9a683a54b7bed1a055.png" for ::1 at 2016-05-29 19:59:21 -0500
+
+
+Started GET "/users/new" for ::1 at 2016-05-29 19:59:26 -0500
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (9.7ms)
+  Rendered users/new.html.erb within layouts/application (11.3ms)
+Completed 200 OK in 27ms (Views: 24.0ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/users" for ::1 at 2016-05-29 19:59:31 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SU3ZjROtAWv+XNWvykPTe1Ckx3gEWnK1yLPPJthwOLGR/HpLGDdphAqAMpa4/MXAue4ZAd4PPHqPeiAfoLWzgg==", "user"=>{"name"=>"2", "email"=>"2", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "description"=>""}, "commit"=>"Submit"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = '2' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+Redirected to http://localhost:3000/users/new
+Completed 302 Found in 9ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/users/new" for ::1 at 2016-05-29 19:59:31 -0500
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (2.3ms)
+  Rendered users/new.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 15ms (Views: 14.3ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (2.0ms)[0m  CREATE TEMPORARY TABLE "ausers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" text, "email" text, "description" text, "password_digest" text, "admin" boolean DEFAULT 'f') 
+  [1m[36m (0.1ms)[0m  [1mSELECT * FROM "users"[0m
+  [1m[35m (0.3ms)[0m  DROP TABLE "users"
+  [1m[36m (0.1ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" text, "email" text, "description" text, "password_digest" text, "admin" boolean DEFAULT 'f') [0m
+  [1m[35m (0.0ms)[0m  SELECT * FROM "ausers"
+  [1m[36m (0.7ms)[0m  [1mDROP TABLE "ausers"[0m
+  [1m[35m (2.4ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_comments_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_comments_on_user_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_comments_on_post_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_comments_on_post_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_posts_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_posts_on_user_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_sources_on_dataset_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_sources_on_dataset_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_sources_on_post_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_sources_on_post_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_subscriptions_on_subscriber_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_subscriptions_on_subscriber_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_subscriptions_on_publisher_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_subscriptions_on_publisher_id' AND type='index'
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_comments_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_comments_on_user_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_comments_on_post_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_comments_on_post_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_posts_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_posts_on_user_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_sources_on_dataset_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_sources_on_dataset_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_sources_on_post_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_sources_on_post_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_subscriptions_on_subscriber_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_subscriptions_on_subscriber_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_subscriptions_on_publisher_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_subscriptions_on_publisher_id' AND type='index'
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mSQL (1.8ms)[0m  DELETE FROM "users"
+  [1m[36mSQL (0.7ms)[0m  [1mDELETE FROM "posts"[0m
+  [1m[35mSQL (0.7ms)[0m  DELETE FROM "subscriptions"
+  [1m[36mSQL (1.0ms)[0m  [1mDELETE FROM "comments"[0m
+  [1m[35mSQL (0.7ms)[0m  DELETE FROM "sources"
+  [1m[36mSQL (0.7ms)[0m  [1mDELETE FROM "datasets"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'margaret@example.org' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'grace@example.org' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'alan@example.org' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "datasets" ("database", "table", "url") VALUES (?, ?, ?)  [["database", "City of Chicago Data Portal"], ["table", "Chicago Energy Benchmarking - 2014 Data Reported in 2015"], ["url", "https://data.cityofchicago.org/Environment-Sustainable-Development/Chicago-Energy-Benchmarking-2014-Data-Reported-in-/tepd-j7h5"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "posts" ("title", "image_url", "content") VALUES (?, ?, ?)[0m  [["title", "Visualize Chicago Energy Benchmarking"], ["image_url", "energy_alan.png"], ["content", "Based on Chicago Energy Benchmarking - 2014 Data Reported in 2015. The Chicago Building Energy Use Benchmarking Ordinance calls on existing municipal, commercial, and residential buildings larger than 50,000 square feet to track whole-building energy use, report to the City annually, and verify data accuracy every three years. The law, which phases in from 2014-2017, covers less than 1% of Chicago’s buildings, which account for approximately 20% of total energy used by all buildings. For more details, including ordinance text, rules and regulations, and timing, please visit www.CityofChicago.org/EnergyBenchmarking. The ordinance authorizes the City to share property-specific information with the public, beginning with the second year in which a building is required to comply. Initially, the dataset includes 243 properties larger than 250,000 square feet that were covered by the ordinance in both 2014 and 2015. The dataset represents self-reported and publicly-available property information for January - December, 2014. In future years, the City plans to release additional building data, as-authorized by the ordinance. Using the \"Data Year\" column, this map shows data for 2014, as reported in 2015."]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "sources" ("post_id", "dataset_id") VALUES (?, ?)  [["post_id", 37], ["dataset_id", 44]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/users/new" for ::1 at 2016-05-29 20:00:53 -0500
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (15.0ms)
+  Rendered users/new.html.erb within layouts/application (18.7ms)
+Completed 200 OK in 258ms (Views: 231.8ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/assets/application.self-cb1f1ad15f98676b5b6add579bce50964eae287fade02ecb259bcea445a6b88b.css?body=1" for ::1 at 2016-05-29 20:00:54 -0500
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-05-29 20:00:54 -0500
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-05-29 20:00:54 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-05-29 20:00:54 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-05-29 20:00:54 -0500
+
+
+Started POST "/users" for ::1 at 2016-05-29 20:00:58 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OgxfNH1oA/z7hO3rY3M53WPOTzsr+l58wrOozLn36MTivfzydvJrEw9YCtIRzC9mioSRQvGvELOFekf1wTJj9w==", "user"=>{"name"=>"2", "email"=>"2", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "description"=>""}, "commit"=>"Submit"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = '2' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Redirected to http://localhost:3000/users/new
+Completed 302 Found in 15ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/users/new" for ::1 at 2016-05-29 20:00:58 -0500
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (2.7ms)
+  Rendered users/new.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 35ms (Views: 34.1ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.6ms)[0m  CREATE TEMPORARY TABLE "ausers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" text, "email" text, "description" text, "password_digest" text, "admin" boolean DEFAULT 'f') 
+  [1m[36m (0.1ms)[0m  [1mSELECT * FROM "users"[0m
+  [1m[35m (0.2ms)[0m  DROP TABLE "users"
+  [1m[36m (0.1ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" text, "email" text, "description" text, "password_digest" text, "admin" boolean DEFAULT 'f') [0m
+  [1m[35m (0.0ms)[0m  SELECT * FROM "ausers"
+  [1m[36m (0.7ms)[0m  [1mDROP TABLE "ausers"[0m
+  [1m[35m (2.1ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_comments_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_comments_on_user_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_comments_on_post_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_comments_on_post_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_posts_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_posts_on_user_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_sources_on_dataset_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_sources_on_dataset_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_sources_on_post_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_sources_on_post_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_subscriptions_on_subscriber_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_subscriptions_on_subscriber_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_subscriptions_on_publisher_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_subscriptions_on_publisher_id' AND type='index'
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_comments_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_comments_on_user_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_comments_on_post_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_comments_on_post_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_posts_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_posts_on_user_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_sources_on_dataset_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_sources_on_dataset_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_sources_on_post_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_sources_on_post_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_subscriptions_on_subscriber_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_subscriptions_on_subscriber_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_subscriptions_on_publisher_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_subscriptions_on_publisher_id' AND type='index'
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mSQL (1.7ms)[0m  DELETE FROM "users"
+  [1m[36mSQL (0.9ms)[0m  [1mDELETE FROM "posts"[0m
+  [1m[35mSQL (1.1ms)[0m  DELETE FROM "subscriptions"
+  [1m[36mSQL (0.8ms)[0m  [1mDELETE FROM "comments"[0m
+  [1m[35mSQL (0.7ms)[0m  DELETE FROM "sources"
+  [1m[36mSQL (0.8ms)[0m  [1mDELETE FROM "datasets"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'margaret@example.org' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'grace@example.org' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'alan@example.org' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "datasets" ("database", "table", "url") VALUES (?, ?, ?)  [["database", "City of Chicago Data Portal"], ["table", "Chicago Energy Benchmarking - 2014 Data Reported in 2015"], ["url", "https://data.cityofchicago.org/Environment-Sustainable-Development/Chicago-Energy-Benchmarking-2014-Data-Reported-in-/tepd-j7h5"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "posts" ("title", "image_url", "content") VALUES (?, ?, ?)[0m  [["title", "Visualize Chicago Energy Benchmarking"], ["image_url", "energy_alan.png"], ["content", "Based on Chicago Energy Benchmarking - 2014 Data Reported in 2015. The Chicago Building Energy Use Benchmarking Ordinance calls on existing municipal, commercial, and residential buildings larger than 50,000 square feet to track whole-building energy use, report to the City annually, and verify data accuracy every three years. The law, which phases in from 2014-2017, covers less than 1% of Chicago’s buildings, which account for approximately 20% of total energy used by all buildings. For more details, including ordinance text, rules and regulations, and timing, please visit www.CityofChicago.org/EnergyBenchmarking. The ordinance authorizes the City to share property-specific information with the public, beginning with the second year in which a building is required to comply. Initially, the dataset includes 243 properties larger than 250,000 square feet that were covered by the ordinance in both 2014 and 2015. The dataset represents self-reported and publicly-available property information for January - December, 2014. In future years, the City plans to release additional building data, as-authorized by the ordinance. Using the \"Data Year\" column, this map shows data for 2014, as reported in 2015."]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "sources" ("post_id", "dataset_id") VALUES (?, ?)  [["post_id", 38], ["dataset_id", 45]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/users/new" for ::1 at 2016-05-29 20:03:33 -0500
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (16.4ms)
+  Rendered users/new.html.erb within layouts/application (20.4ms)
+Completed 200 OK in 278ms (Views: 244.2ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/application.self-cb1f1ad15f98676b5b6add579bce50964eae287fade02ecb259bcea445a6b88b.css?body=1" for ::1 at 2016-05-29 20:03:34 -0500
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-05-29 20:03:34 -0500
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-05-29 20:03:34 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-05-29 20:03:34 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-05-29 20:03:34 -0500
+
+
+Started POST "/users" for ::1 at 2016-05-29 20:03:39 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UCzi1DKatl89i3tLY2FlR0SiBzJnhlyB06R9vM0DeHyInUESOQDesMlXnHIR3nP8rejZS73TEk6UbZKFtcbzTw==", "user"=>{"name"=>"2", "email"=>"2", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "description"=>""}, "commit"=>"Submit"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = '2' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Redirected to http://localhost:3000/users/new
+Completed 302 Found in 14ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/users/new" for ::1 at 2016-05-29 20:03:39 -0500
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (3.0ms)
+  Rendered users/new.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 38ms (Views: 37.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2016-05-29 20:03:43 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hJRl//yy5DYy4FCV06wwpBoUDd+KeCoLMG67esc6U9VcJcY59yiM2cY8t6yhEyYf817TplAtZMR3p1RDv//Y5g==", "user"=>{"name"=>"3", "email"=>"3", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "description"=>""}, "commit"=>"Submit"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = '3' LIMIT 1[0m
+  [1m[35m (0.8ms)[0m  rollback transaction
+Redirected to http://localhost:3000/users/new
+Completed 302 Found in 6ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/users/new" for ::1 at 2016-05-29 20:03:43 -0500
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (4.5ms)
+  Rendered users/new.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 36ms (Views: 35.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2016-05-29 20:04:11 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kQeZFP9fff//YqczinlRZRtJd4+wCKJDGpf+mMKK3nRJtjrS9MUVEAu+QAr4xkfe8gOp9mpd7IxdXhGhuk9VRw==", "user"=>{"name"=>"33333 333", "email"=>"aple@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "description"=>""}, "commit"=>"Submit"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'aple@example.com' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Redirected to http://localhost:3000/users/new
+Completed 302 Found in 6ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/users/new" for ::1 at 2016-05-29 20:04:11 -0500
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (3.9ms)
+  Rendered users/new.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 26ms (Views: 25.0ms | ActiveRecord: 0.0ms)

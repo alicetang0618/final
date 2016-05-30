@@ -7,7 +7,9 @@ class User < ActiveRecord::Base
   has_many :subscribeds, foreign_key: :publisher_id, class_name: "Subscription", :dependent => :destroy
   has_many :comments, :dependent => :destroy
 
-  validates :email, presence: true
-  validates :password_digest, presence: true
+  validates :email, presence: true, uniqueness: true
+  validates :password, confirmation: true
+  validates_confirmation_of :password
+  attr_accessor :password
 
 end

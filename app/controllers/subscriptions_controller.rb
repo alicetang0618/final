@@ -12,7 +12,7 @@ class SubscriptionsController < ApplicationController
     if not session[:user_id]
       redirect_to login_url
     end
-    @subscriptions = Subscription.where(subscriber_id=session[:user_id])
+    @subscriptions = Subscription.where(subscriber_id: session[:user_id])
     @subscriptions = @subscriptions.paginate(:page => params[:page], :per_page => 10)
   end
 

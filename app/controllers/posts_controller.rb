@@ -9,10 +9,10 @@ class PostsController < ApplicationController
   def index
     @posts = Post.all
     if params[:keyword].present?
-      @posts = @posts.where("title LIKE ? OR content LIKE '%#{params[:keyword]}%'")
-    end
-    if @posts.count == 0
-      @posts = Post.all
+      @posts = @posts.where("title LIKE ? OR content LIKE ?", "%#{params[:keyword]}%", "%#{params[:keyword]}%")
+      if @posts.count == 0
+        @posts = Post.all
+      end
     end
     @posts = @posts.paginate(:page => params[:page], :per_page => 10)
   end
