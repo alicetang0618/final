@@ -4,6 +4,8 @@ User
   password_digest: text
   description: text
   admin: boolean(false)
+  reset_digest: string
+  reset_sent_at: datetime
 
 Post
   title: text

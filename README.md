@@ -9,7 +9,12 @@ Open Data Visualization is an Instagram-like blogging site for open data lovers 
 
 ## Additional Feature Choices
 
-- Public URL: http://opendatavisualization.herokuapp.com/
+- Public URL: 
+	- http://opendatavisualization.herokuapp.com/
+- “Forgot Password” functionality via email:
+	- After submitting the password reset request, you will see the prompt "Email sent with password reset instructions".
+	- Look for an email (including a link like: http://localhost:3000/password_resets/NzsI1-lVWgXDe8TqpAsBid/edit?email=alicetang0618%40gmail.com) in your mail box. 
+	- Browse to the link and reset your password.
 
 ## Resources
 

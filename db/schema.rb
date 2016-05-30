@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20160530020857) do
 
   create_table "comments", force: :cascade do |t|
     t.integer "rating"
@@ -55,11 +55,13 @@ ActiveRecord::Schema.define(version: 0) do
   add_index "subscriptions", ["subscriber_id"], name: "index_subscriptions_on_subscriber_id"
 
   create_table "users", force: :cascade do |t|
-    t.text    "name"
-    t.text    "email"
-    t.text    "description"
-    t.text    "password_digest"
-    t.boolean "admin",           default: false
+    t.text     "name"
+    t.text     "email"
+    t.text     "description"
+    t.text     "password_digest"
+    t.boolean  "admin",           default: false
+    t.string   "reset_digest"
+    t.datetime "reset_sent_at"
   end
 
 end
