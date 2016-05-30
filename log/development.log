@@ -29486,3 +29486,725 @@ Processing by UsersController#show as HTML
   [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 79]]
   Rendered users/show.html.erb within layouts/application (0.9ms)
 Completed 200 OK in 16ms (Views: 15.2ms | ActiveRecord: 0.2ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mSQL (1.5ms)[0m  DELETE FROM "users"
+  [1m[36mSQL (0.9ms)[0m  [1mDELETE FROM "posts"[0m
+  [1m[35mSQL (1.0ms)[0m  DELETE FROM "subscriptions"
+  [1m[36mSQL (0.7ms)[0m  [1mDELETE FROM "comments"[0m
+  [1m[35mSQL (0.8ms)[0m  DELETE FROM "sources"
+  [1m[36mSQL (1.0ms)[0m  [1mDELETE FROM "datasets"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'margaret@example.org' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "description") VALUES (?, ?, ?, ?)  [["name", "Margaret Hopper"], ["email", "margaret@example.org"], ["password_digest", "$2a$10$MEyNuNHuwHscfYhGQcwsAOFDOCzXKCVRdpbYjtrB7qlp/bZQa5mXa"], ["description", "I love exploring open data!"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'grace@example.org' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "description") VALUES (?, ?, ?, ?)  [["name", "Grace Turing"], ["email", "grace@example.org"], ["password_digest", "$2a$10$GlRrsL6pCyS5OAFl593WP.7cLMfSGQiIzXtqNFMPpmgA2yAAh26zi"], ["description", "Just for fun..."]]
+  [1m[36m (1.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'alan@example.org' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "description") VALUES (?, ?, ?, ?)  [["name", "Alan Hamilton"], ["email", "alan@example.org"], ["password_digest", "$2a$10$R22P38OzuegEpgCgftKYvupKXlM3L5YbhvdMlbaWnmMkSBoggVheG"], ["description", "Love this site so much!"]]
+  [1m[36m (1.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'alice@example.org' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "description") VALUES (?, ?, ?, ?)  [["name", "Alice Tang"], ["email", "alice@example.org"], ["password_digest", "$2a$10$KcCb3tpmQhoBVO8ntTRuOOe99RdxIlR/N2y/L7g/Txg0BPsl3Xma6"], ["description", "I'm really excited to share my work!"]]
+  [1m[36m (1.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'admin@example.org' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "description", "admin") VALUES (?, ?, ?, ?, ?)  [["name", "Administrator"], ["email", "admin@example.org"], ["password_digest", "$2a$10$7u1ZLw/yguL6MSD8ly//.uQO/5ZXlRbeuxzyvqr8EUqZYUym1WDLe"], ["description", "Feel free to email me at admin@example.org if you need any help!"], ["admin", "t"]]
+  [1m[36m (1.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "datasets" ("database", "table", "url") VALUES (?, ?, ?)[0m  [["database", "City of Chicago Data Portal"], ["table", "Chicago Energy Benchmarking"], ["url", "https://data.cityofchicago.org/Environment-Sustainable-Development/Chicago-Energy-Benchmarking/xq83-jr8c"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "datasets" ("database", "table", "url") VALUES (?, ?, ?)  [["database", "City of Chicago Data Portal"], ["table", "Food Inspections"], ["url", "https://data.cityofchicago.org/Health-Human-Services/Food-Inspections/4ijn-s7e5"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "datasets" ("database", "table", "url") VALUES (?, ?, ?)[0m  [["database", "NYC Open Data"], ["table", "NYC Wi-Fi Hotspot Locations"], ["url", "https://nycopendata.socrata.com/City-Government/NYC-Wi-Fi-Hotspot-Locations/yjub-udmw"]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "datasets" ("database", "table", "url") VALUES (?, ?, ?)  [["database", "World Bank Open Data"], ["table", "Renewable electricity output"], ["url", "http://data.worldbank.org/indicator/EG.ELC.RNEW.ZS?order=wbapi_data_value_2012+wbapi_data_value+wbapi_data_value-last&sort=desc"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "posts" ("title", "image_url", "content", "user_id") VALUES (?, ?, ?, ?)[0m  [["title", "Visualize Chicago Energy Benchmarking"], ["image_url", "energy_alan.png"], ["content", "This map shows the geographic distribution of buildings that are required to report annual energy use to the City by the ordinance. The Chicago Building Energy Use Benchmarking Ordinance calls on existing municipal, commercial, and residential buildings larger than 50,000 square feet to track whole-building energy use, report to the City annually, and verify data accuracy every three years. The law, which phases in from 2014-2017, covers less than 1% of Chicago’s buildings, which account for approximately 20% of total energy used by all buildings. For more details, including ordinance text, rules and regulations, and timing, please visit www.CityofChicago.org/EnergyBenchmarking. The ordinance authorizes the City to share property-specific information with the public, beginning with the second year in which a building is required to comply. Initially, the dataset includes 243 properties larger than 250,000 square feet that were covered by the ordinance in both 2014 and 2015. The dataset represents self-reported and publicly-available property information for January - December, 2014. In future years, the City plans to release additional building data, as-authorized by the ordinance. Using the \"Data Year\" column, this map shows data for 2014, as reported in 2015."], ["user_id", 83]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "posts" ("title", "image_url", "content", "user_id") VALUES (?, ?, ?, ?)  [["title", "Chicago Energy Benchmarking Heat Map"], ["image_url", "energy_alice.png"], ["content", "I was inspired by Alan's post and want to do one on Chicago energy mapping. I think for this dataset, heat map is more informative than spot map."], ["user_id", 84]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "posts" ("title", "image_url", "content", "user_id") VALUES (?, ?, ?, ?)[0m  [["title", "Chicago Food Inspection Trends and Results"], ["image_url", "food_grace.png"], ["content", "The top chart shows how the number of food inspections changes over time. The bottom chart shows the overall distribution of inspection results."], ["user_id", 82]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "posts" ("title", "image_url", "content", "user_id") VALUES (?, ?, ?, ?)  [["title", "Chicago Food Inspections by Community Areas"], ["image_url", "food_alan.png"], ["content", "This map shows the community distribution of Chicago food inspections. This information is derived from inspections of restaurants and other food establishments in Chicago from January 1, 2010 to the present. Inspections are performed by staff from the Chicago Department of Public Health’s Food Protection Program using a standardized procedure. The results of the inspection are inputted into a database, then reviewed and approved by a State of Illinois Licensed Environmental Health Practitioner (LEHP). For descriptions of the data elements included in this set, go to http://bit.ly/tS9IE8."], ["user_id", 83]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "posts" ("title", "image_url", "content", "user_id") VALUES (?, ?, ?, ?)[0m  [["title", "Geographic Distribution of NYC Wifi Hotspots"], ["image_url", "wifi_margaret.png"], ["content", "This map shows the locations of Wifi hotspots in New York city. It's a super useful map for travellers!"], ["user_id", 81]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "posts" ("title", "image_url", "content", "user_id") VALUES (?, ?, ?, ?)  [["title", "Locations and Providers of NYC Wifi Hotspots"], ["image_url", "wifi_grace.png"], ["content", "According to the top chart, a large number of wifi hotspots are available outdoors. From the bottom chart, we can see that Time Warner Cable is the largest provider of NYC wifi hotspots."], ["user_id", 82]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.4ms)[0m  [1mINSERT INTO "posts" ("title", "image_url", "content", "user_id") VALUES (?, ?, ?, ?)[0m  [["title", "Renewable Electricity Output by Country"], ["image_url", "electricity_alice.png"], ["content", "This map shows the level of renewable electricity usage for countries around the world. Renewable electricity is the share of electrity generated by renewable power plants in total electricity generated by all types of plants."], ["user_id", 84]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "sources" ("post_id", "dataset_id") VALUES (?, ?)  [["post_id", 61], ["dataset_id", 61]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "sources" ("post_id", "dataset_id") VALUES (?, ?)[0m  [["post_id", 62], ["dataset_id", 61]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "sources" ("post_id", "dataset_id") VALUES (?, ?)  [["post_id", 63], ["dataset_id", 62]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "sources" ("post_id", "dataset_id") VALUES (?, ?)[0m  [["post_id", 64], ["dataset_id", 62]]
+  [1m[35m (2.0ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "sources" ("post_id", "dataset_id") VALUES (?, ?)  [["post_id", 65], ["dataset_id", 63]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "sources" ("post_id", "dataset_id") VALUES (?, ?)[0m  [["post_id", 66], ["dataset_id", 63]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "sources" ("post_id", "dataset_id") VALUES (?, ?)  [["post_id", 67], ["dataset_id", 64]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/datasets" for ::1 at 2016-05-30 00:20:57 -0500
+Processing by DatasetsController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "datasets"
+  [1m[36mDataset Load (0.4ms)[0m  [1mSELECT  "datasets".* FROM "datasets" LIMIT 30 OFFSET 0[0m
+  Rendered datasets/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 70ms (Views: 68.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/datasets/64" for ::1 at 2016-05-30 00:20:59 -0500
+Processing by DatasetsController#show as HTML
+  Parameters: {"id"=>"64"}
+  [1m[35mDataset Load (0.1ms)[0m  SELECT  "datasets".* FROM "datasets" WHERE "datasets"."id" = ? LIMIT 1  [["id", 64]]
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" INNER JOIN "sources" ON "posts"."id" = "sources"."post_id" WHERE "sources"."dataset_id" = ?[0m  [["dataset_id", 64]]
+  Rendered datasets/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 20ms (Views: 18.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/67" for ::1 at 2016-05-30 00:21:07 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"67"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 67]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 84]]
+  [1m[35mDataset Load (0.1ms)[0m  SELECT "datasets".* FROM "datasets" INNER JOIN "sources" ON "datasets"."id" = "sources"."dataset_id" WHERE "sources"."post_id" = ?  [["post_id", 67]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 67]]
+  Rendered posts/_comments.html.erb (1.1ms)
+  Rendered posts/show.html.erb within layouts/application (63.2ms)
+Completed 200 OK in 87ms (Views: 85.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/electricity_alice-f82a722b3dea9ba4f6e06231f0626d11d9de7782ee32683c8e64b9659c35cd14.png" for ::1 at 2016-05-30 00:21:07 -0500
+
+
+Started GET "/posts/67" for ::1 at 2016-05-30 00:21:58 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"67"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 67]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 84]]
+  [1m[35mDataset Load (0.2ms)[0m  SELECT "datasets".* FROM "datasets" INNER JOIN "sources" ON "datasets"."id" = "sources"."dataset_id" WHERE "sources"."post_id" = ?  [["post_id", 67]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 67]]
+  Rendered posts/_comments.html.erb (1.8ms)
+  Rendered posts/show.html.erb within layouts/application (10.5ms)
+Completed 200 OK in 31ms (Views: 29.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/password_resets.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-05-30 00:21:58 -0500
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-05-30 00:21:58 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-05-30 00:21:58 -0500
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-05-30 00:21:58 -0500
+
+
+Started GET "/assets/application.self-cb1f1ad15f98676b5b6add579bce50964eae287fade02ecb259bcea445a6b88b.css?body=1" for ::1 at 2016-05-30 00:21:58 -0500
+
+
+Started GET "/assets/password_resets.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-05-30 00:21:58 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-05-30 00:21:58 -0500
+
+
+Started GET "/assets/electricity_alice-f82a722b3dea9ba4f6e06231f0626d11d9de7782ee32683c8e64b9659c35cd14.png" for ::1 at 2016-05-30 00:21:58 -0500
+
+
+Started GET "/datasets" for ::1 at 2016-05-30 00:22:14 -0500
+Processing by DatasetsController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "datasets"
+  [1m[36mDataset Load (0.1ms)[0m  [1mSELECT  "datasets".* FROM "datasets" LIMIT 30 OFFSET 0[0m
+  Rendered datasets/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 16ms (Views: 15.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts" for ::1 at 2016-05-30 00:22:16 -0500
+Processing by PostsController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "posts"
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" LIMIT 10 OFFSET 0[0m
+  Rendered posts/index.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 24ms (Views: 23.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/food_alan-0837fbdb18416932bbc31bf5d115d2fdce982167069465d3003e250abc6d2906.png" for ::1 at 2016-05-30 00:22:16 -0500
+
+
+Started GET "/assets/wifi_grace-f92a0499a4115080eb682f8e1822f3a48735767d0803d48a8616c1a0dd761f6e.png" for ::1 at 2016-05-30 00:22:16 -0500
+
+
+Started GET "/posts" for ::1 at 2016-05-30 00:23:19 -0500
+Processing by PostsController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "posts"
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" LIMIT 10 OFFSET 0[0m
+  Rendered posts/index.html.erb within layouts/application (10.2ms)
+Completed 200 OK in 35ms (Views: 34.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.self-0e453fce37a7c1bb014aab6cf30bd9c9b003cda7137863bb8e88ba7a670a5bed.css?body=1" for ::1 at 2016-05-30 00:23:19 -0500
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-05-30 00:23:19 -0500
+
+
+Started GET "/assets/password_resets.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-05-30 00:23:19 -0500
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-05-30 00:23:19 -0500
+
+
+Started GET "/assets/password_resets.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-05-30 00:23:19 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-05-30 00:23:19 -0500
+
+
+Started GET "/assets/energy_alan-e72dff968a742512f403ce277e2debb3ba41dd6889c66f9a683a54b7bed1a055.png" for ::1 at 2016-05-30 00:23:19 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-05-30 00:23:19 -0500
+
+
+Started GET "/assets/energy_alice-58cf11df4dc4d308681b72ad18ee712fe5c45606426222c935086dd7622286fe.png" for ::1 at 2016-05-30 00:23:19 -0500
+
+
+Started GET "/assets/food_grace-3f54c73c7c7a9025647a3de0c4554b96ef8ec732ab615cf7814c798e3a4ccfda.png" for ::1 at 2016-05-30 00:23:19 -0500
+
+
+Started GET "/assets/electricity_alice-f82a722b3dea9ba4f6e06231f0626d11d9de7782ee32683c8e64b9659c35cd14.png" for ::1 at 2016-05-30 00:23:19 -0500
+
+
+Started GET "/assets/wifi_grace-f92a0499a4115080eb682f8e1822f3a48735767d0803d48a8616c1a0dd761f6e.png" for ::1 at 2016-05-30 00:23:19 -0500
+
+
+Started GET "/assets/wifi_margaret-50d702b337e10289d3af7da909ab1e3d7a08f429b59f2d40910caa341eb046b8.png" for ::1 at 2016-05-30 00:23:19 -0500
+
+
+Started GET "/assets/food_alan-0837fbdb18416932bbc31bf5d115d2fdce982167069465d3003e250abc6d2906.png" for ::1 at 2016-05-30 00:23:19 -0500
+
+
+Started GET "/posts" for ::1 at 2016-05-30 00:24:07 -0500
+Processing by PostsController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "posts"
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" LIMIT 10 OFFSET 0[0m
+  Rendered posts/index.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 39ms (Views: 37.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.self-f51227b8ab2d7aad391bb8882410e32a139bf69588e8028c1c58ff3be0a013ca.css?body=1" for ::1 at 2016-05-30 00:24:07 -0500
+
+
+Started GET "/assets/password_resets.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-05-30 00:24:07 -0500
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-05-30 00:24:08 -0500
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-05-30 00:24:08 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-05-30 00:24:08 -0500
+
+
+Started GET "/assets/energy_alan-e72dff968a742512f403ce277e2debb3ba41dd6889c66f9a683a54b7bed1a055.png" for ::1 at 2016-05-30 00:24:08 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-05-30 00:24:08 -0500
+
+
+Started GET "/assets/password_resets.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-05-30 00:24:08 -0500
+
+
+Started GET "/assets/energy_alice-58cf11df4dc4d308681b72ad18ee712fe5c45606426222c935086dd7622286fe.png" for ::1 at 2016-05-30 00:24:08 -0500
+
+
+Started GET "/assets/wifi_grace-f92a0499a4115080eb682f8e1822f3a48735767d0803d48a8616c1a0dd761f6e.png" for ::1 at 2016-05-30 00:24:08 -0500
+
+
+Started GET "/assets/wifi_margaret-50d702b337e10289d3af7da909ab1e3d7a08f429b59f2d40910caa341eb046b8.png" for ::1 at 2016-05-30 00:24:08 -0500
+
+
+Started GET "/assets/food_grace-3f54c73c7c7a9025647a3de0c4554b96ef8ec732ab615cf7814c798e3a4ccfda.png" for ::1 at 2016-05-30 00:24:08 -0500
+
+
+Started GET "/assets/food_alan-0837fbdb18416932bbc31bf5d115d2fdce982167069465d3003e250abc6d2906.png" for ::1 at 2016-05-30 00:24:08 -0500
+
+
+Started GET "/assets/electricity_alice-f82a722b3dea9ba4f6e06231f0626d11d9de7782ee32683c8e64b9659c35cd14.png" for ::1 at 2016-05-30 00:24:08 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mSQL (2.1ms)[0m  DELETE FROM "users"
+  [1m[36mSQL (0.8ms)[0m  [1mDELETE FROM "posts"[0m
+  [1m[35mSQL (0.8ms)[0m  DELETE FROM "subscriptions"
+  [1m[36mSQL (0.8ms)[0m  [1mDELETE FROM "comments"[0m
+  [1m[35mSQL (0.7ms)[0m  DELETE FROM "sources"
+  [1m[36mSQL (0.8ms)[0m  [1mDELETE FROM "datasets"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'margaret@example.org' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "description") VALUES (?, ?, ?, ?)  [["name", "Margaret Hopper"], ["email", "margaret@example.org"], ["password_digest", "$2a$10$M.n2mm7ZfnVw14.8McZqHunz8gHSv7qSh5Q16KFqlVuVcltQ8Ft1K"], ["description", "I love exploring open data!"]]
+  [1m[36m (1.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'grace@example.org' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "description") VALUES (?, ?, ?, ?)  [["name", "Grace Turing"], ["email", "grace@example.org"], ["password_digest", "$2a$10$kodbLg8MjgfGO38mDgW.GuMua5qfnJHZW/YpxGQcMxEEhfTVGhFDm"], ["description", "Just for fun..."]]
+  [1m[36m (1.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'alan@example.org' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "description") VALUES (?, ?, ?, ?)  [["name", "Alan Hamilton"], ["email", "alan@example.org"], ["password_digest", "$2a$10$IwDOmIDrFEMIW.efnoOMhOR.EBmQlurv5rzTEBQ2gaLgkU8k2lTr."], ["description", "Love this site so much!"]]
+  [1m[36m (1.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'alice@example.org' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "description") VALUES (?, ?, ?, ?)  [["name", "Alice Tang"], ["email", "alice@example.org"], ["password_digest", "$2a$10$6ckNsODA8mmpvI3P0tGUXeWsdpbsOgQZK6D3TdRTcP0/IG2WUuLB."], ["description", "I'm really excited to share my work!"]]
+  [1m[36m (1.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'admin@example.org' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "description", "admin") VALUES (?, ?, ?, ?, ?)  [["name", "Administrator"], ["email", "admin@example.org"], ["password_digest", "$2a$10$erzOB84S4oNPxo14esGCMeq0A6sVRys6Nvh6uPCryRuICwhJjdC4u"], ["description", "Feel free to email me at admin@example.org if you need any help!"], ["admin", "t"]]
+  [1m[36m (1.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "datasets" ("database", "table", "url") VALUES (?, ?, ?)[0m  [["database", "City of Chicago Data Portal"], ["table", "Chicago Energy Benchmarking"], ["url", "https://data.cityofchicago.org/Environment-Sustainable-Development/Chicago-Energy-Benchmarking/xq83-jr8c"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "datasets" ("database", "table", "url") VALUES (?, ?, ?)  [["database", "City of Chicago Data Portal"], ["table", "Food Inspections"], ["url", "https://data.cityofchicago.org/Health-Human-Services/Food-Inspections/4ijn-s7e5"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "datasets" ("database", "table", "url") VALUES (?, ?, ?)[0m  [["database", "NYC Open Data"], ["table", "NYC Wi-Fi Hotspot Locations"], ["url", "https://nycopendata.socrata.com/City-Government/NYC-Wi-Fi-Hotspot-Locations/yjub-udmw"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "datasets" ("database", "table", "url") VALUES (?, ?, ?)  [["database", "World Bank Open Data"], ["table", "Renewable electricity output"], ["url", "http://data.worldbank.org/indicator/EG.ELC.RNEW.ZS?order=wbapi_data_value_2012+wbapi_data_value+wbapi_data_value-last&sort=desc"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "posts" ("title", "image_url", "content", "user_id") VALUES (?, ?, ?, ?)[0m  [["title", "Visualize Chicago Energy Benchmarking"], ["image_url", "energy_alan.png"], ["content", "This map shows the geographic distribution of buildings that are required to report annual energy use to the City by the ordinance. The Chicago Building Energy Use Benchmarking Ordinance calls on existing municipal, commercial, and residential buildings larger than 50,000 square feet to track whole-building energy use, report to the City annually, and verify data accuracy every three years. The law, which phases in from 2014-2017, covers less than 1% of Chicago’s buildings, which account for approximately 20% of total energy used by all buildings. For more details, including ordinance text, rules and regulations, and timing, please visit www.CityofChicago.org/EnergyBenchmarking. The ordinance authorizes the City to share property-specific information with the public, beginning with the second year in which a building is required to comply. Initially, the dataset includes 243 properties larger than 250,000 square feet that were covered by the ordinance in both 2014 and 2015. The dataset represents self-reported and publicly-available property information for January - December, 2014. In future years, the City plans to release additional building data, as-authorized by the ordinance. Using the \"Data Year\" column, this map shows data for 2014, as reported in 2015."], ["user_id", 88]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "posts" ("title", "image_url", "content", "user_id") VALUES (?, ?, ?, ?)  [["title", "Renewable Electricity Output by Country"], ["image_url", "electricity_alice.png"], ["content", "This map shows the level of renewable electricity usage for countries around the world. Renewable electricity is the share of electrity generated by renewable power plants in total electricity generated by all types of plants."], ["user_id", 89]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "posts" ("title", "image_url", "content", "user_id") VALUES (?, ?, ?, ?)[0m  [["title", "Chicago Food Inspection Trends and Results"], ["image_url", "food_grace.png"], ["content", "The top chart shows how the number of food inspections changes over time. The bottom chart shows the overall distribution of inspection results."], ["user_id", 87]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "posts" ("title", "image_url", "content", "user_id") VALUES (?, ?, ?, ?)  [["title", "Chicago Energy Benchmarking Heat Map"], ["image_url", "energy_alice.png"], ["content", "I was inspired by Alan's post and want to do one on Chicago energy mapping. I think for this dataset, heat map is more informative than spot map."], ["user_id", 89]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "posts" ("title", "image_url", "content", "user_id") VALUES (?, ?, ?, ?)[0m  [["title", "Geographic Distribution of NYC Wifi Hotspots"], ["image_url", "wifi_margaret.png"], ["content", "This map shows the locations of Wifi hotspots in New York city. It's a super useful map for travellers!"], ["user_id", 86]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "posts" ("title", "image_url", "content", "user_id") VALUES (?, ?, ?, ?)  [["title", "Chicago Food Inspections by Community Areas"], ["image_url", "food_alan.png"], ["content", "This map shows the community distribution of Chicago food inspections. This information is derived from inspections of restaurants and other food establishments in Chicago from January 1, 2010 to the present. Inspections are performed by staff from the Chicago Department of Public Health’s Food Protection Program using a standardized procedure. The results of the inspection are inputted into a database, then reviewed and approved by a State of Illinois Licensed Environmental Health Practitioner (LEHP). For descriptions of the data elements included in this set, go to http://bit.ly/tS9IE8."], ["user_id", 88]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "posts" ("title", "image_url", "content", "user_id") VALUES (?, ?, ?, ?)[0m  [["title", "Locations and Providers of NYC Wifi Hotspots"], ["image_url", "wifi_grace.png"], ["content", "According to the top chart, a large number of wifi hotspots are available outdoors. From the bottom chart, we can see that Time Warner Cable is the largest provider of NYC wifi hotspots."], ["user_id", 87]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "sources" ("post_id", "dataset_id") VALUES (?, ?)  [["post_id", 68], ["dataset_id", 65]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "sources" ("post_id", "dataset_id") VALUES (?, ?)[0m  [["post_id", 71], ["dataset_id", 65]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "sources" ("post_id", "dataset_id") VALUES (?, ?)  [["post_id", 70], ["dataset_id", 66]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "sources" ("post_id", "dataset_id") VALUES (?, ?)[0m  [["post_id", 73], ["dataset_id", 66]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "sources" ("post_id", "dataset_id") VALUES (?, ?)  [["post_id", 72], ["dataset_id", 67]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "sources" ("post_id", "dataset_id") VALUES (?, ?)[0m  [["post_id", 74], ["dataset_id", 67]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "sources" ("post_id", "dataset_id") VALUES (?, ?)  [["post_id", 69], ["dataset_id", 68]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/posts" for ::1 at 2016-05-30 00:25:54 -0500
+Processing by PostsController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "posts"
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" LIMIT 10 OFFSET 0[0m
+  Rendered posts/index.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 27ms (Views: 26.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/password_resets.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-05-30 00:25:54 -0500
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-05-30 00:25:54 -0500
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-05-30 00:25:54 -0500
+
+
+Started GET "/assets/application.self-94b02e0fa8e37eef7ad03ad188e3140b3d5f550df2d26881275e7fa1927e7829.css?body=1" for ::1 at 2016-05-30 00:25:54 -0500
+
+
+Started GET "/assets/password_resets.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-05-30 00:25:54 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-05-30 00:25:54 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-05-30 00:25:54 -0500
+
+
+Started GET "/assets/energy_alan-e72dff968a742512f403ce277e2debb3ba41dd6889c66f9a683a54b7bed1a055.png" for ::1 at 2016-05-30 00:25:54 -0500
+
+
+Started GET "/assets/food_grace-3f54c73c7c7a9025647a3de0c4554b96ef8ec732ab615cf7814c798e3a4ccfda.png" for ::1 at 2016-05-30 00:25:54 -0500
+
+
+Started GET "/assets/energy_alice-58cf11df4dc4d308681b72ad18ee712fe5c45606426222c935086dd7622286fe.png" for ::1 at 2016-05-30 00:25:54 -0500
+
+
+Started GET "/assets/food_alan-0837fbdb18416932bbc31bf5d115d2fdce982167069465d3003e250abc6d2906.png" for ::1 at 2016-05-30 00:25:54 -0500
+
+
+Started GET "/assets/electricity_alice-f82a722b3dea9ba4f6e06231f0626d11d9de7782ee32683c8e64b9659c35cd14.png" for ::1 at 2016-05-30 00:25:54 -0500
+
+
+Started GET "/assets/wifi_margaret-50d702b337e10289d3af7da909ab1e3d7a08f429b59f2d40910caa341eb046b8.png" for ::1 at 2016-05-30 00:25:54 -0500
+
+
+Started GET "/assets/wifi_grace-f92a0499a4115080eb682f8e1822f3a48735767d0803d48a8616c1a0dd761f6e.png" for ::1 at 2016-05-30 00:25:54 -0500
+
+
+Started GET "/posts?utf8=%E2%9C%93&keyword=chicago" for ::1 at 2016-05-30 00:26:09 -0500
+Processing by PostsController#index as HTML
+  Parameters: {"utf8"=>"✓", "keyword"=>"chicago"}
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "posts" WHERE (title LIKE '%chicago%' OR content LIKE '%chicago%')
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT COUNT(*) FROM "posts" WHERE (title LIKE '%chicago%' OR content LIKE '%chicago%')[0m
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE (title LIKE '%chicago%' OR content LIKE '%chicago%') LIMIT 10 OFFSET 0
+  Rendered posts/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 19ms (Views: 17.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts?utf8=%E2%9C%93&keyword=nyc" for ::1 at 2016-05-30 00:26:18 -0500
+Processing by PostsController#index as HTML
+  Parameters: {"utf8"=>"✓", "keyword"=>"nyc"}
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "posts" WHERE (title LIKE '%nyc%' OR content LIKE '%nyc%')[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "posts" WHERE (title LIKE '%nyc%' OR content LIKE '%nyc%')
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE (title LIKE '%nyc%' OR content LIKE '%nyc%') LIMIT 10 OFFSET 0[0m
+  Rendered posts/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 19ms (Views: 17.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users" for ::1 at 2016-05-30 00:26:21 -0500
+Processing by UsersController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" LIMIT 30 OFFSET 0[0m
+  Rendered users/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 18ms (Views: 17.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/89" for ::1 at 2016-05-30 00:26:23 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"89"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 89]]
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 89]]
+  Rendered users/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 17ms (Views: 16.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users" for ::1 at 2016-05-30 00:26:24 -0500
+Processing by UsersController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" LIMIT 30 OFFSET 0[0m
+  Rendered users/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 15ms (Views: 14.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/88" for ::1 at 2016-05-30 00:26:26 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"88"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 88]]
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 88]]
+  Rendered users/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 14ms (Views: 13.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users" for ::1 at 2016-05-30 00:26:29 -0500
+Processing by UsersController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" LIMIT 30 OFFSET 0[0m
+  Rendered users/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 16ms (Views: 14.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/87" for ::1 at 2016-05-30 00:26:30 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"87"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 87]]
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 87]]
+  Rendered users/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 16ms (Views: 14.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users" for ::1 at 2016-05-30 00:26:31 -0500
+Processing by UsersController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" LIMIT 30 OFFSET 0[0m
+  Rendered users/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 16ms (Views: 15.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/86" for ::1 at 2016-05-30 00:26:32 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"86"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 86]]
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 86]]
+  Rendered users/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 15ms (Views: 14.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/72" for ::1 at 2016-05-30 00:26:33 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"72"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 72]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 86]]
+  [1m[35mDataset Load (0.1ms)[0m  SELECT "datasets".* FROM "datasets" INNER JOIN "sources" ON "datasets"."id" = "sources"."dataset_id" WHERE "sources"."post_id" = ?  [["post_id", 72]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 72]]
+  Rendered posts/_comments.html.erb (0.9ms)
+  Rendered posts/show.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 24ms (Views: 21.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/subscriptions" for ::1 at 2016-05-30 00:26:42 -0500
+Processing by SubscriptionsController#index as HTML
+Redirected to http://localhost:3000/login
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2016-05-30 00:26:42 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 16ms (Views: 15.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for ::1 at 2016-05-30 00:26:44 -0500
+Processing by UsersController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" LIMIT 30 OFFSET 0[0m
+  Rendered users/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 15ms (Views: 14.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts" for ::1 at 2016-05-30 00:26:45 -0500
+Processing by PostsController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "posts"
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" LIMIT 10 OFFSET 0[0m
+  Rendered posts/index.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 25ms (Views: 24.1ms | ActiveRecord: 0.2ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mSQL (1.7ms)[0m  DELETE FROM "users"
+  [1m[36mSQL (0.8ms)[0m  [1mDELETE FROM "posts"[0m
+  [1m[35mSQL (1.0ms)[0m  DELETE FROM "subscriptions"
+  [1m[36mSQL (0.9ms)[0m  [1mDELETE FROM "comments"[0m
+  [1m[35mSQL (0.9ms)[0m  DELETE FROM "sources"
+  [1m[36mSQL (0.8ms)[0m  [1mDELETE FROM "datasets"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'margaret@example.org' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "description") VALUES (?, ?, ?, ?)  [["name", "Margaret Hopper"], ["email", "margaret@example.org"], ["password_digest", "$2a$10$cz/3lZnscX1O6sawAG3DDegsjsoPeEgK6sobsNQy//kEy80CbGbtq"], ["description", "I love exploring open data!"]]
+  [1m[36m (1.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'grace@example.org' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "description") VALUES (?, ?, ?, ?)  [["name", "Grace Turing"], ["email", "grace@example.org"], ["password_digest", "$2a$10$taY7h3PBjFpf4w7tW5AShulgint.xuh6pR5U93Vaud4bVT079D5cq"], ["description", "Just for fun..."]]
+  [1m[36m (1.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'alan@example.org' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "description") VALUES (?, ?, ?, ?)  [["name", "Alan Hamilton"], ["email", "alan@example.org"], ["password_digest", "$2a$10$w.iiNdZcxDiwf2RbywYuZelX8pP7/r5MM1XEOkreGIO0gJwMwWVvi"], ["description", "Love this site so much!"]]
+  [1m[36m (1.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'alice@example.org' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "description") VALUES (?, ?, ?, ?)  [["name", "Alice Tang"], ["email", "alice@example.org"], ["password_digest", "$2a$10$UHNkqUXY5uHKcbpYqMDNZeheIRP0h3zBBecBw6mTE7quC80vonujW"], ["description", "I'm really excited to share my work!"]]
+  [1m[36m (1.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'admin@example.org' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "description", "admin") VALUES (?, ?, ?, ?, ?)  [["name", "Administrator"], ["email", "admin@example.org"], ["password_digest", "$2a$10$jYSP55vdBeBXzk4P1XxrVeLSn2TLOv4wA7Wv/oESFedutOEPGnQ6m"], ["description", "Feel free to email me at admin@example.org if you need any help!"], ["admin", "t"]]
+  [1m[36m (1.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "datasets" ("database", "table", "url") VALUES (?, ?, ?)[0m  [["database", "City of Chicago Data Portal"], ["table", "Chicago Energy Benchmarking"], ["url", "https://data.cityofchicago.org/Environment-Sustainable-Development/Chicago-Energy-Benchmarking/xq83-jr8c"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "datasets" ("database", "table", "url") VALUES (?, ?, ?)  [["database", "City of Chicago Data Portal"], ["table", "Food Inspections"], ["url", "https://data.cityofchicago.org/Health-Human-Services/Food-Inspections/4ijn-s7e5"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "datasets" ("database", "table", "url") VALUES (?, ?, ?)[0m  [["database", "NYC Open Data"], ["table", "NYC Wi-Fi Hotspot Locations"], ["url", "https://nycopendata.socrata.com/City-Government/NYC-Wi-Fi-Hotspot-Locations/yjub-udmw"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "datasets" ("database", "table", "url") VALUES (?, ?, ?)  [["database", "World Bank Open Data"], ["table", "Renewable electricity output"], ["url", "http://data.worldbank.org/indicator/EG.ELC.RNEW.ZS?order=wbapi_data_value_2012+wbapi_data_value+wbapi_data_value-last&sort=desc"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "posts" ("title", "image_url", "content", "user_id") VALUES (?, ?, ?, ?)[0m  [["title", "Visualize Chicago Energy Benchmarking"], ["image_url", "energy_alan.png"], ["content", "This map shows the geographic distribution of buildings that are required to report annual energy use to the City by the ordinance. The Chicago Building Energy Use Benchmarking Ordinance calls on existing municipal, commercial, and residential buildings larger than 50,000 square feet to track whole-building energy use, report to the City annually, and verify data accuracy every three years. The law, which phases in from 2014-2017, covers less than 1% of Chicago’s buildings, which account for approximately 20% of total energy used by all buildings. For more details, including ordinance text, rules and regulations, and timing, please visit www.CityofChicago.org/EnergyBenchmarking. The ordinance authorizes the City to share property-specific information with the public, beginning with the second year in which a building is required to comply. Initially, the dataset includes 243 properties larger than 250,000 square feet that were covered by the ordinance in both 2014 and 2015. The dataset represents self-reported and publicly-available property information for January - December, 2014. In future years, the City plans to release additional building data, as-authorized by the ordinance. Using the \"Data Year\" column, this map shows data for 2014, as reported in 2015."], ["user_id", 93]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "posts" ("title", "image_url", "content", "user_id") VALUES (?, ?, ?, ?)  [["title", "Renewable Electricity Output by Country"], ["image_url", "electricity_alice.png"], ["content", "This map shows the level of renewable electricity usage for countries around the world. Renewable electricity is the share of electrity generated by renewable power plants in total electricity generated by all types of plants."], ["user_id", 94]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "posts" ("title", "image_url", "content", "user_id") VALUES (?, ?, ?, ?)[0m  [["title", "Chicago Food Inspection Trends and Results"], ["image_url", "food_grace.png"], ["content", "The top chart shows how the number of food inspections changes over time. The bottom chart shows the overall distribution of inspection results."], ["user_id", 92]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "posts" ("title", "image_url", "content", "user_id") VALUES (?, ?, ?, ?)  [["title", "Chicago Energy Benchmarking Heat Map"], ["image_url", "energy_alice.png"], ["content", "I was inspired by Alan's post and want to do one on Chicago energy mapping. I think for this dataset, heat map is more informative than spot map."], ["user_id", 94]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "posts" ("title", "image_url", "content", "user_id") VALUES (?, ?, ?, ?)[0m  [["title", "Geographic Distribution of NYC Wifi Hotspots"], ["image_url", "wifi_margaret.png"], ["content", "This map shows the locations of Wifi hotspots in New York city. It's a super useful map for travellers!"], ["user_id", 91]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "posts" ("title", "image_url", "content", "user_id") VALUES (?, ?, ?, ?)  [["title", "Chicago Food Inspections by Community Areas"], ["image_url", "food_alan.png"], ["content", "This map shows the community distribution of Chicago food inspections. This information is derived from inspections of restaurants and other food establishments in Chicago from January 1, 2010 to the present. Inspections are performed by staff from the Chicago Department of Public Health’s Food Protection Program using a standardized procedure. The results of the inspection are inputted into a database, then reviewed and approved by a State of Illinois Licensed Environmental Health Practitioner (LEHP). For descriptions of the data elements included in this set, go to http://bit.ly/tS9IE8."], ["user_id", 93]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "posts" ("title", "image_url", "content", "user_id") VALUES (?, ?, ?, ?)[0m  [["title", "Locations and Providers of NYC Wifi Hotspots"], ["image_url", "wifi_grace.png"], ["content", "According to the top chart, a large number of wifi hotspots are available outdoors. From the bottom chart, we can see that Time Warner Cable is the largest provider of NYC wifi hotspots."], ["user_id", 92]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "sources" ("post_id", "dataset_id") VALUES (?, ?)  [["post_id", 75], ["dataset_id", 69]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "sources" ("post_id", "dataset_id") VALUES (?, ?)[0m  [["post_id", 78], ["dataset_id", 69]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "sources" ("post_id", "dataset_id") VALUES (?, ?)  [["post_id", 77], ["dataset_id", 70]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "sources" ("post_id", "dataset_id") VALUES (?, ?)[0m  [["post_id", 80], ["dataset_id", 70]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "sources" ("post_id", "dataset_id") VALUES (?, ?)  [["post_id", 79], ["dataset_id", 71]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "sources" ("post_id", "dataset_id") VALUES (?, ?)[0m  [["post_id", 81], ["dataset_id", 71]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "sources" ("post_id", "dataset_id") VALUES (?, ?)  [["post_id", 76], ["dataset_id", 72]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "subscriptions" ("publisher_id", "subscriber_id") VALUES (?, ?)[0m  [["publisher_id", 94], ["subscriber_id", 93]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "subscriptions" ("publisher_id", "subscriber_id") VALUES (?, ?)  [["publisher_id", 93], ["subscriber_id", 94]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "subscriptions" ("publisher_id", "subscriber_id") VALUES (?, ?)[0m  [["publisher_id", 91], ["subscriber_id", 92]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "subscriptions" ("publisher_id", "subscriber_id") VALUES (?, ?)  [["publisher_id", 93], ["subscriber_id", 91]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "subscriptions" ("publisher_id", "subscriber_id") VALUES (?, ?)[0m  [["publisher_id", 92], ["subscriber_id", 94]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "subscriptions" ("publisher_id", "subscriber_id") VALUES (?, ?)  [["publisher_id", 93], ["subscriber_id", 92]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "subscriptions" ("publisher_id", "subscriber_id") VALUES (?, ?)[0m  [["publisher_id", 94], ["subscriber_id", 91]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "comments" ("rating", "comment", "post_id", "user_id") VALUES (?, ?, ?, ?)  [["rating", 5], ["comment", "Great map!"], ["post_id", 76], ["user_id", 93]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "comments" ("rating", "comment", "post_id", "user_id") VALUES (?, ?, ?, ?)[0m  [["rating", 4], ["comment", "Very informative!"], ["post_id", 76], ["user_id", 91]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "comments" ("rating", "comment", "post_id", "user_id") VALUES (?, ?, ?, ?)  [["rating", 4], ["comment", "I like these two charts!"], ["post_id", 81], ["user_id", 91]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "comments" ("rating", "comment", "post_id", "user_id") VALUES (?, ?, ?, ?)[0m  [["rating", 4], ["comment", "Yes, it's super useful!"], ["post_id", 79], ["user_id", 94]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "comments" ("rating", "comment", "post_id", "user_id") VALUES (?, ?, ?, ?)  [["rating", 5], ["comment", "I have another posting on the same dataset. Want to take a look?"], ["post_id", 80], ["user_id", 92]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "comments" ("rating", "comment", "post_id", "user_id") VALUES (?, ?, ?, ?)[0m  [["rating", 5], ["comment", "Great visualization!"], ["post_id", 75], ["user_id", 94]]
+  [1m[35m (0.6ms)[0m  commit transaction
+
+
+Started GET "/datasets" for ::1 at 2016-05-30 00:36:01 -0500
+Processing by DatasetsController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "datasets"
+  [1m[36mDataset Load (0.1ms)[0m  [1mSELECT  "datasets".* FROM "datasets" LIMIT 30 OFFSET 0[0m
+  Rendered datasets/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 16ms (Views: 15.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/datasets/72" for ::1 at 2016-05-30 00:36:03 -0500
+Processing by DatasetsController#show as HTML
+  Parameters: {"id"=>"72"}
+  [1m[35mDataset Load (0.1ms)[0m  SELECT  "datasets".* FROM "datasets" WHERE "datasets"."id" = ? LIMIT 1  [["id", 72]]
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" INNER JOIN "sources" ON "posts"."id" = "sources"."post_id" WHERE "sources"."dataset_id" = ?[0m  [["dataset_id", 72]]
+  Rendered datasets/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 15ms (Views: 14.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/76" for ::1 at 2016-05-30 00:36:05 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"76"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 76]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 94]]
+  [1m[35mDataset Load (0.1ms)[0m  SELECT "datasets".* FROM "datasets" INNER JOIN "sources" ON "datasets"."id" = "sources"."dataset_id" WHERE "sources"."post_id" = ?  [["post_id", 76]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 76]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?  [["post_id", 76]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 93]]
+  Rendered comments/_comment.html.erb (3.4ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 91]]
+  Rendered comments/_comment.html.erb (0.7ms)
+  Rendered posts/_comments.html.erb (13.5ms)
+  Rendered posts/show.html.erb within layouts/application (17.5ms)
+Completed 200 OK in 33ms (Views: 30.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/datasets/72" for ::1 at 2016-05-30 00:36:13 -0500
+Processing by DatasetsController#show as HTML
+  Parameters: {"id"=>"72"}
+  [1m[36mDataset Load (0.1ms)[0m  [1mSELECT  "datasets".* FROM "datasets" WHERE "datasets"."id" = ? LIMIT 1[0m  [["id", 72]]
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts" INNER JOIN "sources" ON "posts"."id" = "sources"."post_id" WHERE "sources"."dataset_id" = ?  [["dataset_id", 72]]
+  Rendered datasets/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 16ms (Views: 14.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/datasets" for ::1 at 2016-05-30 00:36:16 -0500
+Processing by DatasetsController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "datasets"[0m
+  [1m[35mDataset Load (0.1ms)[0m  SELECT  "datasets".* FROM "datasets" LIMIT 30 OFFSET 0
+  Rendered datasets/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 16ms (Views: 14.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/datasets/70" for ::1 at 2016-05-30 00:36:17 -0500
+Processing by DatasetsController#show as HTML
+  Parameters: {"id"=>"70"}
+  [1m[36mDataset Load (0.1ms)[0m  [1mSELECT  "datasets".* FROM "datasets" WHERE "datasets"."id" = ? LIMIT 1[0m  [["id", 70]]
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts" INNER JOIN "sources" ON "posts"."id" = "sources"."post_id" WHERE "sources"."dataset_id" = ?  [["dataset_id", 70]]
+  Rendered datasets/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 17ms (Views: 15.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/77" for ::1 at 2016-05-30 00:36:19 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"77"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 77]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 92]]
+  [1m[36mDataset Load (0.1ms)[0m  [1mSELECT "datasets".* FROM "datasets" INNER JOIN "sources" ON "datasets"."id" = "sources"."dataset_id" WHERE "sources"."post_id" = ?[0m  [["post_id", 77]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?  [["post_id", 77]]
+  Rendered posts/_comments.html.erb (1.0ms)
+  Rendered posts/show.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 19ms (Views: 16.6ms | ActiveRecord: 0.3ms)
