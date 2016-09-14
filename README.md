@@ -1,4 +1,4 @@
-# webdev_final
+# Open Data Visualization
 Web Development Final Project: Open Data Visualization
 
 *Xiaorui Tang, xiaoruit, 449972*
